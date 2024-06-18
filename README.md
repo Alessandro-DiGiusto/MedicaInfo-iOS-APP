@@ -101,5 +101,5 @@ Questo progetto è distribuito sotto la licenza GNU General Public License v3.0.
 
 ## Contatti
 
-Per domande o suggerimenti, contattami a [tuo-email@example.com](mailto:me@alessandrodigiusto.it).
+Per domande o suggerimenti, contattami a [me@alessandrodigiusto.it](mailto:me@alessandrodigiusto.it).
 
