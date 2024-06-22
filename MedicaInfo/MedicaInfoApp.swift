@@ -12,13 +12,13 @@ import CoreData
 struct MedicaInfoApp: App {
     let persistenceController = PersistenceController.shared
     
-/*//##########################################################################
+/* //##########################################################################
     // USARE PER CACELLARE TUTTI I RECORD DEL DB
      init() {
         // Chiamata a deleteAllPatients() per eliminare tutti i dati dei pazienti all'avvio dell'app
         deleteAllPatients()
-    } 
-    */
+    } */
+    
     // Funzione per eliminare tutti i dati dall'entità Patient
     func deleteAllPatients() {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Patient")
