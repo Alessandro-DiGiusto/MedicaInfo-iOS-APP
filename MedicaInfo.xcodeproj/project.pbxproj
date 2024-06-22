@@ -16,6 +16,10 @@
 		ED700EB52BFE97FC00FCABC2 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED700EB42BFE97FC00FCABC2 /* PersistenceController.swift */; };
 		ED700EB72BFE987D00FCABC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED700EB62BFE987D00FCABC2 /* AppDelegate.swift */; };
 		ED700EBD2BFE9A7000FCABC2 /* MedicalDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED700EBB2BFE9A7000FCABC2 /* MedicalDataModel.xcdatamodeld */; };
+		EDB84BA32C0A1E8700489FA1 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB84BA22C0A1E8700489FA1 /* AddNoteView.swift */; };
+		EDB84BA52C0A383700489FA1 /* PatientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB84BA42C0A383700489FA1 /* PatientDetailView.swift */; };
+		EDB84BA72C0CDFF500489FA1 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB84BA62C0CDFF500489FA1 /* Test.swift */; };
+		EDCC88382C1DB12000ACF9EF /* AnamnesiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC88372C1DB12000ACF9EF /* AnamnesiView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		ED700EB42BFE97FC00FCABC2 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		ED700EB62BFE987D00FCABC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED700EBC2BFE9A7000FCABC2 /* MedicalDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MedicalDataModel.xcdatamodel; sourceTree = "<group>"; };
+		EDB84BA22C0A1E8700489FA1 /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
+		EDB84BA42C0A383700489FA1 /* PatientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailView.swift; sourceTree = "<group>"; };
+		EDB84BA62C0CDFF500489FA1 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		EDCC88372C1DB12000ACF9EF /* AnamnesiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnamnesiView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,10 @@
 				ED700EA92BFE8C5500FCABC2 /* MedicaInfo.entitlements */,
 				ED700EAA2BFE8C5500FCABC2 /* Preview Content */,
 				ED700EBB2BFE9A7000FCABC2 /* MedicalDataModel.xcdatamodeld */,
+				EDB84BA22C0A1E8700489FA1 /* AddNoteView.swift */,
+				EDB84BA42C0A383700489FA1 /* PatientDetailView.swift */,
+				EDB84BA62C0CDFF500489FA1 /* Test.swift */,
+				EDCC88372C1DB12000ACF9EF /* AnamnesiView.swift */,
 			);
 			path = MedicaInfo;
 			sourceTree = "<group>";
@@ -154,12 +166,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDCC88382C1DB12000ACF9EF /* AnamnesiView.swift in Sources */,
 				ED700EB72BFE987D00FCABC2 /* AppDelegate.swift in Sources */,
 				ED700EA42BFE8C5200FCABC2 /* ContentView.swift in Sources */,
 				ED700EB32BFE975300FCABC2 /* DetailView.swift in Sources */,
 				ED700EA62BFE8C5200FCABC2 /* Item.swift in Sources */,
 				ED700EBD2BFE9A7000FCABC2 /* MedicalDataModel.xcdatamodeld in Sources */,
+				EDB84BA52C0A383700489FA1 /* PatientDetailView.swift in Sources */,
 				ED700EA22BFE8C5200FCABC2 /* MedicaInfoApp.swift in Sources */,
+				EDB84BA72C0CDFF500489FA1 /* Test.swift in Sources */,
+				EDB84BA32C0A1E8700489FA1 /* AddNoteView.swift in Sources */,
 				ED700EB52BFE97FC00FCABC2 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
