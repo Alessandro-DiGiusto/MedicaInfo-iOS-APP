@@ -6,6 +6,9 @@
         <attribute name="conditions" optional="YES" attributeType="String"/>
         <attribute name="gender" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="nota" optional="YES" attributeType="String"/>
+        <attribute name="residenceAddress" optional="YES" attributeType="String"/>
         <attribute name="surname" optional="YES" attributeType="String"/>
+        <attribute name="tel" optional="YES" attributeType="String"/>
     </entity>
 </model>
