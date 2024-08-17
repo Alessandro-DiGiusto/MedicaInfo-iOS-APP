@@ -1,91 +1,175 @@
-//
-//  PatientDetailView.swift
-//  MedicaInfo
-//
-//  Created by Alessandro Di Giusto on 31/05/24.
-//
-
-import Foundation
 import SwiftUI
 import CoreData
-import UserNotifications
-import UIKit
-import WebKit
-import PDFKit
 
 struct PatientDetailView: View {
-    let patient: Patient
+    @ObservedObject var viewModel: PatientViewModel
     let dateFormatter: DateFormatter
-    @State private var noteText: String = ""
 
     init(patient: Patient, dateFormatter: DateFormatter) {
-        self.patient = patient
+        self.viewModel = PatientViewModel(patient: patient)
         self.dateFormatter = dateFormatter
     }
-    
+
     var body: some View {
-        Spacer()
-        HStack {
-            Text(patient.name ?? "Nessun nome inserito")
-            Text(patient.surname ?? "Nessun surname inserito")
-        }
-        .bold()
-        
-        Section(header: Text("Anagrafica")) {
-            VStack {
-                // Altre view sopra lo sfondo
-                // Section Anagrafica con effetto vetro
-                VStack {
-                    Divider()
-                    Text("Data di Nascita: \(patient.birthDate ?? Date(), formatter: dateFormatter)")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Divider()
-                    Text("Codice Fiscale: \(patient.cf ?? "N/A")")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Divider()
-                    
-                    HStack{
-                        Text("Sesso:")
-                            .bold()
-                        Text(patient.gender ?? "Nessun gender inserito")
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    Divider()
-                    Text("Contatto: \(patient.tel ?? "Nessun Contatto inserito")")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Divider()
-                    
-                    Group {
-                        Text("Condizioni Mediche:")
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                // Sezione Anagrafica
+                SectionCard(header: "Anagrafica") {
+                    HStack {
+                        Text("Nome Completo:")
                             .font(.headline)
-                        ForEach(patient.conditions?.components(separatedBy: ", ") ?? [], id: \.self) { condition in
-                            Text("⚠️ \(condition)")
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                        Spacer()
+                        Text("\(viewModel.patient.name ?? "N/A") \(viewModel.patient.surname ?? "N/A")")
+                            .font(.body)
+                    }
+                    Divider()
+                    DetailRow(title: "Data di Nascita:", value: dateFormatter.string(from: viewModel.patient.birthDate ?? Date()))
+
+                    // Picker per Comune di Nascita
+                    Picker("Comune di Nascita", selection: $viewModel.selectedComuneNascita) {
+                        ForEach(viewModel.comuni) { comune in
+                            Text(comune.nome).tag(comune as Comune?)
                         }
                     }
+                    .pickerStyle(MenuPickerStyle())
+
+                    // Campo separato per l'indirizzo di residenza
+                    DetailRow(title: "Indirizzo di Residenza:", value: viewModel.patient.residenceAddress ?? "N/A")
+                    DetailRow(title: "Codice Fiscale:", value: viewModel.patient.cf ?? "N/A")
+                    DetailRow(title: "Sesso:", value: viewModel.patient.gender ?? "N/A")
+                    DetailRow(title: "Telefono:", value: viewModel.patient.tel ?? "N/A")
+                }
+                
+                // Sezione Anamnesi Sportiva
+                SectionCard(header: "Anamnesi Sportiva") {
+                    DetailRow(title: "Sport Richiesto:", value: viewModel.patient.requiredSport ?? "N/A")
+                    if viewModel.patient.yearsOfPractice > 0 {
+                        DetailRow(title: "Anni di Pratica:", value: "\(viewModel.patient.yearsOfPractice)")
+                    }
+                    if viewModel.patient.weeklyHours > 0 {
+                        DetailRow(title: "Ore Settimanali:", value: "\(viewModel.patient.weeklyHours)")
+                    }
+                    DetailRow(title: "Pratica Altri Sport:", value: viewModel.patient.practicesOtherSports ? "Sì" : "No")
+                    if viewModel.patient.practicesOtherSports {
+                        DetailRow(title: "Altri Sport:", value: viewModel.patient.otherSportsDetails ?? "N/A")
+                    }
+                    DetailRow(title: "Sport Praticati in Passato:", value: viewModel.patient.pastSports ?? "N/A")
+                }
+                
+                // Sezione Condizioni Mediche
+                SectionCard(header: "Condizioni Mediche") {
+                    MedicalConditionRow(condition: "Diabete Mellito", isPresent: viewModel.patient.diabetesMellitus)
+                    MedicalConditionRow(condition: "Malattie di Cuore", isPresent: viewModel.patient.heartDisease)
+                    MedicalConditionRow(condition: "Malattie Tiroidee", isPresent: viewModel.patient.thyroidDiseases)
+                    MedicalConditionRow(condition: "Morte Improvvisa in Famiglia", isPresent: viewModel.patient.suddenDeath)
+                    MedicalConditionRow(condition: "Malattie Polmonari", isPresent: viewModel.patient.pulmonaryDiseases)
+                    MedicalConditionRow(condition: "Infarto del Miocardio", isPresent: viewModel.patient.myocardialInfarction)
+                    MedicalConditionRow(condition: "Cardiomiopatie", isPresent: viewModel.patient.cardiomyopathies)
+                    MedicalConditionRow(condition: "Ipertensione", isPresent: viewModel.patient.hypertension)
+                    MedicalConditionRow(condition: "Colesterolo Alto", isPresent: viewModel.patient.highCholesterol)
+                    MedicalConditionRow(condition: "Celiachia", isPresent: viewModel.patient.celiacDisease)
+                    MedicalConditionRow(condition: "Ictus/Malattie Neurologiche", isPresent: viewModel.patient.strokeNeurological)
+                    MedicalConditionRow(condition: "Tumori", isPresent: viewModel.patient.tumors)
+                    MedicalConditionRow(condition: "Asma/Allergie", isPresent: viewModel.patient.asthmaAllergies)
+                    MedicalConditionRow(condition: "Obesità", isPresent: viewModel.patient.obesity)
+                    MedicalConditionRow(condition: "Malattie Genetiche", isPresent: viewModel.patient.geneticDiseases)
+                }
+                
+                // Sezione Nota
+                SectionCard(header: "Nota") {
+                    Text(viewModel.patient.nota ?? "Nessuna nota inserita")
+                        .font(.body)
+                        .padding(.vertical, 10)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
                     
-                    
-                    
-                    // Aggiungi un campo per le note
-                    Spacer()
-                    TextField("Aggiungi una nota", text: $noteText)
+                    // Campo di testo per aggiungere una nota
+                    TextField("Aggiungi una nota", text: $viewModel.noteText)
                         .padding()
                         .background(Color(.systemGray6))
                         .cornerRadius(8)
                     
-                    // Aggiungi un pulsante per salvare la nota
-                    Button("Salva Nota") {
-                        // Qui aggiungi la logica per salvare la nota nel database o dove preferisci
+                    // Pulsante per salvare la nota
+                    Button(action: {
+                        viewModel.updateNoteText()
+                    }) {
+                        Text("Salva Nota")
+                            .font(.headline)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
                     }
-                    .padding()
-                    
+                    .padding(.top, 10)
+                }
+            }
+            .padding()
+            .navigationBarTitle("Dettagli Paziente", displayMode: .inline)
+        }
+    }
+    
+    // MARK: - UI Components
+    
+    // Card per ogni sezione
+    struct SectionCard<Content: View>: View {
+        let header: String
+        let content: Content
+        
+        init(header: String, @ViewBuilder content: () -> Content) {
+            self.header = header
+            self.content = content()
+        }
+        
+        var body: some View {
+            VStack(alignment: .leading, spacing: 8) {
+                Text(header)
+                    .font(.title2)
+                    .bold()
+                    .padding(.bottom, 5)
+                content
+            }
+            .padding()
+            .background(Color(.systemBackground))
+            .cornerRadius(12)
+            .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
+        }
+    }
+    
+    // Riga di dettaglio per informazioni di base
+    struct DetailRow: View {
+        let title: String
+        let value: String
+        
+        var body: some View {
+            HStack {
+                Text(title)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+                Spacer()
+                Text(value)
+                    .font(.body)
+                    .foregroundColor(.primary)
+            }
+            .padding(.vertical, 4)
+        }
+    }
+    
+    // Riga per le condizioni mediche
+    struct MedicalConditionRow: View {
+        let condition: String
+        let isPresent: Bool
+        
+        var body: some View {
+            if isPresent {
+                HStack {
+                    Text("⚠️ \(condition)")
+                        .font(.body)
+                        .foregroundColor(.red)
                     Spacer()
                 }
-                .padding()
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .navigationBarTitle("Dettagli Paziente")
+                .padding(.vertical, 4)
             }
         }
-            }//fine section
-        }
+    }
+}

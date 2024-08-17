@@ -8,7 +8,7 @@
 import Foundation
 
 // Struttura per rappresentare un Comune
-struct Comune: Identifiable, Codable {
+struct Comune: Identifiable, Codable, Hashable {  // Conformità a Hashable aggiunta
     let id = UUID()  // Identificatore unico per ogni Comune
     let nome: String // Nome del Comune
 }

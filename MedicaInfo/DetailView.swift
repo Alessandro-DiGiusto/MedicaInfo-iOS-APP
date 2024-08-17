@@ -62,7 +62,7 @@ struct DetailView: View {
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
-                .transition(.move(edge: .top))
+                //.transition(.move(edge: .top))
                 //.animation(.default, value: isSearching)
             )
         } else {
@@ -71,6 +71,9 @@ struct DetailView: View {
     }
 
     var patientsListView: some View {
+        
+        
+        
         List {
             ForEach(filteredPatients, id: \.self) { patient in
                 NavigationLink(destination: PatientDetailView(patient: patient, dateFormatter: dateFormatter)) {
@@ -115,7 +118,7 @@ struct DetailView: View {
                         Image(systemName: "note.text")
                     }
                 }
-                .gesture(
+                /*.gesture(
                     DragGesture()
                         .onEnded { value in
                             if value.translation.width > 100 {
@@ -123,13 +126,10 @@ struct DetailView: View {
                                 selectedPatient = patient
                             }
                         }
-                )
+                )*/
             }
         }
     }
-
-
-
 
     var toolbar: some View {
         HStack {

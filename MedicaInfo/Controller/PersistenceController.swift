@@ -5,4 +5,20 @@
 //  Created by Alessandro Di Giusto on 17/08/24.
 //
 
-import Foundation
+//import Foundation
+import CoreData
+
+struct PersistenceController {
+    static let shared = PersistenceController()
+
+    let container: NSPersistentContainer
+
+    init() {
+        container = NSPersistentContainer(name: "MedicalDataModel") // Sostituisci con il nome del tuo modello di dati
+        container.loadPersistentStores { description, error in
+            if let error = error {
+                fatalError("Unable to load persistent stores: \(error)")
+            }
+        }
+    }
+}
