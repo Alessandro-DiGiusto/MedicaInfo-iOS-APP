@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>177</string>
+					<string>108</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>176</string>
+					<string>108</string>
 					<key>Timestamp</key>
-					<string>742640616.963969</string>
+					<string>745691027.853606</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -34,14 +34,14 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string> }
-</string>
+				<string></string>
 				<key>leading</key>
-				<string>        return formatter
-    }()
+				<string>        }
+    }
 </string>
 				<key>trailing</key>
-				<string></string>
+				<string>}
+</string>
 			</dict>
 			<key>title</key>
 			<string>Error: No exact matches in reference to static method 'buildExpression'</string>

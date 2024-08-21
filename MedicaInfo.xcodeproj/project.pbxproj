@@ -7,37 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ED700EA22BFE8C5200FCABC2 /* MedicaInfoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED700EA12BFE8C5200FCABC2 /* MedicaInfoApp.swift */; };
-		ED700EA42BFE8C5200FCABC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED700EA32BFE8C5200FCABC2 /* ContentView.swift */; };
-		ED700EA62BFE8C5200FCABC2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED700EA52BFE8C5200FCABC2 /* Item.swift */; };
-		ED700EA82BFE8C5500FCABC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED700EA72BFE8C5500FCABC2 /* Assets.xcassets */; };
-		ED700EAC2BFE8C5500FCABC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED700EAB2BFE8C5500FCABC2 /* Preview Assets.xcassets */; };
-		ED700EB32BFE975300FCABC2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED700EB22BFE975300FCABC2 /* DetailView.swift */; };
-		ED700EB52BFE97FC00FCABC2 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED700EB42BFE97FC00FCABC2 /* PersistenceController.swift */; };
-		ED700EB72BFE987D00FCABC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED700EB62BFE987D00FCABC2 /* AppDelegate.swift */; };
-		ED700EBD2BFE9A7000FCABC2 /* MedicalDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED700EBB2BFE9A7000FCABC2 /* MedicalDataModel.xcdatamodeld */; };
-		EDB84BA32C0A1E8700489FA1 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB84BA22C0A1E8700489FA1 /* AddNoteView.swift */; };
-		EDB84BA52C0A383700489FA1 /* PatientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB84BA42C0A383700489FA1 /* PatientDetailView.swift */; };
-		EDB84BA72C0CDFF500489FA1 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB84BA62C0CDFF500489FA1 /* Test.swift */; };
-		EDCC88382C1DB12000ACF9EF /* AnamnesiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC88372C1DB12000ACF9EF /* AnamnesiView.swift */; };
+		ED0D8D692C723614009E16DC /* DetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D8D682C723613009E16DC /* DetailRow.swift */; };
+		ED0D8D6B2C72362E009E16DC /* MedicalConditionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D8D6A2C72362E009E16DC /* MedicalConditionRow.swift */; };
+		ED8F4A552C70DA0A007C4734 /* MedicaInfoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A3E2C70DA0A007C4734 /* MedicaInfoApp.swift */; };
+		ED8F4A562C70DA0A007C4734 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A3F2C70DA0A007C4734 /* AddNoteView.swift */; };
+		ED8F4A572C70DA0A007C4734 /* AddPatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A402C70DA0A007C4734 /* AddPatientView.swift */; };
+		ED8F4A582C70DA0A007C4734 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A412C70DA0A007C4734 /* SearchBar.swift */; };
+		ED8F4A592C70DA0A007C4734 /* PatientCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A422C70DA0A007C4734 /* PatientCardView.swift */; };
+		ED8F4A5A2C70DA0A007C4734 /* SectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A432C70DA0A007C4734 /* SectionCard.swift */; };
+		ED8F4A5B2C70DA0A007C4734 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A452C70DA0A007C4734 /* DataLoader.swift */; };
+		ED8F4A5C2C70DA0A007C4734 /* AnamnesiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A462C70DA0A007C4734 /* AnamnesiView.swift */; };
+		ED8F4A5D2C70DA0A007C4734 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A472C70DA0A007C4734 /* ContentView.swift */; };
+		ED8F4A5E2C70DA0A007C4734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A482C70DA0A007C4734 /* AppDelegate.swift */; };
+		ED8F4A5F2C70DA0A007C4734 /* Comune.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A492C70DA0A007C4734 /* Comune.swift */; };
+		ED8F4A602C70DA0A007C4734 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A4A2C70DA0A007C4734 /* Item.swift */; };
+		ED8F4A612C70DA0A007C4734 /* MedicalDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A4B2C70DA0A007C4734 /* MedicalDataModel.xcdatamodeld */; };
+		ED8F4A622C70DA0A007C4734 /* PatientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A4D2C70DA0A007C4734 /* PatientDetailView.swift */; };
+		ED8F4A632C70DA0A007C4734 /* PatientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A4E2C70DA0A007C4734 /* PatientViewModel.swift */; };
+		ED8F4A642C70DA0A007C4734 /* AddPatientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A4F2C70DA0A007C4734 /* AddPatientViewModel.swift */; };
+		ED8F4A652C70DA0A007C4734 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A512C70DA0A007C4734 /* Test.swift */; };
+		ED8F4A662C70DA0A007C4734 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A522C70DA0A007C4734 /* DetailView.swift */; };
+		ED8F4A672C70DA0A007C4734 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A532C70DA0A007C4734 /* PersistenceController.swift */; };
+		EDA79B912C7254C000ABFBFA /* PDFKitRepresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA79B902C7254C000ABFBFA /* PDFKitRepresentedView.swift */; };
+		EDE2B46E2C7108BD00EA4F5B /* comuni.json in Resources */ = {isa = PBXBuildFile; fileRef = EDE2B46D2C7108BD00EA4F5B /* comuni.json */; };
+		EDE2B4702C710F7A00EA4F5B /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2B46F2C710F7A00EA4F5B /* UIApplication+Extensions.swift */; };
+		EDE2B4772C71174D00EA4F5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE2B4762C71174D00EA4F5B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED0D8D682C723613009E16DC /* DetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRow.swift; sourceTree = "<group>"; };
+		ED0D8D6A2C72362E009E16DC /* MedicalConditionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalConditionRow.swift; sourceTree = "<group>"; };
 		ED700E9E2BFE8C5200FCABC2 /* MedicaInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicaInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED700EA12BFE8C5200FCABC2 /* MedicaInfoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicaInfoApp.swift; sourceTree = "<group>"; };
-		ED700EA32BFE8C5200FCABC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		ED700EA52BFE8C5200FCABC2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		ED700EA72BFE8C5500FCABC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		ED700EA92BFE8C5500FCABC2 /* MedicaInfo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MedicaInfo.entitlements; sourceTree = "<group>"; };
-		ED700EAB2BFE8C5500FCABC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		ED700EB22BFE975300FCABC2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		ED700EB42BFE97FC00FCABC2 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		ED700EB62BFE987D00FCABC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED700EBC2BFE9A7000FCABC2 /* MedicalDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MedicalDataModel.xcdatamodel; sourceTree = "<group>"; };
-		EDB84BA22C0A1E8700489FA1 /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
-		EDB84BA42C0A383700489FA1 /* PatientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailView.swift; sourceTree = "<group>"; };
-		EDB84BA62C0CDFF500489FA1 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
-		EDCC88372C1DB12000ACF9EF /* AnamnesiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnamnesiView.swift; sourceTree = "<group>"; };
+		ED8F4A3E2C70DA0A007C4734 /* MedicaInfoApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicaInfoApp.swift; sourceTree = "<group>"; };
+		ED8F4A3F2C70DA0A007C4734 /* AddNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
+		ED8F4A402C70DA0A007C4734 /* AddPatientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPatientView.swift; sourceTree = "<group>"; };
+		ED8F4A412C70DA0A007C4734 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		ED8F4A422C70DA0A007C4734 /* PatientCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientCardView.swift; sourceTree = "<group>"; };
+		ED8F4A432C70DA0A007C4734 /* SectionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCard.swift; sourceTree = "<group>"; };
+		ED8F4A452C70DA0A007C4734 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		ED8F4A462C70DA0A007C4734 /* AnamnesiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnamnesiView.swift; sourceTree = "<group>"; };
+		ED8F4A472C70DA0A007C4734 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ED8F4A482C70DA0A007C4734 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED8F4A492C70DA0A007C4734 /* Comune.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comune.swift; sourceTree = "<group>"; };
+		ED8F4A4A2C70DA0A007C4734 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		ED8F4A4C2C70DA0A007C4734 /* MedicalDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MedicalDataModel.xcdatamodel; sourceTree = "<group>"; };
+		ED8F4A4D2C70DA0A007C4734 /* PatientDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDetailView.swift; sourceTree = "<group>"; };
+		ED8F4A4E2C70DA0A007C4734 /* PatientViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientViewModel.swift; sourceTree = "<group>"; };
+		ED8F4A4F2C70DA0A007C4734 /* AddPatientViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPatientViewModel.swift; sourceTree = "<group>"; };
+		ED8F4A512C70DA0A007C4734 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		ED8F4A522C70DA0A007C4734 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		ED8F4A532C70DA0A007C4734 /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		EDA79B902C7254C000ABFBFA /* PDFKitRepresentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitRepresentedView.swift; sourceTree = "<group>"; };
+		EDA79B9C2C73732600ABFBFA /* comuni.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = comuni.json; sourceTree = "<group>"; };
+		EDE2B46C2C71064400EA4F5B /* MedicaInfo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MedicaInfo-Bridging-Header.h"; sourceTree = "<group>"; };
+		EDE2B46D2C7108BD00EA4F5B /* comuni.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = comuni.json; path = ../../../Downloads/comuni.json; sourceTree = "<group>"; };
+		EDE2B46F2C710F7A00EA4F5B /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		EDE2B4762C71174D00EA4F5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../MedicaInfo 2/Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,30 +95,91 @@
 		ED700EA02BFE8C5200FCABC2 /* MedicaInfo */ = {
 			isa = PBXGroup;
 			children = (
-				ED700EB42BFE97FC00FCABC2 /* PersistenceController.swift */,
-				ED700EB22BFE975300FCABC2 /* DetailView.swift */,
-				ED700EA12BFE8C5200FCABC2 /* MedicaInfoApp.swift */,
-				ED700EA32BFE8C5200FCABC2 /* ContentView.swift */,
-				ED700EB62BFE987D00FCABC2 /* AppDelegate.swift */,
-				ED700EA52BFE8C5200FCABC2 /* Item.swift */,
-				ED700EA72BFE8C5500FCABC2 /* Assets.xcassets */,
-				ED700EA92BFE8C5500FCABC2 /* MedicaInfo.entitlements */,
-				ED700EAA2BFE8C5500FCABC2 /* Preview Content */,
-				ED700EBB2BFE9A7000FCABC2 /* MedicalDataModel.xcdatamodeld */,
-				EDB84BA22C0A1E8700489FA1 /* AddNoteView.swift */,
-				EDB84BA42C0A383700489FA1 /* PatientDetailView.swift */,
-				EDB84BA62C0CDFF500489FA1 /* Test.swift */,
-				EDCC88372C1DB12000ACF9EF /* AnamnesiView.swift */,
+				ED8F4A542C70DA0A007C4734 /* Controllers */,
+				EDA79B972C73236100ABFBFA /* Models */,
+				ED8F4A442C70DA0A007C4734 /* Views */,
+				EDA79B9B2C7370D800ABFBFA /* Extensions */,
+				ED8F4A482C70DA0A007C4734 /* AppDelegate.swift */,
+				ED8F4A3E2C70DA0A007C4734 /* MedicaInfoApp.swift */,
+				EDE2B46D2C7108BD00EA4F5B /* comuni.json */,
+				EDE2B46C2C71064400EA4F5B /* MedicaInfo-Bridging-Header.h */,
+				EDE2B4762C71174D00EA4F5B /* Assets.xcassets */,
+				ED8F4A512C70DA0A007C4734 /* Test.swift */,
 			);
 			path = MedicaInfo;
 			sourceTree = "<group>";
 		};
-		ED700EAA2BFE8C5500FCABC2 /* Preview Content */ = {
+		ED8F4A442C70DA0A007C4734 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ED700EAB2BFE8C5500FCABC2 /* Preview Assets.xcassets */,
+				EDA79B982C7323B000ABFBFA /* Main Views */,
+				EDA79B992C7323CB00ABFBFA /* Components */,
+				EDA79B9A2C73241800ABFBFA /* PDF */,
 			);
-			path = "Preview Content";
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ED8F4A542C70DA0A007C4734 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED8F4A452C70DA0A007C4734 /* DataLoader.swift */,
+				ED8F4A532C70DA0A007C4734 /* PersistenceController.swift */,
+				ED8F4A4E2C70DA0A007C4734 /* PatientViewModel.swift */,
+				ED8F4A4F2C70DA0A007C4734 /* AddPatientViewModel.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EDA79B972C73236100ABFBFA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED8F4A4A2C70DA0A007C4734 /* Item.swift */,
+				ED8F4A4B2C70DA0A007C4734 /* MedicalDataModel.xcdatamodeld */,
+				ED8F4A492C70DA0A007C4734 /* Comune.swift */,
+				EDA79B9C2C73732600ABFBFA /* comuni.json */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EDA79B982C7323B000ABFBFA /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED8F4A3F2C70DA0A007C4734 /* AddNoteView.swift */,
+				ED8F4A462C70DA0A007C4734 /* AnamnesiView.swift */,
+				ED8F4A472C70DA0A007C4734 /* ContentView.swift */,
+				ED8F4A4D2C70DA0A007C4734 /* PatientDetailView.swift */,
+				ED8F4A422C70DA0A007C4734 /* PatientCardView.swift */,
+				ED8F4A522C70DA0A007C4734 /* DetailView.swift */,
+				ED8F4A402C70DA0A007C4734 /* AddPatientView.swift */,
+			);
+			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		EDA79B992C7323CB00ABFBFA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				ED8F4A412C70DA0A007C4734 /* SearchBar.swift */,
+				ED8F4A432C70DA0A007C4734 /* SectionCard.swift */,
+				ED0D8D682C723613009E16DC /* DetailRow.swift */,
+				ED0D8D6A2C72362E009E16DC /* MedicalConditionRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EDA79B9A2C73241800ABFBFA /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				EDA79B902C7254C000ABFBFA /* PDFKitRepresentedView.swift */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
+		EDA79B9B2C7370D800ABFBFA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EDE2B46F2C710F7A00EA4F5B /* UIApplication+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,10 +210,11 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					ED700E9D2BFE8C5200FCABC2 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1540;
 					};
 				};
 			};
@@ -154,8 +241,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED700EAC2BFE8C5500FCABC2 /* Preview Assets.xcassets in Resources */,
-				ED700EA82BFE8C5500FCABC2 /* Assets.xcassets in Resources */,
+				EDE2B4772C71174D00EA4F5B /* Assets.xcassets in Resources */,
+				EDE2B46E2C7108BD00EA4F5B /* comuni.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,17 +253,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDCC88382C1DB12000ACF9EF /* AnamnesiView.swift in Sources */,
-				ED700EB72BFE987D00FCABC2 /* AppDelegate.swift in Sources */,
-				ED700EA42BFE8C5200FCABC2 /* ContentView.swift in Sources */,
-				ED700EB32BFE975300FCABC2 /* DetailView.swift in Sources */,
-				ED700EA62BFE8C5200FCABC2 /* Item.swift in Sources */,
-				ED700EBD2BFE9A7000FCABC2 /* MedicalDataModel.xcdatamodeld in Sources */,
-				EDB84BA52C0A383700489FA1 /* PatientDetailView.swift in Sources */,
-				ED700EA22BFE8C5200FCABC2 /* MedicaInfoApp.swift in Sources */,
-				EDB84BA72C0CDFF500489FA1 /* Test.swift in Sources */,
-				EDB84BA32C0A1E8700489FA1 /* AddNoteView.swift in Sources */,
-				ED700EB52BFE97FC00FCABC2 /* PersistenceController.swift in Sources */,
+				ED8F4A5E2C70DA0A007C4734 /* AppDelegate.swift in Sources */,
+				ED8F4A562C70DA0A007C4734 /* AddNoteView.swift in Sources */,
+				ED8F4A632C70DA0A007C4734 /* PatientViewModel.swift in Sources */,
+				ED0D8D692C723614009E16DC /* DetailRow.swift in Sources */,
+				EDA79B912C7254C000ABFBFA /* PDFKitRepresentedView.swift in Sources */,
+				ED8F4A5F2C70DA0A007C4734 /* Comune.swift in Sources */,
+				ED8F4A5A2C70DA0A007C4734 /* SectionCard.swift in Sources */,
+				ED8F4A572C70DA0A007C4734 /* AddPatientView.swift in Sources */,
+				ED8F4A5C2C70DA0A007C4734 /* AnamnesiView.swift in Sources */,
+				ED8F4A582C70DA0A007C4734 /* SearchBar.swift in Sources */,
+				ED8F4A602C70DA0A007C4734 /* Item.swift in Sources */,
+				ED8F4A5B2C70DA0A007C4734 /* DataLoader.swift in Sources */,
+				ED8F4A5D2C70DA0A007C4734 /* ContentView.swift in Sources */,
+				ED0D8D6B2C72362E009E16DC /* MedicalConditionRow.swift in Sources */,
+				ED8F4A652C70DA0A007C4734 /* Test.swift in Sources */,
+				ED8F4A552C70DA0A007C4734 /* MedicaInfoApp.swift in Sources */,
+				ED8F4A612C70DA0A007C4734 /* MedicalDataModel.xcdatamodeld in Sources */,
+				EDE2B4702C710F7A00EA4F5B /* UIApplication+Extensions.swift in Sources */,
+				ED8F4A592C70DA0A007C4734 /* PatientCardView.swift in Sources */,
+				ED8F4A662C70DA0A007C4734 /* DetailView.swift in Sources */,
+				ED8F4A622C70DA0A007C4734 /* PatientDetailView.swift in Sources */,
+				ED8F4A642C70DA0A007C4734 /* AddPatientViewModel.swift in Sources */,
+				ED8F4A672C70DA0A007C4734 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +316,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -238,6 +338,8 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
+				NEW_SETTING1 = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -278,6 +380,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -293,6 +396,8 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
+				NEW_SETTING1 = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -302,9 +407,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MedicaInfo/MedicaInfo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MedicaInfo/Preview Content\"";
 				DEVELOPMENT_TEAM = 8JV2R2Z788;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -330,6 +437,8 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MedicaInfo/MedicaInfo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -340,9 +449,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MedicaInfo/MedicaInfo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MedicaInfo/Preview Content\"";
 				DEVELOPMENT_TEAM = 8JV2R2Z788;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -368,6 +479,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MedicaInfo/MedicaInfo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -397,12 +509,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		ED700EBB2BFE9A7000FCABC2 /* MedicalDataModel.xcdatamodeld */ = {
+		ED8F4A4B2C70DA0A007C4734 /* MedicalDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				ED700EBC2BFE9A7000FCABC2 /* MedicalDataModel.xcdatamodel */,
+				ED8F4A4C2C70DA0A007C4734 /* MedicalDataModel.xcdatamodel */,
 			);
-			currentVersion = ED700EBC2BFE9A7000FCABC2 /* MedicalDataModel.xcdatamodel */;
+			currentVersion = ED8F4A4C2C70DA0A007C4734 /* MedicalDataModel.xcdatamodel */;
 			path = MedicalDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
