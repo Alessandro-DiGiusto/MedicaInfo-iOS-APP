@@ -37,6 +37,21 @@ class AddPatientViewModel: ObservableObject {
     @Published var obesity: Bool = false
     @Published var geneticDiseases: Bool = false
     
+    // Anamnesi Fisiologica
+    @Published var partoNaturale: String = ""
+    @Published var vaccinazioni: String = ""
+    @Published var qualiFarmaci: String = ""
+    @Published var alterazioniEsamiSangue: String = ""
+    @Published var dieta: String = ""
+    @Published var fumo: String = ""
+    @Published var quanteSigarette: String = ""
+    @Published var consumoAlcol: String = ""
+    @Published var consumoCaffe: String = ""
+    @Published var etaMestruazione: Decimal = 0
+    @Published var dataUltimaMestruazione: Date = Date()
+    @Published var noteAnomalieCiclo: String = ""
+    @Published var gravidanze: Bool = false
+    
     @Published var comuni: [Comune] = []
     @Published var filteredComuni: [Comune] = []
     
@@ -88,7 +103,31 @@ class AddPatientViewModel: ObservableObject {
         newPatient.asthmaAllergies = asthmaAllergies
         newPatient.obesity = obesity
         newPatient.geneticDiseases = geneticDiseases
+        newPatient.partoNaturale = partoNaturale
+        newPatient.vaccinazioni = vaccinazioni
+        newPatient.dieta = dieta
+        newPatient.fumo = fumo
+        newPatient.quanteSigarette = quanteSigarette
+        newPatient.consumoAlcol = consumoAlcol
+        newPatient.consumoCaffe = consumoCaffe
+        newPatient.etaMestruazione = NSDecimalNumber(decimal: etaMestruazione)
+        newPatient.noteAnomalieCiclo = noteAnomalieCiclo
+        newPatient.gravidanze = gravidanze
         
+        if !qualiFarmaci.isEmpty {
+            // Salva `qualiFarmaci` nel database o nel model
+            newPatient.qualiFarmaci = qualiFarmaci
+        } else {
+            // Non salvare nulla riguardo ai farmaci
+        }
+        
+        if !alterazioniEsamiSangue.isEmpty {
+            // Salva `alterazioniEsamiSangue` nel database o nel model
+            newPatient.alterazioniEsamiSangue = alterazioniEsamiSangue
+        } else {
+            // Non salvare nulla per non ha fatto esami del sangue.
+        }
+
         do {
             try context.save()
         } catch {
