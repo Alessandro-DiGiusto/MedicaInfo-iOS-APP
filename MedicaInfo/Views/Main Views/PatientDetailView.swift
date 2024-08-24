@@ -1,3 +1,10 @@
+//
+//  PatientDetailView.swift
+//  MedicaInfo
+//
+//  Created by Alessandro Di Giusto on 02/06/24.
+//
+
 import SwiftUI
 import CoreData
 import UniformTypeIdentifiers
@@ -7,54 +14,47 @@ struct PatientDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var showingDocumentPicker = false
     @State private var showingPDF = false
-    
+
     let context: NSManagedObjectContext
-    
-    let dateFormatter: DateFormatter
-    
-    init(patient: Patient, dateFormatter: DateFormatter, context: NSManagedObjectContext) {
+
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter
+    }()
+
+    init(patient: Patient, context: NSManagedObjectContext) {
         self.viewModel = PatientViewModel(patient: patient, context: context)
-        self.dateFormatter = dateFormatter
         self.context = context
     }
-    
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 // Sezione Anagrafica
                 SectionCard(header: "Anagrafica") {
-                    HStack {
-                        Text("Nome Completo:")
-                            .font(.headline)
-                        Spacer()
-                        Text("\(viewModel.patient.name ?? "N/A") \(viewModel.patient.surname ?? "N/A")")
-                            .font(.body)
-                    }
-                    Divider()
-                    DetailRow(title: "Data di Nascita:", value: dateFormatter.string(from: viewModel.patient.birthDate ?? Date()))
-                    
+                    DetailRow(title: "Nome Completo:", value: "\(viewModel.patient.name ?? "N/A") \(viewModel.patient.surname ?? "N/A")")
+                    DetailRow(title: "Data di Nascita:", value: viewModel.patient.birthDate != nil ? dateFormatter.string(from: viewModel.patient.birthDate!) : "N/A")
                     DetailRow(title: "Indirizzo di Residenza:", value: viewModel.patient.residenceAddress ?? "N/A")
                     DetailRow(title: "Codice Fiscale:", value: viewModel.patient.cf ?? "N/A")
                     DetailRow(title: "Sesso:", value: viewModel.patient.gender ?? "N/A")
+                    DetailRow(title: "Luogo di Nascita:", value: viewModel.patient.birthPlace ?? "N/A")
                     DetailRow(title: "Telefono:", value: viewModel.patient.tel ?? "N/A")
                 }
-                
+
                 // Sezione Anamnesi Sportiva
                 SectionCard(header: "Anamnesi Sportiva") {
                     DetailRow(title: "Sport Richiesto:", value: viewModel.patient.requiredSport ?? "N/A")
-                    if viewModel.patient.yearsOfPractice > 0 {
-                        DetailRow(title: "Anni di Pratica:", value: "\(viewModel.patient.yearsOfPractice)")
-                    }
-                    if viewModel.patient.weeklyHours > 0 {
-                        DetailRow(title: "Ore Settimanali:", value: "\(viewModel.patient.weeklyHours)")
-                    }
+                    DetailRow(title: "Anni di Pratica:", value: "\(viewModel.patient.yearsOfPractice)")
+                    DetailRow(title: "Ore Settimanali:", value: "\(viewModel.patient.weeklyHours)")
                     DetailRow(title: "Pratica Altri Sport:", value: viewModel.patient.practicesOtherSports ? "Sì" : "No")
                     if viewModel.patient.practicesOtherSports {
                         DetailRow(title: "Altri Sport:", value: viewModel.patient.otherSportsDetails ?? "N/A")
                     }
                     DetailRow(title: "Sport Praticati in Passato:", value: viewModel.patient.pastSports ?? "N/A")
                 }
-                
+
                 // Sezione Condizioni Mediche
                 SectionCard(header: "Condizioni Mediche") {
                     MedicalConditionRow(condition: "Diabete Mellito", isPresent: viewModel.patient.diabetesMellitus)
@@ -73,7 +73,33 @@ struct PatientDetailView: View {
                     MedicalConditionRow(condition: "Obesità", isPresent: viewModel.patient.obesity)
                     MedicalConditionRow(condition: "Malattie Genetiche", isPresent: viewModel.patient.geneticDiseases)
                 }
-                
+
+                // Sezione Stile di Vita
+                SectionCard(header: "Stile di Vita") {
+                    DetailRow(title: "Parto Naturale:", value: viewModel.patient.partoNaturale ?? "N/A")
+                    DetailRow(title: "Vaccinazioni:", value: viewModel.patient.vaccinazioni ?? "N/A")
+                    DetailRow(title: "Dieta:", value: viewModel.patient.dieta ?? "N/A")
+                    DetailRow(title: "Fumo:", value: viewModel.patient.fumo  ?? "N/A")
+                    DetailRow(title: "Quante Sigarette:", value: viewModel.patient.quanteSigarette != nil ? String(viewModel.patient.quanteSigarette!) : "N/A")
+                    DetailRow(title: "Consumo di Alcol:", value: viewModel.patient.consumoAlcol ?? "N/A")
+                    DetailRow(title: "Consumo di Caffè:", value: viewModel.patient.consumoCaffe ?? "N/A")
+                }
+
+                // Sezione Mestruazioni e Gravidanze
+                if let etaMestruazione = viewModel.patient.etaMestruazione?.intValue {
+                    SectionCard(header: "Mestruazioni e Gravidanze") {
+                        DetailRow(title: "Età Mestruazione:", value: "\(etaMestruazione)")
+                        DetailRow(title: "Anomalie del Ciclo:", value: viewModel.patient.noteAnomalieCiclo ?? "N/A")
+                        DetailRow(title: "Gravidanze:", value: viewModel.patient.gravidanze ? "Sì" : "No")
+                    }
+                }
+
+                // Sezione Farmaci e Esami del Sangue
+                SectionCard(header: "Farmaci e Esami del Sangue") {
+                    DetailRow(title: "Quali Farmaci:", value: viewModel.patient.qualiFarmaci ?? "N/A")
+                    DetailRow(title: "Alterazioni Esami del Sangue:", value: viewModel.patient.alterazioniEsamiSangue ?? "N/A")
+                }
+
                 // Sezione PDF
                 SectionCard(header: "Carica E.C.G.") {
                     if let pdfFileURL = viewModel.pdfFileURL {
@@ -112,7 +138,7 @@ struct PatientDetailView: View {
                         }
                     }
                 }
-                
+
                 // Sezione Nota
                 SectionCard(header: "Nota") {
                     Text(viewModel.patient.nota ?? "Nessuna nota inserita")
@@ -120,13 +146,13 @@ struct PatientDetailView: View {
                         .padding(.vertical, 10)
                         .background(Color(.systemGray6))
                         .cornerRadius(8)
-                    
+
                     // Campo di testo per aggiungere una nota
                     TextField("Aggiungi una nota", text: $viewModel.noteText)
                         .padding()
                         .background(Color(.systemGray6))
                         .cornerRadius(8)
-                    
+
                     // Pulsante per salvare la nota
                     Button(action: {
                         viewModel.saveNote()
@@ -146,15 +172,18 @@ struct PatientDetailView: View {
         }
         .navigationBarTitle("Dettagli Paziente", displayMode: .inline)
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: backButton) // Rimuove la seconda freccia e mantiene solo la nostra
+        .navigationBarItems(leading: backButton)
     }
-    
+
     // Pulsante indietro personalizzato
     var backButton: some View {
         Button(action: {
-            // Azione per tornare alla lista dei pazienti
             presentationMode.wrappedValue.dismiss()
         }) {
+            Image(systemName: "chevron.left")
+                .foregroundColor(.blue)
+            Text("Indietro")
+                .foregroundColor(.blue)
         }
     }
 }
@@ -162,7 +191,7 @@ struct PatientDetailView: View {
 // Viewer per mostrare il PDF
 struct PDFViewer: View {
     let pdfURL: URL
-    
+
     var body: some View {
         PDFKitRepresentedView(url: pdfURL)
             .edgesIgnoringSafeArea(.all)

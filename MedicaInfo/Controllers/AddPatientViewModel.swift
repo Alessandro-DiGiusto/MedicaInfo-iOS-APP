@@ -1,10 +1,3 @@
-//
-//  AddPatientViewModel.swift
-//  MedicaInfo
-//
-//  Created by Alessandro Di Giusto on 12/08/24.
-//
-
 import Foundation
 import CoreData
 import Combine
@@ -55,7 +48,6 @@ class AddPatientViewModel: ObservableObject {
     @Published var consumoAlcol: String = ""
     @Published var consumoCaffe: String = ""
     @Published var etaMestruazione: Decimal = 0
-    @Published var dataUltimaMestruazione: Date = Date()
     @Published var noteAnomalieCiclo: String = ""
     @Published var gravidanze: Bool = false
     
@@ -65,7 +57,7 @@ class AddPatientViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     private var context: NSManagedObjectContext
     
-    init(context: NSManagedObjectContext) {
+    init(patient: Patient? = nil, context: NSManagedObjectContext) {
         self.context = context
         loadComuni()
         
@@ -76,6 +68,52 @@ class AddPatientViewModel: ObservableObject {
                 self.comuni.filter { $0.nome.lowercased().contains(searchTerm.lowercased()) }
             }
             .assign(to: &$filteredComuni)
+        
+        if let patient = patient {
+            // Popola le variabili se esiste un paziente (in caso di modifica)
+            self.name = patient.name ?? ""
+            self.surname = patient.surname ?? ""
+            self.birthDate = patient.birthDate ?? Date()
+            self.cf = patient.cf ?? ""
+            self.gender = patient.gender ?? "Maschile"
+            self.birthPlace = patient.birthPlace ?? ""
+            self.residenceAddress = patient.residenceAddress ?? ""
+            self.tel = patient.tel ?? ""
+            self.sportAnamnesis = patient.sportAnamnesis
+            self.requiredSport = patient.requiredSport ?? ""
+            self.yearsOfPractice = Int(patient.yearsOfPractice)
+            self.weeklyHours = Int(patient.weeklyHours)
+            self.practicesOtherSports = patient.practicesOtherSports
+            self.otherSportsDetails = patient.otherSportsDetails ?? ""
+            self.pastSports = patient.pastSports ?? ""
+            self.diabetesMellitus = patient.diabetesMellitus
+            self.heartDisease = patient.heartDisease
+            self.thyroidDiseases = patient.thyroidDiseases
+            self.suddenDeath = patient.suddenDeath
+            self.pulmonaryDiseases = patient.pulmonaryDiseases
+            self.myocardialInfarction = patient.myocardialInfarction
+            self.cardiomyopathies = patient.cardiomyopathies
+            self.hypertension = patient.hypertension
+            self.highCholesterol = patient.highCholesterol
+            self.celiacDisease = patient.celiacDisease
+            self.strokeNeurological = patient.strokeNeurological
+            self.tumors = patient.tumors
+            self.asthmaAllergies = patient.asthmaAllergies
+            self.obesity = patient.obesity
+            self.geneticDiseases = patient.geneticDiseases
+            self.partoNaturale = patient.partoNaturale ?? ""
+            self.vaccinazioni = patient.vaccinazioni ?? ""
+            self.qualiFarmaci = patient.qualiFarmaci ?? ""
+            self.alterazioniEsamiSangue = patient.alterazioniEsamiSangue ?? ""
+            self.dieta = patient.dieta ?? ""
+            self.fumo = patient.fumo ?? ""
+            self.quanteSigarette = patient.quanteSigarette ?? ""
+            self.consumoAlcol = patient.consumoAlcol ?? ""
+            self.consumoCaffe = patient.consumoCaffe ?? ""
+            self.etaMestruazione = patient.etaMestruazione?.decimalValue ?? 0 // Corretto qui
+            self.noteAnomalieCiclo = patient.noteAnomalieCiclo ?? ""
+            self.gravidanze = patient.gravidanze
+        }
     }
     
     func savePatient() {
@@ -122,19 +160,13 @@ class AddPatientViewModel: ObservableObject {
         newPatient.gravidanze = gravidanze
         
         if !qualiFarmaci.isEmpty {
-            // Salva `qualiFarmaci` nel database o nel model
             newPatient.qualiFarmaci = qualiFarmaci
-        } else {
-            // Non salvare nulla riguardo ai farmaci
         }
         
         if !alterazioniEsamiSangue.isEmpty {
-            // Salva `alterazioniEsamiSangue` nel database o nel model
             newPatient.alterazioniEsamiSangue = alterazioniEsamiSangue
-        } else {
-            // Non salvare nulla per non ha fatto esami del sangue.
         }
-
+        
         do {
             try context.save()
         } catch {

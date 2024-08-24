@@ -1,3 +1,9 @@
+//
+//  DataLoader.swift
+//  MedicaInfo
+//
+//  Created by Alessandro Di Giusto on 02/06/24.
+//
 
 import Foundation
 
