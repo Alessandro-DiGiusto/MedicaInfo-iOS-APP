@@ -1,10 +1,3 @@
-//
-//  AddPatientView.swift
-//  MedicaInfo
-//
-//  Created by Alessandro Di Giusto on 12/08/24.
-//
-
 import SwiftUI
 import CoreData
 
@@ -39,6 +32,25 @@ struct AddPatientView: View {
     @State private var anomalieCiclo: Bool = false
     @State private var noteAnomalieCiclo: String = ""
     @State private var gravidanze: Bool = false
+
+    @State private var selectedConditions: [String] = []
+    private let allConditions = [
+        "Diabete Mellito",
+        "Malattie di Cuore",
+        "Malattie Tiroidee",
+        "Morte Improvvisa",
+        "Malattie Polmonari",
+        "Infarto del Miocardio",
+        "Cardiomiopatie",
+        "Ipertensione",
+        "Colesterolo Alto",
+        "Celiachia",
+        "Ictus/Malattie Neurologiche",
+        "Tumori",
+        "Asma/Allergie",
+        "Obesità",
+        "Malattie Genetiche"
+    ]
     
     init() {
         _viewModel = StateObject(wrappedValue: AddPatientViewModel(context: PersistenceController.shared.container.viewContext))
@@ -148,7 +160,6 @@ struct AddPatientView: View {
                                 showSuggestions = false
                             }
                     }
-                    .frame(height: 20)
                 }
                 HStack {
                     Image(systemName: "house")
@@ -217,27 +228,44 @@ struct AddPatientView: View {
             }
     }
     
-    // Sezione Condizioni Mediche
+    // Sezione Condizioni Mediche con Aggiunta Dinamica
     var medicalConditionsSection: some View {
         Section(header: Text("Condizioni Mediche")
             .font(.headline)
             .foregroundColor(.blue)) {
-                Toggle("Diabete Mellito", isOn: $viewModel.diabetesMellitus)
-                Toggle("Malattie di Cuore", isOn: $viewModel.heartDisease)
-                Toggle("Malattie Tiroidee", isOn: $viewModel.thyroidDiseases)
-                Toggle("Morte Improvvisa", isOn: $viewModel.suddenDeath)
-                Toggle("Malattie Polmonari", isOn: $viewModel.pulmonaryDiseases)
-                Toggle("Infarto del Miocardio", isOn: $viewModel.myocardialInfarction)
-                Toggle("Cardiomiopatie", isOn: $viewModel.cardiomyopathies)
-                Toggle("Ipertensione", isOn: $viewModel.hypertension)
-                Toggle("Colesterolo Alto", isOn: $viewModel.highCholesterol)
-                Toggle("Celiachia", isOn: $viewModel.celiacDisease)
-                Toggle("Ictus/Malattie Neurologiche", isOn: $viewModel.strokeNeurological)
-                Toggle("Tumori", isOn: $viewModel.tumors)
-                Toggle("Asma/Allergie", isOn: $viewModel.asthmaAllergies)
-                Toggle("Obesità", isOn: $viewModel.obesity)
-                Toggle("Malattie Genetiche", isOn: $viewModel.geneticDiseases)
+            
+            // Lista delle condizioni mediche selezionate
+            ForEach(selectedConditions, id: \.self) { condition in
+                HStack {
+                    Text(condition)
+                    Spacer()
+                    Button(action: {
+                        withAnimation {
+                            selectedConditions.removeAll { $0 == condition }
+                        }
+                    }) {
+                        Image(systemName: "minus.circle.fill")
+                            .foregroundColor(.red)
+                    }
+                }
+                .contentShape(Rectangle())  // Rende l'intera area del pulsante cliccabile
             }
+
+            // Menu per aggiungere nuove condizioni
+            Menu {
+                ForEach(allConditions.filter { !selectedConditions.contains($0) }, id: \.self) { condition in
+                    Button(condition) {
+                        selectedConditions.append(condition)
+                    }
+                }
+            } label: {
+                HStack {
+                    Image(systemName: "plus.circle.fill")
+                    Text("Aggiungi Condizione Medica")
+                }
+                .foregroundColor(.blue)
+            }
+        }
     }
     
     // Sezione Anamnesi Fisiologica
@@ -293,9 +321,9 @@ struct AddPatientView: View {
                 }
                 
                 HStack {
-                    CheckboxField(title: "Vegetariana", isChecked: Binding(get: { dieta == "Vegetariana" }, set: { if $0 { dieta = "Vegetariana" } }), checkboxOnRight: false)
+                    CheckboxField(title: "Vegetariana", isChecked: Binding(get: { dieta == "Vegetariana" }, set: { if $0 { dieta == "Vegetariana" } }), checkboxOnRight: false)
                     Spacer()
-                    CheckboxField(title: "Speciale", isChecked: Binding(get: { dieta == "Speciale" }, set: { if $0 { dieta = "Speciale" } }), checkboxOnRight: true)
+                    CheckboxField(title: "Speciale", isChecked: Binding(get: { dieta == "Speciale" }, set: { if $0 { dieta == "Speciale" } }), checkboxOnRight: true)
                 }
             }
             
