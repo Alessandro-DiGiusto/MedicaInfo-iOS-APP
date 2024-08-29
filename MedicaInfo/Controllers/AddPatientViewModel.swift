@@ -5,7 +5,7 @@ import Combine
 class AddPatientViewModel: ObservableObject {
     @Published var name: String = ""
     @Published var surname: String = ""
-    @Published var birthDate: Date = Date()
+    @Published var birthDate: Date = Date() // Default a oggi
     @Published var cf: String = ""
     @Published var gender: String = "Maschile"
     @Published var birthPlace: String = ""
@@ -51,13 +51,19 @@ class AddPatientViewModel: ObservableObject {
     @Published var dataUltimaMestruazione: Date = Date()
     @Published var noteAnomalieCiclo: String = ""
     @Published var gravidanze: Bool = false
+    // Proprietà per la dieta
+    @Published var dietaVaria: Bool = false
+    @Published var dietaVegana: Bool = false
+    @Published var dietaVegetariana: Bool = false
+    @Published var dietaSpeciale: Bool = false
+    @Published var scelta: String = ""
     
     @Published var comuni: [Comune] = []
     @Published var filteredComuni: [Comune] = []
     
     private var cancellables: Set<AnyCancellable> = []
     private var context: NSManagedObjectContext
-    
+
     init(context: NSManagedObjectContext) {
         self.context = context
         loadComuni()
@@ -75,10 +81,13 @@ class AddPatientViewModel: ObservableObject {
         let newPatient = Patient(context: context)
         newPatient.name = name
         newPatient.surname = surname
-        newPatient.birthDate = birthDate
+        //newPatient.birthDate = birthDate
         newPatient.cf = cf
         newPatient.gender = gender
         newPatient.birthPlace = birthPlace
+        newPatient.birthDate = birthDate  // Usa la data di nascita selezionata
+        print("Data di nascita salvata: \(newPatient.birthDate ?? Date())")
+        print("Selected Birth Date: \(birthDate)")
         newPatient.residenceAddress = residenceAddress
         newPatient.tel = tel
         newPatient.sportAnamnesis = sportAnamnesis
@@ -108,32 +117,79 @@ class AddPatientViewModel: ObservableObject {
         newPatient.dieta = dieta
         newPatient.fumo = fumo
         newPatient.quanteSigarette = quanteSigarette
-        newPatient.consumoAlcol = consumoAlcol
+        //newPatient.consumoAlcol = consumoAlcol
+        newPatient.consumoCaffe = consumoCaffe
+        
+        if scelta.isEmpty {
+            newPatient.consumoAlcol = consumoAlcol
+        } else {
+            newPatient.consumoAlcol = scelta
+        }
+        
         newPatient.consumoCaffe = consumoCaffe
         newPatient.etaMestruazione = NSDecimalNumber(decimal: etaMestruazione)
         newPatient.noteAnomalieCiclo = noteAnomalieCiclo
         newPatient.gravidanze = gravidanze
         
         if !qualiFarmaci.isEmpty {
-            // Salva `qualiFarmaci` nel database o nel model
             newPatient.qualiFarmaci = qualiFarmaci
-        } else {
-            // Non salvare nulla riguardo ai farmaci
         }
         
         if !alterazioniEsamiSangue.isEmpty {
-            // Salva `alterazioniEsamiSangue` nel database o nel model
             newPatient.alterazioniEsamiSangue = alterazioniEsamiSangue
-        } else {
-            // Non salvare nulla per non ha fatto esami del sangue.
         }
-
+        
+        print("Saving patient with the following details:")
+        print("Name: \(newPatient.name ?? "N/A")")
+        print("Surname: \(newPatient.surname ?? "N/A")")
+        print("Birth Date: \(newPatient.birthDate ?? Date())")
+        print("Codice Fiscale: \(newPatient.cf ?? "N/A")")
+        print("Gender: \(newPatient.gender ?? "N/A")")
+        print("Birth Place: \(newPatient.birthPlace ?? "N/A")")
+        print("Residence Address: \(newPatient.residenceAddress ?? "N/A")")
+        print("Telephone: \(newPatient.tel ?? "N/A")")
+        print("Sport Anamnesis: \(newPatient.sportAnamnesis)")
+        print("Required Sport: \(newPatient.requiredSport ?? "N/A")")
+        print("Years of Practice: \(newPatient.yearsOfPractice)")
+        print("Weekly Hours: \(newPatient.weeklyHours)")
+        print("Practices Other Sports: \(newPatient.practicesOtherSports)")
+        print("Other Sports Details: \(newPatient.otherSportsDetails ?? "N/A")")
+        print("Past Sports: \(newPatient.pastSports ?? "N/A")")
+        print("Diabetes Mellitus: \(newPatient.diabetesMellitus)")
+        print("Heart Disease: \(newPatient.heartDisease)")
+        print("Thyroid Diseases: \(newPatient.thyroidDiseases)")
+        print("Sudden Death: \(newPatient.suddenDeath)")
+        print("Pulmonary Diseases: \(newPatient.pulmonaryDiseases)")
+        print("Myocardial Infarction: \(newPatient.myocardialInfarction)")
+        print("Cardiomyopathies: \(newPatient.cardiomyopathies)")
+        print("Hypertension: \(newPatient.hypertension)")
+        print("High Cholesterol: \(newPatient.highCholesterol)")
+        print("Celiac Disease: \(newPatient.celiacDisease)")
+        print("Stroke Neurological: \(newPatient.strokeNeurological)")
+        print("Tumors: \(newPatient.tumors)")
+        print("Asthma/Allergies: \(newPatient.asthmaAllergies)")
+        print("Obesity: \(newPatient.obesity)")
+        print("Genetic Diseases: \(newPatient.geneticDiseases)")
+        print("Parto Naturale: \(newPatient.partoNaturale ?? "N/A")")
+        print("Vaccinazioni: \(newPatient.vaccinazioni ?? "N/A")")
+        print("Dieta: \(newPatient.dieta ?? "N/A")")
+        print("Fumo: \(newPatient.fumo ?? "N/A")")
+        print("Quante Sigarette: \(newPatient.quanteSigarette ?? "N/A")")
+        print("Consumo Alcol: \(newPatient.consumoAlcol ?? "N/A")")
+        print("Consumo Caffe: \(newPatient.consumoCaffe ?? "N/A")")
+        print("Eta Mestruazione: \(newPatient.etaMestruazione ?? 0)")
+        print("Note Anomalie Ciclo: \(newPatient.noteAnomalieCiclo ?? "N/A")")
+        print("Gravidanze: \(newPatient.gravidanze)")
+        print("Quali Farmaci: \(newPatient.qualiFarmaci ?? "N/A")")
+        print("Alterazioni Esami Sangue: \(newPatient.alterazioniEsamiSangue ?? "N/A")")
+        
         do {
             try context.save()
         } catch {
             print("Failed to save new patient: \(error)")
         }
     }
+    
     
     func loadComuni() {
         let loader = DataLoader()

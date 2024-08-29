@@ -89,9 +89,13 @@ struct DetailView: View {
             .background(
                 selectedPatient.map { patient in
                     NavigationLink(
-                        destination: PatientDetailView(patient: patient, dateFormatter: DateFormatter(), context: viewContext)
-                            .navigationBarTitleDisplayMode(.inline) // Barra di navigazione inline
-                            .navigationBarBackButtonHidden(false),   // Abilita solo il pulsante Back
+                        destination: PatientDetailView(
+                            viewModel: PatientViewModel(patient: patient, context: viewContext), // Crea il viewModel da passare
+                            context: viewContext
+                            //dateFormatter: DateFormatter()
+                        )
+                        .navigationBarTitleDisplayMode(.inline) // Barra di navigazione inline
+                        .navigationBarBackButtonHidden(false),   // Abilita solo il pulsante Back
                         isActive: Binding<Bool>(
                             get: { selectedPatient != nil },
                             set: { if !$0 { selectedPatient = nil } }
