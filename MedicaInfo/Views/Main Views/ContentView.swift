@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  MedicaInfo
-//
-//  Created by Alessandro Di Giusto on 12/08/24.
-//
-
 import SwiftUI
 import CoreData
 
@@ -15,6 +8,7 @@ struct ContentView: View {
     @State private var showPatientListView = false
     @State private var showDeleteConfirmation = false
     @State private var deleteConfirmationStep = 0 // Contatore per le conferme
+    @State private var showSuccessOverlay = false // Stato per l'overlay di successo
     
     var body: some View {
         NavigationView {
@@ -50,10 +44,6 @@ struct ContentView: View {
                         .font(.system(size: 12, weight: .medium, design: .rounded))
                         .foregroundColor(.white.opacity(0.3))
                         .padding(.top, 10)
-                        .multilineTextAlignment(.center)
-                    Text("Latest Version: 0.3v")
-                        .font(.system(size: 12, weight: .medium, design: .rounded))
-                        .foregroundColor(.white.opacity(0.3))
                         .padding(.bottom, 30)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 20)
@@ -141,7 +131,38 @@ struct ContentView: View {
             .alert(isPresented: $showDeleteConfirmation) {
                 getDeleteConfirmationAlert()
             }
+            .overlay(
+                // Overlay di successo
+                VStack {
+                    if showSuccessOverlay {
+                        successOverlay
+                            .transition(.opacity)
+                            .onAppear {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                    withAnimation {
+                                        showSuccessOverlay = false
+                                    }
+                                }
+                            }
+                    }
+                }
+            )
         }
+    }
+    
+    private var successOverlay: some View {
+        VStack {
+            Text("✅ Cancellati! ")
+                .font(.title2)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.green)
+                .cornerRadius(10)
+        }
+        .frame(width: 300, height: 100)
+        .cornerRadius(20)
+        .shadow(radius: 20)
     }
     
     private func getDeleteConfirmationAlert() -> Alert {
@@ -214,6 +235,12 @@ struct ContentView: View {
             try viewContext.save()
             
             print("Tutti i pazienti sono stati cancellati.")
+            
+            // Mostra l'overlay di successo
+            withAnimation {
+                showSuccessOverlay = true
+            }
+            
         } catch {
             // Gestisci l'errore
             print("Errore durante la cancellazione dei pazienti: \(error)")
