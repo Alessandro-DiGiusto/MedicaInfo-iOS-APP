@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import PDFKit
 
+// Supponiamo che esista un componente PDFKitRepresentedView
+// Wrapper per integrare PDFKit in SwiftUI
 struct PDFKitRepresentedView: UIViewRepresentable {
     let url: URL
     
@@ -20,6 +22,6 @@ struct PDFKitRepresentedView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: PDFView, context: Context) {
-        // Non è necessario fare nulla qui
+        // Non è necessario aggiornare nulla
     }
 }

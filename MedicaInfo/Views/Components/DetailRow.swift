@@ -9,20 +9,21 @@ import Foundation
 import SwiftUI
 
 // Riga di dettaglio
+// Componenti di Supporto
+
 struct DetailRow: View {
     let title: String
     let value: String
-
+    
     var body: some View {
         HStack {
             Text(title)
-                .font(.subheadline)
-                .foregroundColor(.gray)
+                .font(.headline)
             Spacer()
             Text(value)
                 .font(.body)
-                .foregroundColor(.primary)
+                .foregroundColor(.secondary)
         }
-        .padding(.vertical, 4)
+        .padding(.vertical, 2)
     }
 }

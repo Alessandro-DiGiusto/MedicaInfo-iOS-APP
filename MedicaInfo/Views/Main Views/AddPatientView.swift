@@ -11,47 +11,24 @@ struct AddPatientView: View {
     @State private var showSuccessMessage: Bool = false
     
     // Variabili per Anamnesi Fisiologica
-    @State private var partoNaturale: String = ""
+    @State private var partoNaturaleSelection: String = ""
+    @State private var altroInput: String = ""
     @State private var vaccinazioni: String = ""
-    
     @State private var assumeFarmaci: Bool = false
     @State private var qualiFarmaci: String = ""
     @State private var esamiSangue: Bool = false
-    @State private var alterazioniEsamiSangue: String = ""
-    
-    @State private var dieta: String = ""
-    @State private var dietaSpeciale: String = ""
-    @State private var fumo: String = ""
-    @State private var quanteSigarette: String = ""
-    @State private var beveAlcolici: Bool = false
+    @State private var sceltaDieta: String = ""
+    @State private var sceltaFumatore: String = ""
+    @State private var sceltaAlcolistica: String = ""
     @State private var consumoAlcol: String = ""
-    @State private var beveCaffe: Bool = false
+    @State private var sceltaCaffe: String = ""
     @State private var consumoCaffe: String = ""
-    @State private var etaMestruazione: Decimal = 0
-    @State private var dataUltimaMestruazione: Date = Date()
-    @State private var anomalieCiclo: Bool = false
-    @State private var noteAnomalieCiclo: String = ""
-    @State private var gravidanze: Bool = false
-
-    @State private var selectedConditions: [String] = []
-    private let allConditions = [
-        "Diabete Mellito",
-        "Malattie di Cuore",
-        "Malattie Tiroidee",
-        "Morte Improvvisa",
-        "Malattie Polmonari",
-        "Infarto del Miocardio",
-        "Cardiomiopatie",
-        "Ipertensione",
-        "Colesterolo Alto",
-        "Celiachia",
-        "Ictus/Malattie Neurologiche",
-        "Tumori",
-        "Asma/Allergie",
-        "Obesità",
-        "Malattie Genetiche"
-    ]
     
+    //DATA PICKER DATA DI NASCITA
+    // Stato per tenere traccia della data di nascita selezionata
+    @State private var birthDate = Date()
+    
+    // Inizializzazione del ViewModel
     init() {
         _viewModel = StateObject(wrappedValue: AddPatientViewModel(context: PersistenceController.shared.container.viewContext))
     }
@@ -69,7 +46,14 @@ struct AddPatientView: View {
                     personalDataSection
                     sportAnamnesisSection
                     medicalConditionsSection
-                    physiologicalAnamnesisSection
+                    parto
+                    caffe
+                    vax
+                    farmaci
+                    esami
+                    alimentazione
+                    fumiamola
+                    alcolista
                 }
                 .padding(.top)
                 
@@ -110,20 +94,12 @@ struct AddPatientView: View {
                     TextField("Cognome", text: $viewModel.surname)
                 }
                 HStack {
-                    Image(systemName: "calendar")
-                        .foregroundColor(.blue)
-                    HStack {
-                        Text("Data di Nascita")
-                            .foregroundColor(.black)
-                        Spacer()
-                        DatePicker("", selection: $viewModel.birthDate, displayedComponents: .date)
-                            .labelsHidden()
-                            .accentColor(.blue)
-                    }
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        UIApplication.shared.endEditing()
-                    }
+                    // Aggiungi il DatePicker per la selezione della data
+                    Image(systemName: "calendar").foregroundColor(.blue)
+                    DatePicker("Data di nascita", selection: $viewModel.birthDate, displayedComponents: [.date])
+                        .datePickerStyle(.automatic) // Puoi scegliere lo stile che preferisci
+                        .labelsHidden()
+                        .accentColor(.blue)
                 }
                 HStack {
                     Image(systemName: "barcode.viewfinder")
@@ -228,178 +204,203 @@ struct AddPatientView: View {
             }
     }
     
-    // Sezione Condizioni Mediche con Aggiunta Dinamica
+    // Sezione Condizioni Mediche
     var medicalConditionsSection: some View {
         Section(header: Text("Condizioni Mediche")
+                //TextField("barrare le caselle in caso di parente affetto (padre, madre, fratelli, sorelle, nonni paterni/matemi) e specificare il parente che soffra o abbia sofferto di:")
             .font(.headline)
             .foregroundColor(.blue)) {
-            
-            // Lista delle condizioni mediche selezionate
-            ForEach(selectedConditions, id: \.self) { condition in
-                HStack {
-                    Text(condition)
-                    Spacer()
-                    Button(action: {
-                        withAnimation {
-                            selectedConditions.removeAll { $0 == condition }
-                        }
-                    }) {
-                        Image(systemName: "minus.circle.fill")
-                            .foregroundColor(.red)
-                    }
-                }
-                .contentShape(Rectangle())  // Rende l'intera area del pulsante cliccabile
+                Toggle("Diabete Mellito", isOn: $viewModel.diabetesMellitus)
+                Toggle("Malattie di Cuore", isOn: $viewModel.heartDisease)
+                Toggle("Malattie Tiroidee", isOn: $viewModel.thyroidDiseases)
+                Toggle("Morte Improvvisa", isOn: $viewModel.suddenDeath)
+                Toggle("Malattie Polmonari", isOn: $viewModel.pulmonaryDiseases)
+                Toggle("Infarto del Miocardio", isOn: $viewModel.myocardialInfarction)
+                Toggle("Cardiomiopatie", isOn: $viewModel.cardiomyopathies)
+                Toggle("Ipertensione", isOn: $viewModel.hypertension)
+                Toggle("Colesterolo Alto", isOn: $viewModel.highCholesterol)
+                Toggle("Celiachia", isOn: $viewModel.celiacDisease)
+                Toggle("Ictus/Malattie Neurologiche", isOn: $viewModel.strokeNeurological)
+                Toggle("Tumori", isOn: $viewModel.tumors)
+                Toggle("Asma/Allergie", isOn: $viewModel.asthmaAllergies)
+                Toggle("Obesità", isOn: $viewModel.obesity)
+                Toggle("Malattie Genetiche", isOn: $viewModel.geneticDiseases)
             }
-
-            // Menu per aggiungere nuove condizioni
-            Menu {
-                ForEach(allConditions.filter { !selectedConditions.contains($0) }, id: \.self) { condition in
-                    Button(condition) {
-                        selectedConditions.append(condition)
-                    }
-                }
-            } label: {
-                HStack {
-                    Image(systemName: "plus.circle.fill")
-                    Text("Aggiungi Condizione Medica")
-                }
-                .foregroundColor(.blue)
-            }
-        }
     }
     
     // Sezione Anamnesi Fisiologica
-    var physiologicalAnamnesisSection: some View {
-        Section {
-            ToggleGroupView(
-                title: "È nato da parto naturale?",
-                options: ["NO", "SI", "Altro"],
-                selectedOption: $partoNaturale
-            )
-            if partoNaturale == "Altro" {
-                TextField("Specifica", text: $partoNaturale)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+    var parto: some View {
+        Section(header: Text("ANAMNESI FISIOLOGICA")
+            .font(.headline)
+            .foregroundColor(.blue)) {
+                ToggleGroupView(
+                    title: "È nato da parto naturale?",
+                    options: ["NO", "SI", "Altro"],
+                    selectedOption: $partoNaturaleSelection
+                )
+                if partoNaturaleSelection == "Altro" {
+                    TextField("Specifica", text: $altroInput)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .onChange(of: altroInput) { newValue in
+                            viewModel.partoNaturale = newValue
+                        }
+                }
             }
-            
+            .onChange(of: partoNaturaleSelection) { newValue in
+                if newValue != "Altro" {
+                    viewModel.partoNaturale = newValue
+                }
+            }
+    }
+    
+    var caffe: some View {
+        Section(header: Text("")
+            .font(.headline)
+            .foregroundColor(.blue)) {
+                
+                ToggleGroupView(
+                    title: "Consuma Caffè",
+                    options: ["NO", "SI"],
+                    selectedOption: $sceltaCaffe
+                )
+                
+                if sceltaCaffe == "SI" {
+                    TextField("Quanti caffè prende al giorno?", text: $consumoCaffe)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .onChange(of: consumoCaffe) { newValue in
+                            viewModel.consumoCaffe = newValue
+                        }
+                }
+            }
+            .onChange(of: sceltaCaffe) { newValue in
+                if newValue == "NO" {
+                    viewModel.consumoCaffe = "NO"
+                } else if newValue == "SI" && !consumoCaffe.isEmpty {
+                    viewModel.consumoCaffe = consumoCaffe
+                }
+            }
+    }
+    
+    var vax: some View {
+        Section(){
             ToggleGroupView(
                 title: "Vaccinazioni",
                 options: ["NON LO SO", "NO", "SI"],
-                selectedOption: $vaccinazioni
+                selectedOption: $viewModel.vaccinazioni
             )
-            
-            VStack(alignment: .leading, spacing: 15) {
-                Toggle(isOn: $assumeFarmaci) {
-                    Text("Assume regolarmente farmaci e/o integratori alimentari?")
-                }
-                
-                if assumeFarmaci {
-                    TextField("Se sì, quali?", text: $qualiFarmaci)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-            }
-            .padding(.vertical)
-            
-            VStack(alignment: .leading, spacing: 15) {
-                Toggle(isOn: $esamiSangue) {
-                    Text("Ha eseguito esami del sangue nell'ultimo anno?")
-                }
-                
-                if esamiSangue {
-                    TextField("Se si, erano presenti alterazioni?", text: $alterazioniEsamiSangue)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-            }
-            .padding(.vertical)
-            
-            VStack(alignment: .leading) {
-                Text("Dieta")
-                
-                HStack {
-                    CheckboxField(title: "Varia", isChecked: Binding(get: { dieta == "Varia" }, set: { if $0 { dieta = "Varia" } }), checkboxOnRight: false)
-                    Spacer()
-                    CheckboxField(title: "Vegana", isChecked: Binding(get: { dieta == "Vegana" }, set: { if $0 { dieta = "Vegana" } }), checkboxOnRight: true)
-                }
-                
-                HStack {
-                    CheckboxField(title: "Vegetariana", isChecked: Binding(get: { dieta == "Vegetariana" }, set: { if $0 { dieta == "Vegetariana" } }), checkboxOnRight: false)
-                    Spacer()
-                    CheckboxField(title: "Speciale", isChecked: Binding(get: { dieta == "Speciale" }, set: { if $0 { dieta == "Speciale" } }), checkboxOnRight: true)
-                }
-            }
-            
-            if dieta == "Speciale" {
-                TextField("Specifica dieta speciale", text: $dietaSpeciale)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
-            
-            ToggleGroupView(
-                title: "Fumatore?",
-                options: ["NO", "SI", "EX"],
-                selectedOption: $fumo
-            )
-            if fumo == "SI" {
-                TextField("Quante sigarette al giorno e da quanto tempo?", text: $quanteSigarette)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
-            
-            VStack(alignment: .leading, spacing: 15) {
-                Toggle(isOn: $beveAlcolici) {
-                    Text("Beve alcolici?")
-                }
-                if beveAlcolici {
-                    TextField("Quantità di alcol consumata", text: $consumoAlcol)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-            }
-            .padding(.vertical)
-            
-            VStack(alignment: .leading, spacing: 15) {
-                Toggle(isOn: $beveCaffe) {
-                    Text("Beve caffè/the/coca-cola")
-                }
-                if beveCaffe {
-                    TextField("Quantità di caffè/the/coca-cola consumata", text: $consumoCaffe)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-            }
-            .padding(.vertical)
-            
-            if viewModel.gender == "Femminile" {
-                HStack {
-                    Text("Età prima mestruazione")
-                    Spacer()
-                    TextField("Anni", text: Binding(
-                        get: { "\(etaMestruazione)" },
-                        set: {
-                            if let value = Decimal(string: $0) {
-                                etaMestruazione = value
-                            } else {
-                                etaMestruazione = 0
-                            }
-                        }
-                    ))
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .keyboardType(.decimalPad)
-                }
-                
-                HStack {
-                    Text("Data ultima mestruazione")
-                    DatePicker("", selection: $dataUltimaMestruazione, displayedComponents: .date)
-                        .datePickerStyle(CompactDatePickerStyle())
-                }
-                
-                Toggle("Anomalie del ciclo mestruale", isOn: $anomalieCiclo)
-                if anomalieCiclo {
-                    TextField("Note sulle anomalie", text: $noteAnomalieCiclo)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-                
-                Toggle("Gravidanze", isOn: $gravidanze)
-            } else {
-                // Non mostrare
-            }
         }
     }
+    
+    var farmaci: some View {
+        
+        VStack(alignment: .leading, spacing: 15) {
+            Toggle(isOn: $assumeFarmaci) {
+                Text("Assume regolarmente farmaci e/o integratori alimentari?")
+            }
+            
+            if assumeFarmaci {
+                TextField("Se sì, quali?", text: $viewModel.qualiFarmaci)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+        }
+        .padding(.vertical)
+        
+    }
+    
+    var esami: some View {
+        VStack(alignment: .leading, spacing: 15) {
+            Toggle(isOn: $esamiSangue) {
+                Text("Ha eseguito esami del sangue nell'ultimo anno?")
+            }
+            
+            if esamiSangue {
+                TextField("Se si, erano presenti alterazioni?", text: $viewModel.alterazioniEsamiSangue)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+        }
+        .padding(.vertical)
+    }
+    
+    var alimentazione: some View {
+        VStack(alignment: .leading) {
+            Text("Dieta")
+            
+            HStack {
+                DietaButton(title: "Varia", selectedOption: $viewModel.dieta, optionValue: "Varia")
+                Spacer()
+                DietaButton(title: "Vegana", selectedOption: $viewModel.dieta, optionValue: "Vegana")
+            }
+            
+            HStack {
+                DietaButton(title: "Vegetariana", selectedOption: $viewModel.dieta, optionValue: "Vegetariana")
+                Spacer()
+                DietaButton(title: "Speciale", selectedOption: $sceltaDieta, optionValue: "Speciale")
+            }
+            
+            if sceltaDieta == "Speciale" {
+                TextField("Specifica dieta speciale", text: Binding(
+                    get: { viewModel.dieta.replacingOccurrences(of: "Speciale: ", with: "") },
+                    set: { newValue in
+                        viewModel.dieta = "Speciale: \(newValue)"
+                    }
+                ))
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+        }
+        .padding(.vertical)
+    }
+    
+    var fumiamola: some View {
+        VStack(alignment: .leading) {
+            Text("Fumatore?")
+            
+            HStack {
+                DietaButton(title: "NO", selectedOption: $viewModel.fumo, optionValue: "NO")
+                Spacer()
+                DietaButton(title: "EX", selectedOption: $viewModel.fumo, optionValue: "EX")
+                Spacer()
+                DietaButton(title: "SI", selectedOption: $viewModel.fumo, optionValue: "SI")
+            }
+            
+            if sceltaFumatore == "SI" {
+                TextField("Quante sigarette al giorno fumi?", text: Binding(
+                    get: { viewModel.quanteSigarette.replacingOccurrences(of: "Si: ", with: "") },
+                    set: { newValue in
+                        viewModel.quanteSigarette = " \(newValue)"
+                    }
+                ))
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+        }
+        .padding(.vertical)
+    }
+    
+    var alcolista: some View {
+        VStack(alignment: .leading) {
+            Text("Beve alcolici?")
+            
+            HStack {
+                DietaButton(title: "NO", selectedOption: $sceltaAlcolistica, optionValue: "NO")
+                    .onTapGesture {
+                        sceltaAlcolistica = "NO"
+                        viewModel.consumoAlcol = "NO" // Salva "NO" in consumoAlcol
+                    }
+                Spacer()
+                DietaButton(title: "SI", selectedOption: $sceltaAlcolistica, optionValue: "SI")
+                    .onTapGesture {
+                        sceltaAlcolistica = "SI"
+                        viewModel.consumoAlcol = "" // Pulisci il campo per permettere l'input
+                    }
+            }
+            
+            if sceltaAlcolistica == "SI" {
+                TextField("Quanti?", text: $viewModel.consumoAlcol)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+        }
+        .padding(.vertical)
+    }
+    
     
     // Pulsante di Salvataggio
     var saveButton: some View {
