@@ -93,6 +93,7 @@ struct DetailView: View {
                             viewModel: PatientViewModel(patient: patient, context: viewContext), // Crea il viewModel da passare
                             context: viewContext
                             //dateFormatter: DateFormatter()
+                            //questo va bene
                         )
                         .navigationBarTitleDisplayMode(.inline) // Barra di navigazione inline
                         .navigationBarBackButtonHidden(false),   // Abilita solo il pulsante Back
