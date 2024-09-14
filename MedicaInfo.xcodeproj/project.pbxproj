@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED0D8D692C723614009E16DC /* DetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D8D682C723613009E16DC /* DetailRow.swift */; };
 		ED0D8D6B2C72362E009E16DC /* MedicalConditionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D8D6A2C72362E009E16DC /* MedicalConditionRow.swift */; };
-		ED586D352C79ED3600D6C082 /* MedicalPatient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED586D342C79ED3600D6C082 /* MedicalPatient.swift */; };
+		ED44F1F12C7B7538000EA28E /* DietaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44F1F02C7B7538000EA28E /* DietaButton.swift */; };
 		ED8F4A552C70DA0A007C4734 /* MedicaInfoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A3E2C70DA0A007C4734 /* MedicaInfoApp.swift */; };
 		ED8F4A562C70DA0A007C4734 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A3F2C70DA0A007C4734 /* AddNoteView.swift */; };
 		ED8F4A572C70DA0A007C4734 /* AddPatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A402C70DA0A007C4734 /* AddPatientView.swift */; };
@@ -26,7 +26,6 @@
 		ED8F4A622C70DA0A007C4734 /* PatientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A4D2C70DA0A007C4734 /* PatientDetailView.swift */; };
 		ED8F4A632C70DA0A007C4734 /* PatientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A4E2C70DA0A007C4734 /* PatientViewModel.swift */; };
 		ED8F4A642C70DA0A007C4734 /* AddPatientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A4F2C70DA0A007C4734 /* AddPatientViewModel.swift */; };
-		ED8F4A652C70DA0A007C4734 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A512C70DA0A007C4734 /* Test.swift */; };
 		ED8F4A662C70DA0A007C4734 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A522C70DA0A007C4734 /* DetailView.swift */; };
 		ED8F4A672C70DA0A007C4734 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A532C70DA0A007C4734 /* PersistenceController.swift */; };
 		EDA79B912C7254C000ABFBFA /* PDFKitRepresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA79B902C7254C000ABFBFA /* PDFKitRepresentedView.swift */; };
@@ -38,7 +37,7 @@
 /* Begin PBXFileReference section */
 		ED0D8D682C723613009E16DC /* DetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRow.swift; sourceTree = "<group>"; };
 		ED0D8D6A2C72362E009E16DC /* MedicalConditionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalConditionRow.swift; sourceTree = "<group>"; };
-		ED586D342C79ED3600D6C082 /* MedicalPatient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalPatient.swift; sourceTree = "<group>"; };
+		ED44F1F02C7B7538000EA28E /* DietaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaButton.swift; sourceTree = "<group>"; };
 		ED700E9E2BFE8C5200FCABC2 /* MedicaInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicaInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8F4A3E2C70DA0A007C4734 /* MedicaInfoApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicaInfoApp.swift; sourceTree = "<group>"; };
 		ED8F4A3F2C70DA0A007C4734 /* AddNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
@@ -56,7 +55,6 @@
 		ED8F4A4D2C70DA0A007C4734 /* PatientDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDetailView.swift; sourceTree = "<group>"; };
 		ED8F4A4E2C70DA0A007C4734 /* PatientViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientViewModel.swift; sourceTree = "<group>"; };
 		ED8F4A4F2C70DA0A007C4734 /* AddPatientViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPatientViewModel.swift; sourceTree = "<group>"; };
-		ED8F4A512C70DA0A007C4734 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		ED8F4A522C70DA0A007C4734 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		ED8F4A532C70DA0A007C4734 /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		EDA79B902C7254C000ABFBFA /* PDFKitRepresentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitRepresentedView.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				EDE2B46D2C7108BD00EA4F5B /* comuni.json */,
 				EDE2B46C2C71064400EA4F5B /* MedicaInfo-Bridging-Header.h */,
 				EDE2B4762C71174D00EA4F5B /* Assets.xcassets */,
-				ED8F4A512C70DA0A007C4734 /* Test.swift */,
 			);
 			path = MedicaInfo;
 			sourceTree = "<group>";
@@ -164,7 +161,7 @@
 				ED8F4A432C70DA0A007C4734 /* SectionCard.swift */,
 				ED0D8D682C723613009E16DC /* DetailRow.swift */,
 				ED0D8D6A2C72362E009E16DC /* MedicalConditionRow.swift */,
-				ED586D342C79ED3600D6C082 /* MedicalPatient.swift */,
+				ED44F1F02C7B7538000EA28E /* DietaButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -261,7 +258,6 @@
 				ED8F4A632C70DA0A007C4734 /* PatientViewModel.swift in Sources */,
 				ED0D8D692C723614009E16DC /* DetailRow.swift in Sources */,
 				EDA79B912C7254C000ABFBFA /* PDFKitRepresentedView.swift in Sources */,
-				ED586D352C79ED3600D6C082 /* MedicalPatient.swift in Sources */,
 				ED8F4A5F2C70DA0A007C4734 /* Comune.swift in Sources */,
 				ED8F4A5A2C70DA0A007C4734 /* SectionCard.swift in Sources */,
 				ED8F4A572C70DA0A007C4734 /* AddPatientView.swift in Sources */,
@@ -271,7 +267,7 @@
 				ED8F4A5B2C70DA0A007C4734 /* DataLoader.swift in Sources */,
 				ED8F4A5D2C70DA0A007C4734 /* ContentView.swift in Sources */,
 				ED0D8D6B2C72362E009E16DC /* MedicalConditionRow.swift in Sources */,
-				ED8F4A652C70DA0A007C4734 /* Test.swift in Sources */,
+				ED44F1F12C7B7538000EA28E /* DietaButton.swift in Sources */,
 				ED8F4A552C70DA0A007C4734 /* MedicaInfoApp.swift in Sources */,
 				ED8F4A612C70DA0A007C4734 /* MedicalDataModel.xcdatamodeld in Sources */,
 				EDE2B4702C710F7A00EA4F5B /* UIApplication+Extensions.swift in Sources */,
