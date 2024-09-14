@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED0D8D692C723614009E16DC /* DetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D8D682C723613009E16DC /* DetailRow.swift */; };
 		ED0D8D6B2C72362E009E16DC /* MedicalConditionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D8D6A2C72362E009E16DC /* MedicalConditionRow.swift */; };
+		ED586D352C79ED3600D6C082 /* MedicalPatient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED586D342C79ED3600D6C082 /* MedicalPatient.swift */; };
 		ED8F4A552C70DA0A007C4734 /* MedicaInfoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A3E2C70DA0A007C4734 /* MedicaInfoApp.swift */; };
 		ED8F4A562C70DA0A007C4734 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A3F2C70DA0A007C4734 /* AddNoteView.swift */; };
 		ED8F4A572C70DA0A007C4734 /* AddPatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A402C70DA0A007C4734 /* AddPatientView.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		ED0D8D682C723613009E16DC /* DetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRow.swift; sourceTree = "<group>"; };
 		ED0D8D6A2C72362E009E16DC /* MedicalConditionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalConditionRow.swift; sourceTree = "<group>"; };
+		ED586D342C79ED3600D6C082 /* MedicalPatient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalPatient.swift; sourceTree = "<group>"; };
 		ED700E9E2BFE8C5200FCABC2 /* MedicaInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicaInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8F4A3E2C70DA0A007C4734 /* MedicaInfoApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicaInfoApp.swift; sourceTree = "<group>"; };
 		ED8F4A3F2C70DA0A007C4734 /* AddNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				ED8F4A432C70DA0A007C4734 /* SectionCard.swift */,
 				ED0D8D682C723613009E16DC /* DetailRow.swift */,
 				ED0D8D6A2C72362E009E16DC /* MedicalConditionRow.swift */,
+				ED586D342C79ED3600D6C082 /* MedicalPatient.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				ED8F4A632C70DA0A007C4734 /* PatientViewModel.swift in Sources */,
 				ED0D8D692C723614009E16DC /* DetailRow.swift in Sources */,
 				EDA79B912C7254C000ABFBFA /* PDFKitRepresentedView.swift in Sources */,
+				ED586D352C79ED3600D6C082 /* MedicalPatient.swift in Sources */,
 				ED8F4A5F2C70DA0A007C4734 /* Comune.swift in Sources */,
 				ED8F4A5A2C70DA0A007C4734 /* SectionCard.swift in Sources */,
 				ED8F4A572C70DA0A007C4734 /* AddPatientView.swift in Sources */,
