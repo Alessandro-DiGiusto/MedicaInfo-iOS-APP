@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		034147F1DD574CF09392C00F /* MealSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC6FE3304B4845A6B736C5 /* MealSectionView.swift */; };
+		43E0371F324F44DFBD47546A /* FoodDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D37B95BC840C49210B335 /* FoodDataLoader.swift */; };
+		47210E6F48A443F4A1A8DC22 /* FoodSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F9FF43B374E489E5FF397 /* FoodSearchView.swift */; };
+		52EEEE5E6B444E9CAD09D032 /* MacroGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307499B9AB0456F9EFFF831 /* MacroGaugeView.swift */; };
+		6301AA3A262F48BF9709FE57 /* DietPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF17DF951D42678A837B5E /* DietPlanView.swift */; };
+		6D55FF8DA1B44F50B369962E5599A29E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5E134DF904DD19C3DAC97A97E1B91 /* ProfileView.swift */; };
+		74AAF650CB4B48C3A9ED46AE /* alimenti.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AB6A283F96140049F5B1D87 /* alimenti.json */; };
+		79837BB268FF4D588391AF47 /* DietModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63F0AD1372347BB9EC5B11A /* DietModels.swift */; };
+		80208C68257340CF8C4E9EA6 /* DietPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EB446D2444980BDC263BF /* DietPlanViewModel.swift */; };
+		A78A4F8BEC8841F385305B1BB5101BC9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C89005DFA0D496887039DB94A5BE484 /* SettingsView.swift */; };
+		AB64275C9682408F945ECAD3AEB588D9 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FB92C30EA642088A4F74D278514452 /* InfoView.swift */; };
+		CD9651C3B26A44C29F17D3CA /* FoodEntryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A7D9AC57504748BC4C93EB /* FoodEntryRow.swift */; };
 		ED0D8D692C723614009E16DC /* DetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D8D682C723613009E16DC /* DetailRow.swift */; };
 		ED0D8D6B2C72362E009E16DC /* MedicalConditionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D8D6A2C72362E009E16DC /* MedicalConditionRow.swift */; };
 		ED44F1F12C7B7538000EA28E /* DietaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44F1F02C7B7538000EA28E /* DietaButton.swift */; };
@@ -29,12 +41,24 @@
 		ED8F4A662C70DA0A007C4734 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A522C70DA0A007C4734 /* DetailView.swift */; };
 		ED8F4A672C70DA0A007C4734 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F4A532C70DA0A007C4734 /* PersistenceController.swift */; };
 		EDA79B912C7254C000ABFBFA /* PDFKitRepresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA79B902C7254C000ABFBFA /* PDFKitRepresentedView.swift */; };
-		EDE2B46E2C7108BD00EA4F5B /* comuni.json in Resources */ = {isa = PBXBuildFile; fileRef = EDE2B46D2C7108BD00EA4F5B /* comuni.json */; };
+		EDE2B46E2C7108BD00EA4F5B /* Models/comuni.json in Resources */ = {isa = PBXBuildFile; fileRef = EDE2B46D2C7108BD00EA4F5B /* Models/comuni.json */; };
 		EDE2B4702C710F7A00EA4F5B /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2B46F2C710F7A00EA4F5B /* UIApplication+Extensions.swift */; };
 		EDE2B4772C71174D00EA4F5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE2B4762C71174D00EA4F5B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0307499B9AB0456F9EFFF831 /* MacroGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroGaugeView.swift; sourceTree = "<group>"; };
+		12CC6FE3304B4845A6B736C5 /* MealSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSectionView.swift; sourceTree = "<group>"; };
+		164D37B95BC840C49210B335 /* FoodDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDataLoader.swift; sourceTree = "<group>"; };
+		1AB6A283F96140049F5B1D87 /* alimenti.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = alimenti.json; sourceTree = "<group>"; };
+		32FB92C30EA642088A4F74D278514452 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		6C89005DFA0D496887039DB94A5BE484 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		77A7D9AC57504748BC4C93EB /* FoodEntryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodEntryRow.swift; sourceTree = "<group>"; };
+		8E7F9FF43B374E489E5FF397 /* FoodSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchView.swift; sourceTree = "<group>"; };
+		965EB446D2444980BDC263BF /* DietPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietPlanViewModel.swift; sourceTree = "<group>"; };
+		B63F0AD1372347BB9EC5B11A /* DietModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietModels.swift; sourceTree = "<group>"; };
+		D8C5E134DF904DD19C3DAC97A97E1B91 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DDDF17DF951D42678A837B5E /* DietPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietPlanView.swift; sourceTree = "<group>"; };
 		ED0D8D682C723613009E16DC /* DetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRow.swift; sourceTree = "<group>"; };
 		ED0D8D6A2C72362E009E16DC /* MedicalConditionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalConditionRow.swift; sourceTree = "<group>"; };
 		ED44F1F02C7B7538000EA28E /* DietaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaButton.swift; sourceTree = "<group>"; };
@@ -60,9 +84,9 @@
 		EDA79B902C7254C000ABFBFA /* PDFKitRepresentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitRepresentedView.swift; sourceTree = "<group>"; };
 		EDA79B9C2C73732600ABFBFA /* comuni.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = comuni.json; sourceTree = "<group>"; };
 		EDE2B46C2C71064400EA4F5B /* MedicaInfo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MedicaInfo-Bridging-Header.h"; sourceTree = "<group>"; };
-		EDE2B46D2C7108BD00EA4F5B /* comuni.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = comuni.json; path = ../../../Downloads/comuni.json; sourceTree = "<group>"; };
+		EDE2B46D2C7108BD00EA4F5B /* Models/comuni.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Models/comuni.json; sourceTree = "<group>"; };
 		EDE2B46F2C710F7A00EA4F5B /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
-		EDE2B4762C71174D00EA4F5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../MedicaInfo 2/Assets.xcassets"; sourceTree = "<group>"; };
+		EDE2B4762C71174D00EA4F5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A38709F1D9264DD283A59C73 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				965EB446D2444980BDC263BF /* DietPlanViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		ED700E952BFE8C5200FCABC2 = {
 			isa = PBXGroup;
 			children = (
@@ -96,12 +128,13 @@
 			isa = PBXGroup;
 			children = (
 				ED8F4A542C70DA0A007C4734 /* Controllers */,
+				A38709F1D9264DD283A59C73 /* ViewModels */,
 				EDA79B972C73236100ABFBFA /* Models */,
 				ED8F4A442C70DA0A007C4734 /* Views */,
 				EDA79B9B2C7370D800ABFBFA /* Extensions */,
 				ED8F4A482C70DA0A007C4734 /* AppDelegate.swift */,
 				ED8F4A3E2C70DA0A007C4734 /* MedicaInfoApp.swift */,
-				EDE2B46D2C7108BD00EA4F5B /* comuni.json */,
+				EDE2B46D2C7108BD00EA4F5B /* Models/comuni.json */,
 				EDE2B46C2C71064400EA4F5B /* MedicaInfo-Bridging-Header.h */,
 				EDE2B4762C71174D00EA4F5B /* Assets.xcassets */,
 			);
@@ -123,6 +156,7 @@
 			children = (
 				ED8F4A452C70DA0A007C4734 /* DataLoader.swift */,
 				ED8F4A532C70DA0A007C4734 /* PersistenceController.swift */,
+				164D37B95BC840C49210B335 /* FoodDataLoader.swift */,
 				ED8F4A4E2C70DA0A007C4734 /* PatientViewModel.swift */,
 				ED8F4A4F2C70DA0A007C4734 /* AddPatientViewModel.swift */,
 			);
@@ -136,6 +170,8 @@
 				ED8F4A4B2C70DA0A007C4734 /* MedicalDataModel.xcdatamodeld */,
 				ED8F4A492C70DA0A007C4734 /* Comune.swift */,
 				EDA79B9C2C73732600ABFBFA /* comuni.json */,
+				B63F0AD1372347BB9EC5B11A /* DietModels.swift */,
+				1AB6A283F96140049F5B1D87 /* alimenti.json */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,6 +186,10 @@
 				ED8F4A422C70DA0A007C4734 /* PatientCardView.swift */,
 				ED8F4A522C70DA0A007C4734 /* DetailView.swift */,
 				ED8F4A402C70DA0A007C4734 /* AddPatientView.swift */,
+				DDDF17DF951D42678A837B5E /* DietPlanView.swift */,
+				6C89005DFA0D496887039DB94A5BE484 /* SettingsView.swift */,
+				D8C5E134DF904DD19C3DAC97A97E1B91 /* ProfileView.swift */,
+				32FB92C30EA642088A4F74D278514452 /* InfoView.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -162,6 +202,10 @@
 				ED0D8D682C723613009E16DC /* DetailRow.swift */,
 				ED0D8D6A2C72362E009E16DC /* MedicalConditionRow.swift */,
 				ED44F1F02C7B7538000EA28E /* DietaButton.swift */,
+				0307499B9AB0456F9EFFF831 /* MacroGaugeView.swift */,
+				12CC6FE3304B4845A6B736C5 /* MealSectionView.swift */,
+				77A7D9AC57504748BC4C93EB /* FoodEntryRow.swift */,
+				8E7F9FF43B374E489E5FF397 /* FoodSearchView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -210,7 +254,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 2650;
 				TargetAttributes = {
 					ED700E9D2BFE8C5200FCABC2 = {
 						CreatedOnToolsVersion = 15.2;
@@ -242,7 +286,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDE2B4772C71174D00EA4F5B /* Assets.xcassets in Resources */,
-				EDE2B46E2C7108BD00EA4F5B /* comuni.json in Resources */,
+				EDE2B46E2C7108BD00EA4F5B /* Models/comuni.json in Resources */,
+				74AAF650CB4B48C3A9ED46AE /* alimenti.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +321,18 @@
 				ED8F4A622C70DA0A007C4734 /* PatientDetailView.swift in Sources */,
 				ED8F4A642C70DA0A007C4734 /* AddPatientViewModel.swift in Sources */,
 				ED8F4A672C70DA0A007C4734 /* PersistenceController.swift in Sources */,
+				79837BB268FF4D588391AF47 /* DietModels.swift in Sources */,
+				43E0371F324F44DFBD47546A /* FoodDataLoader.swift in Sources */,
+				80208C68257340CF8C4E9EA6 /* DietPlanViewModel.swift in Sources */,
+				6301AA3A262F48BF9709FE57 /* DietPlanView.swift in Sources */,
+				52EEEE5E6B444E9CAD09D032 /* MacroGaugeView.swift in Sources */,
+				034147F1DD574CF09392C00F /* MealSectionView.swift in Sources */,
+				CD9651C3B26A44C29F17D3CA /* FoodEntryRow.swift in Sources */,
+				47210E6F48A443F4A1A8DC22 /* FoodSearchView.swift in Sources */,
+				A78A4F8BEC8841F385305B1BB5101BC9 /* SettingsView.swift in Sources */,
+				DBD98F745EDF4F36A73C7E50 /* PlatformColor.swift in Sources */,
+				6D55FF8DA1B44F50B369962E5599A29E /* ProfileView.swift in Sources */,
+				AB64275C9682408F945ECAD3AEB588D9 /* InfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +375,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8JV2R2Z788;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -341,6 +399,7 @@
 				NEW_SETTING = "";
 				NEW_SETTING1 = "";
 				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -382,6 +441,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8JV2R2Z788;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -398,6 +458,7 @@
 				MTL_FAST_MATH = YES;
 				NEW_SETTING = "";
 				NEW_SETTING1 = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -413,8 +474,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MedicaInfo/Preview Content\"";
-				DEVELOPMENT_TEAM = 8JV2R2Z788;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -434,8 +496,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = it.alessandrodigiusto.MedicaInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "MedicaInfo/MedicaInfo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -455,7 +519,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MedicaInfo/Preview Content\"";
-				DEVELOPMENT_TEAM = 8JV2R2Z788;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -478,6 +541,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "MedicaInfo/MedicaInfo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

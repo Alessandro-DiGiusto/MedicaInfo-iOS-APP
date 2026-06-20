@@ -1,12 +1,6 @@
-//
-//  MedicaInfoApp.swift
-//  MedicaInfo
-//
-//  Created by Alessandro Di Giusto on 22/05/24.
-//
-
 import SwiftUI
 import CoreData
+import SwiftData
 
 @main
 struct MedicaInfoApp: App {
@@ -38,5 +32,6 @@ struct MedicaInfoApp: App {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+        .modelContainer(for: [DietPlan.self, Meal.self, FoodEntry.self])
     }
 }

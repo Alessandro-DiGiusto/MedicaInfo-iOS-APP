@@ -211,13 +211,21 @@ struct PatientDetailView: View {
                         Text(viewModel.patient.nota ?? "Nessuna nota inserita")
                             .font(.body)
                             .padding(.vertical, 10)
+                            #if os(iOS)
                             .background(Color(.systemGray6))
+                            #else
+                            .background(Color(.controlBackgroundColor))
+                            #endif
                             .cornerRadius(8)
                         
                         // Campo di testo per aggiungere una nota
                         TextField("Aggiungi una nota", text: $viewModel.noteText)
                             .padding()
+                            #if os(iOS)
                             .background(Color(.systemGray6))
+                            #else
+                            .background(Color(.controlBackgroundColor))
+                            #endif
                             .cornerRadius(8)
                         
                         // Pulsante per salvare la nota
@@ -239,8 +247,11 @@ struct PatientDetailView: View {
             }
             .padding()
         }
-        .navigationBarTitle("Dettagli Paziente", displayMode: .inline)
+        .navigationTitle("Dettagli Paziente")
+        #if os(iOS)
+        .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
+        #endif
         //.navigationBarItems(leading: backButton)
     }
     

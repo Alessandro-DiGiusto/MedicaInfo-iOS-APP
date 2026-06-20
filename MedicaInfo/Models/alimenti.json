@@ -1,0 +1,5906 @@
+[
+    {
+        "nome": "Barretta kellog's",
+        "proteine": 1.5,
+        "grassi": 1.0,
+        "carboidrati": 17.0,
+        "kcal": 82.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Biscotti tipo grancereale (1=10,3gr)",
+        "proteine": 8.0,
+        "grassi": 18.0,
+        "carboidrati": 63.6,
+        "kcal": 448.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Biscotti alla soia",
+        "proteine": 11.5,
+        "grassi": 6.1,
+        "carboidrati": 70.8,
+        "kcal": 366.0,
+        "zuccheri": 6.2
+    },
+    {
+        "nome": "Biscotti frollini",
+        "proteine": 7.2,
+        "grassi": 13.8,
+        "carboidrati": 73.7,
+        "kcal": 429.0,
+        "zuccheri": 22.0
+    },
+    {
+        "nome": "Biscotti integrali",
+        "proteine": 7.8,
+        "grassi": 14.3,
+        "carboidrati": 70.8,
+        "kcal": 425.0,
+        "zuccheri": 28.8
+    },
+    {
+        "nome": "Biscotti integrali con soia",
+        "proteine": 11.5,
+        "grassi": 20.4,
+        "carboidrati": 60.4,
+        "kcal": 456.0,
+        "zuccheri": 1.1
+    },
+    {
+        "nome": "Biscotti per l'infanzia",
+        "proteine": 13.8,
+        "grassi": 8.5,
+        "carboidrati": 75.7,
+        "kcal": 416.0,
+        "zuccheri": 35.7
+    },
+    {
+        "nome": "Biscotti secchi",
+        "proteine": 6.6,
+        "grassi": 7.9,
+        "carboidrati": 84.8,
+        "kcal": 416.0,
+        "zuccheri": 18.5
+    },
+    {
+        "nome": "Biscotti wafers",
+        "proteine": 7.1,
+        "grassi": 15.0,
+        "carboidrati": 77.6,
+        "kcal": 454.0,
+        "zuccheri": 26.7
+    },
+    {
+        "nome": "Cornetti",
+        "proteine": 7.2,
+        "grassi": 18.3,
+        "carboidrati": 58.0,
+        "kcal": 411.0,
+        "zuccheri": 10.6
+    },
+    {
+        "nome": "Cornflakes",
+        "proteine": 6.6,
+        "grassi": 0.8,
+        "carboidrati": 87.4,
+        "kcal": 361.0,
+        "zuccheri": 10.4
+    },
+    {
+        "nome": "Crackers al formaggio",
+        "proteine": 9.8,
+        "grassi": 25.5,
+        "carboidrati": 62.1,
+        "kcal": 502.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Crackers alla soia",
+        "proteine": 13.1,
+        "grassi": 11.7,
+        "carboidrati": 67.7,
+        "kcal": 412.0,
+        "zuccheri": 6.3
+    },
+    {
+        "nome": "Crackers salati",
+        "proteine": 9.4,
+        "grassi": 10.0,
+        "carboidrati": 80.1,
+        "kcal": 428.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Cracotte",
+        "proteine": 10.5,
+        "grassi": 1.2,
+        "carboidrati": 78.8,
+        "kcal": 348.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Croissants",
+        "proteine": 8.3,
+        "grassi": 20.3,
+        "carboidrati": 38.0,
+        "kcal": 358.0,
+        "zuccheri": 1.1
+    },
+    {
+        "nome": "Crusca di frumento",
+        "proteine": 14.1,
+        "grassi": 5.5,
+        "carboidrati": 26.6,
+        "kcal": 206.0,
+        "zuccheri": 3.8
+    },
+    {
+        "nome": "Farina d'avena",
+        "proteine": 12.6,
+        "grassi": 7.1,
+        "carboidrati": 72.3,
+        "kcal": 385.0,
+        "zuccheri": 7.2
+    },
+    {
+        "nome": "Farina d'orzo",
+        "proteine": 10.6,
+        "grassi": 1.9,
+        "carboidrati": 79.3,
+        "kcal": 357.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Farina di frum duro",
+        "proteine": 12.9,
+        "grassi": 2.8,
+        "carboidrati": 63.2,
+        "kcal": 314.0,
+        "zuccheri": 3.2
+    },
+    {
+        "nome": "Farina di frum integr",
+        "proteine": 11.9,
+        "grassi": 1.9,
+        "carboidrati": 67.8,
+        "kcal": 319.0,
+        "zuccheri": 2.1
+    },
+    {
+        "nome": "Farina tipo 0",
+        "proteine": 11.5,
+        "grassi": 1.0,
+        "carboidrati": 76.2,
+        "kcal": 341.0,
+        "zuccheri": 1.8
+    },
+    {
+        "nome": "Farina tipo 00",
+        "proteine": 11.0,
+        "grassi": 0.7,
+        "carboidrati": 77.3,
+        "kcal": 340.0,
+        "zuccheri": 1.7
+    },
+    {
+        "nome": "Farina di mais",
+        "proteine": 8.7,
+        "grassi": 2.7,
+        "carboidrati": 80.8,
+        "kcal": 362.0,
+        "zuccheri": 1.5
+    },
+    {
+        "nome": "Farina di riso",
+        "proteine": 7.3,
+        "grassi": 0.5,
+        "carboidrati": 87.0,
+        "kcal": 360.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Farina di segale",
+        "proteine": 11.7,
+        "grassi": 2.3,
+        "carboidrati": 65.0,
+        "kcal": 311.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Farina di soia",
+        "proteine": 36.8,
+        "grassi": 23.5,
+        "carboidrati": 23.4,
+        "kcal": 446.0,
+        "zuccheri": 11.2
+    },
+    {
+        "nome": "Farina di Carrube",
+        "proteine": 5.4,
+        "grassi": 0.3,
+        "carboidrati": 50.0,
+        "kcal": 293.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Farina Riso, Mais e Tapioca",
+        "proteine": 7.0,
+        "grassi": 1.0,
+        "carboidrati": 86.75,
+        "kcal": 387.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Farro",
+        "proteine": 15.1,
+        "grassi": 2.5,
+        "carboidrati": 67.1,
+        "kcal": 335.0,
+        "zuccheri": 2.7
+    },
+    {
+        "nome": "Fette biscottate",
+        "proteine": 11.3,
+        "grassi": 6.0,
+        "carboidrati": 82.3,
+        "kcal": 408.0,
+        "zuccheri": 2.2
+    },
+    {
+        "nome": "Fette biscottate integrali",
+        "proteine": 14.2,
+        "grassi": 10.0,
+        "carboidrati": 62.0,
+        "kcal": 379.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Fiocchi d'avena",
+        "proteine": 8.0,
+        "grassi": 7.5,
+        "carboidrati": 72.8,
+        "kcal": 373.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Frumento duro",
+        "proteine": 13.0,
+        "grassi": 2.9,
+        "carboidrati": 62.5,
+        "kcal": 312.0,
+        "zuccheri": 3.2
+    },
+    {
+        "nome": "Frumento tenero",
+        "proteine": 12.3,
+        "grassi": 2.6,
+        "carboidrati": 65.2,
+        "kcal": 317.0,
+        "zuccheri": 3.3
+    },
+    {
+        "nome": "Germe di frumento",
+        "proteine": 28.0,
+        "grassi": 10.0,
+        "carboidrati": 55.0,
+        "kcal": 408.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Grano saraceno",
+        "proteine": 12.4,
+        "grassi": 3.3,
+        "carboidrati": 62.5,
+        "kcal": 314.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Grissini",
+        "proteine": 12.3,
+        "grassi": 13.9,
+        "carboidrati": 68.4,
+        "kcal": 431.0,
+        "zuccheri": 2.2
+    },
+    {
+        "nome": "Mais",
+        "proteine": 9.2,
+        "grassi": 3.8,
+        "carboidrati": 75.1,
+        "kcal": 353.0,
+        "zuccheri": 2.5
+    },
+    {
+        "nome": "Mais in scatola, scolato",
+        "proteine": 3.4,
+        "grassi": 1.3,
+        "carboidrati": 19.5,
+        "kcal": 98.0,
+        "zuccheri": 4.3
+    },
+    {
+        "nome": "Mais, amido",
+        "proteine": 0.3,
+        "grassi": 0.0,
+        "carboidrati": 86.8,
+        "kcal": 327.0,
+        "zuccheri": 2.5
+    },
+    {
+        "nome": "Miglio",
+        "proteine": 11.8,
+        "grassi": 3.9,
+        "carboidrati": 72.9,
+        "kcal": 356.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Miglio decorticato",
+        "proteine": 11.0,
+        "grassi": 4.2,
+        "carboidrati": 74.1,
+        "kcal": 360.0,
+        "zuccheri": 4.9
+    },
+    {
+        "nome": "Muesli",
+        "proteine": 9.7,
+        "grassi": 6.0,
+        "carboidrati": 72.2,
+        "kcal": 364.0,
+        "zuccheri": 26.2
+    },
+    {
+        "nome": "Orzo perlato",
+        "proteine": 10.4,
+        "grassi": 1.4,
+        "carboidrati": 70.5,
+        "kcal": 319.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pane al malto",
+        "proteine": 8.3,
+        "grassi": 2.4,
+        "carboidrati": 56.6,
+        "kcal": 267.0,
+        "zuccheri": 26.1
+    },
+    {
+        "nome": "Pane azzimo",
+        "proteine": 10.7,
+        "grassi": 0.8,
+        "carboidrati": 87.1,
+        "kcal": 377.0,
+        "zuccheri": 1.9
+    },
+    {
+        "nome": "Pane di segale",
+        "proteine": 8.3,
+        "grassi": 1.7,
+        "carboidrati": 45.4,
+        "kcal": 219.0,
+        "zuccheri": 1.8
+    },
+    {
+        "nome": "Pane di tipo 0",
+        "proteine": 8.1,
+        "grassi": 0.5,
+        "carboidrati": 63.5,
+        "kcal": 275.0,
+        "zuccheri": 2.0
+    },
+    {
+        "nome": "Pane di tipo 00",
+        "proteine": 8.6,
+        "grassi": 0.4,
+        "carboidrati": 66.9,
+        "kcal": 289.0,
+        "zuccheri": 1.9
+    },
+    {
+        "nome": "Pane di tipo 1",
+        "proteine": 8.9,
+        "grassi": 0.6,
+        "carboidrati": 59.7,
+        "kcal": 265.0,
+        "zuccheri": 2.2
+    },
+    {
+        "nome": "Pane di tipo integrale",
+        "proteine": 7.5,
+        "grassi": 1.3,
+        "carboidrati": 48.5,
+        "kcal": 224.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pane formato rosetta",
+        "proteine": 9.0,
+        "grassi": 1.9,
+        "carboidrati": 57.6,
+        "kcal": 269.0,
+        "zuccheri": 7.5
+    },
+    {
+        "nome": "Pangrattato",
+        "proteine": 10.1,
+        "grassi": 2.1,
+        "carboidrati": 77.8,
+        "kcal": 351.0,
+        "zuccheri": 5.0
+    },
+    {
+        "nome": "Panini al latte",
+        "proteine": 9.0,
+        "grassi": 8.7,
+        "carboidrati": 48.2,
+        "kcal": 295.0,
+        "zuccheri": 2.7
+    },
+    {
+        "nome": "Panini all'olio",
+        "proteine": 7.7,
+        "grassi": 5.8,
+        "carboidrati": 57.5,
+        "kcal": 299.0,
+        "zuccheri": 4.0
+    },
+    {
+        "nome": "Pasta Integrale (Barilla)",
+        "proteine": 12.5,
+        "grassi": 2.0,
+        "carboidrati": 67.2,
+        "kcal": 337.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Pasta all'uovo secca cruda",
+        "proteine": 13.0,
+        "grassi": 2.4,
+        "carboidrati": 77.9,
+        "kcal": 366.0,
+        "zuccheri": 2.0
+    },
+    {
+        "nome": "Pasta all'uovo secca, cotta no sale",
+        "proteine": 4.3,
+        "grassi": 0.8,
+        "carboidrati": 25.9,
+        "kcal": 122.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "Pasta di semola cruda",
+        "proteine": 10.9,
+        "grassi": 1.4,
+        "carboidrati": 79.1,
+        "kcal": 353.0,
+        "zuccheri": 4.2
+    },
+    {
+        "nome": "Pasta di semola, cotta no sale",
+        "proteine": 4.7,
+        "grassi": 0.5,
+        "carboidrati": 30.3,
+        "kcal": 137.0,
+        "zuccheri": 1.3
+    },
+    {
+        "nome": "Pasta ripiena torelloni ricotta",
+        "proteine": 12.7,
+        "grassi": 14.2,
+        "carboidrati": 30.9,
+        "kcal": 302.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pasta sfoglia",
+        "proteine": 5.5,
+        "grassi": 23.4,
+        "carboidrati": 36.1,
+        "kcal": 377.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "pasta pizza buitoni",
+        "proteine": 7.3,
+        "grassi": 6.7,
+        "carboidrati": 45.6,
+        "kcal": 272.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pizza bianca",
+        "proteine": 7.9,
+        "grassi": 5.9,
+        "carboidrati": 57.9,
+        "kcal": 302.0,
+        "zuccheri": 2.1
+    },
+    {
+        "nome": "Pizza con pomodoro",
+        "proteine": 7.1,
+        "grassi": 6.6,
+        "carboidrati": 41.4,
+        "kcal": 243.0,
+        "zuccheri": 2.9
+    },
+    {
+        "nome": "Pizza con pomodoro e mozzarella",
+        "proteine": 5.6,
+        "grassi": 5.6,
+        "carboidrati": 52.9,
+        "kcal": 271.0,
+        "zuccheri": 12.9
+    },
+    {
+        "nome": "Riso brillato crudo",
+        "proteine": 6.7,
+        "grassi": 0.4,
+        "carboidrati": 80.4,
+        "kcal": 332.0,
+        "zuccheri": 0.2
+    },
+    {
+        "nome": "Riso brillato, cotto no sale",
+        "proteine": 2.0,
+        "grassi": 0.1,
+        "carboidrati": 24.2,
+        "kcal": 100.0,
+        "zuccheri": 0.1
+    },
+    {
+        "nome": "Riso integrale crudo",
+        "proteine": 7.5,
+        "grassi": 1.9,
+        "carboidrati": 77.4,
+        "kcal": 337.0,
+        "zuccheri": 1.2
+    },
+    {
+        "nome": "Riso integrale, cotto no sale",
+        "proteine": 2.5,
+        "grassi": 0.6,
+        "carboidrati": 25.5,
+        "kcal": 111.0,
+        "zuccheri": 0.4
+    },
+    {
+        "nome": "Riso parboiled crudo",
+        "proteine": 7.4,
+        "grassi": 0.3,
+        "carboidrati": 81.3,
+        "kcal": 337.0,
+        "zuccheri": 0.3
+    },
+    {
+        "nome": "Riso parboiled, cotto no sale",
+        "proteine": 2.1,
+        "grassi": 0.1,
+        "carboidrati": 23.3,
+        "kcal": 97.0,
+        "zuccheri": 0.2
+    },
+    {
+        "nome": "Riso soffiato da prima colazione",
+        "proteine": 6.0,
+        "grassi": 1.0,
+        "carboidrati": 85.0,
+        "kcal": 352.0,
+        "zuccheri": 9.0
+    },
+    {
+        "nome": "Semola",
+        "proteine": 11.5,
+        "grassi": 0.5,
+        "carboidrati": 76.9,
+        "kcal": 339.0,
+        "zuccheri": 1.9
+    },
+    {
+        "nome": "Tapioca",
+        "proteine": 0.6,
+        "grassi": 0.2,
+        "carboidrati": 94.9,
+        "kcal": 360.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tortellini, freschi",
+        "proteine": 12.2,
+        "grassi": 7.1,
+        "carboidrati": 49.9,
+        "kcal": 300.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Toast (40gr pane;30 gr pros;10gr fontina = 100)",
+        "proteine": 13.93,
+        "grassi": 3.81,
+        "carboidrati": 26.84,
+        "kcal": 190.7,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Ceci in scatola, scolati",
+        "proteine": 6.7,
+        "grassi": 2.3,
+        "carboidrati": 13.9,
+        "kcal": 100.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Ceci secchi crudi",
+        "proteine": 20.9,
+        "grassi": 6.3,
+        "carboidrati": 46.9,
+        "kcal": 316.0,
+        "zuccheri": 3.7
+    },
+    {
+        "nome": "Ceci secchi, cotti no sale",
+        "proteine": 7.0,
+        "grassi": 2.4,
+        "carboidrati": 18.9,
+        "kcal": 120.0,
+        "zuccheri": 1.3
+    },
+    {
+        "nome": "Fagioli crudi",
+        "proteine": 23.6,
+        "grassi": 2.0,
+        "carboidrati": 47.5,
+        "kcal": 291.0,
+        "zuccheri": 3.5
+    },
+    {
+        "nome": "Fagioli Borlotti freschi crudi",
+        "proteine": 10.2,
+        "grassi": 0.8,
+        "carboidrati": 22.7,
+        "kcal": 133.0,
+        "zuccheri": 1.2
+    },
+    {
+        "nome": "Fagioli Borlotti freschi, cotti no sale",
+        "proteine": 5.7,
+        "grassi": 0.5,
+        "carboidrati": 11.2,
+        "kcal": 69.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Fagioli Borlotti in scatola, scolati",
+        "proteine": 6.7,
+        "grassi": 0.5,
+        "carboidrati": 15.9,
+        "kcal": 91.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Fagioli Borlotti secchi crudi",
+        "proteine": 20.2,
+        "grassi": 2.0,
+        "carboidrati": 47.7,
+        "kcal": 278.0,
+        "zuccheri": 3.5
+    },
+    {
+        "nome": "Fagioli Borlotti secchi, cotti no sale",
+        "proteine": 6.9,
+        "grassi": 0.4,
+        "carboidrati": 16.4,
+        "kcal": 93.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Fagioli -Cannellini in scatola, scolati",
+        "proteine": 6.0,
+        "grassi": 0.6,
+        "carboidrati": 12.5,
+        "kcal": 76.0,
+        "zuccheri": 0.3
+    },
+    {
+        "nome": "Fagioli -Cannellini secchi crudi",
+        "proteine": 23.4,
+        "grassi": 1.6,
+        "carboidrati": 45.5,
+        "kcal": 279.0,
+        "zuccheri": 2.9
+    },
+    {
+        "nome": "Fagioli -Cannellini secchi, cotti no sale",
+        "proteine": 8.0,
+        "grassi": 0.4,
+        "carboidrati": 14.9,
+        "kcal": 91.0,
+        "zuccheri": 0.6
+    },
+    {
+        "nome": "Fagioli, cotti no sale",
+        "proteine": 7.9,
+        "grassi": 0.7,
+        "carboidrati": 17.0,
+        "kcal": 102.0,
+        "zuccheri": 1.2
+    },
+    {
+        "nome": "Fagioli, dall'occhio secchi",
+        "proteine": 22.4,
+        "grassi": 1.4,
+        "carboidrati": 50.9,
+        "kcal": 293.0,
+        "zuccheri": 4.0
+    },
+    {
+        "nome": "Fagiolini freschi crudi",
+        "proteine": 2.1,
+        "grassi": 0.1,
+        "carboidrati": 2.4,
+        "kcal": 18.0,
+        "zuccheri": 2.4
+    },
+    {
+        "nome": "Fagiolini surgelati, cotti no sale",
+        "proteine": 1.7,
+        "grassi": 0.1,
+        "carboidrati": 4.6,
+        "kcal": 25.0,
+        "zuccheri": 2.1
+    },
+    {
+        "nome": "Fave fresche crude",
+        "proteine": 5.2,
+        "grassi": 0.4,
+        "carboidrati": 4.5,
+        "kcal": 41.0,
+        "zuccheri": 2.2
+    },
+    {
+        "nome": "Fave fresche, cotte no sale",
+        "proteine": 6.1,
+        "grassi": 0.5,
+        "carboidrati": 5.3,
+        "kcal": 49.0,
+        "zuccheri": 2.6
+    },
+    {
+        "nome": "Fave secche crude",
+        "proteine": 21.3,
+        "grassi": 3.0,
+        "carboidrati": 29.7,
+        "kcal": 224.0,
+        "zuccheri": 14.5
+    },
+    {
+        "nome": "Fave secche sgusciate crude",
+        "proteine": 27.2,
+        "grassi": 3.0,
+        "carboidrati": 54.8,
+        "kcal": 341.0,
+        "zuccheri": 4.9
+    },
+    {
+        "nome": "Lenticchie in scatola, scolate",
+        "proteine": 5.0,
+        "grassi": 0.5,
+        "carboidrati": 15.4,
+        "kcal": 82.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "Lenticchie secche crude",
+        "proteine": 22.7,
+        "grassi": 1.0,
+        "carboidrati": 51.1,
+        "kcal": 291.0,
+        "zuccheri": 1.8
+    },
+    {
+        "nome": "Lenticchie secche, cotte no sale",
+        "proteine": 6.9,
+        "grassi": 0.4,
+        "carboidrati": 16.3,
+        "kcal": 92.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "Lupini, ammollati",
+        "proteine": 16.4,
+        "grassi": 2.4,
+        "carboidrati": 7.1,
+        "kcal": 114.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Piselli freschi crudi",
+        "proteine": 5.5,
+        "grassi": 0.6,
+        "carboidrati": 6.5,
+        "kcal": 52.0,
+        "zuccheri": 4.0
+    },
+    {
+        "nome": "Piselli freschi, cotti no sale",
+        "proteine": 9.7,
+        "grassi": 1.0,
+        "carboidrati": 11.5,
+        "kcal": 91.0,
+        "zuccheri": 7.0
+    },
+    {
+        "nome": "Piselli in scatola, scolati",
+        "proteine": 5.3,
+        "grassi": 0.6,
+        "carboidrati": 11.1,
+        "kcal": 68.0,
+        "zuccheri": 3.9
+    },
+    {
+        "nome": "Piselli secchi",
+        "proteine": 21.7,
+        "grassi": 2.0,
+        "carboidrati": 48.2,
+        "kcal": 286.0,
+        "zuccheri": 2.9
+    },
+    {
+        "nome": "Piselli surgelati",
+        "proteine": 5.4,
+        "grassi": 0.3,
+        "carboidrati": 6.4,
+        "kcal": 48.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Soia secca",
+        "proteine": 36.9,
+        "grassi": 19.1,
+        "carboidrati": 23.2,
+        "kcal": 407.0,
+        "zuccheri": 11.0
+    },
+    {
+        "nome": "Soia, isolato proteico",
+        "proteine": 86.5,
+        "grassi": 0.7,
+        "carboidrati": 4.5,
+        "kcal": 369.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Aglio",
+        "proteine": 0.9,
+        "grassi": 0.6,
+        "carboidrati": 8.4,
+        "kcal": 41.0,
+        "zuccheri": 8.4
+    },
+    {
+        "nome": "Agretti",
+        "proteine": 1.8,
+        "grassi": 0.2,
+        "carboidrati": 2.2,
+        "kcal": 17.0,
+        "zuccheri": 2.2
+    },
+    {
+        "nome": "Agretti, bolliti, no sale",
+        "proteine": 4.8,
+        "grassi": 0.5,
+        "carboidrati": 5.6,
+        "kcal": 45.0,
+        "zuccheri": 5.6
+    },
+    {
+        "nome": "Asparagi di bosco",
+        "proteine": 4.6,
+        "grassi": 0.2,
+        "carboidrati": 4.0,
+        "kcal": 35.0,
+        "zuccheri": 4.0
+    },
+    {
+        "nome": "Asparagi di campo crudi",
+        "proteine": 3.6,
+        "grassi": 0.2,
+        "carboidrati": 3.3,
+        "kcal": 29.0,
+        "zuccheri": 3.3
+    },
+    {
+        "nome": "Asparagi di campo bolliti no sale",
+        "proteine": 5.1,
+        "grassi": 0.3,
+        "carboidrati": 4.7,
+        "kcal": 41.0,
+        "zuccheri": 4.7
+    },
+    {
+        "nome": "Asparagi di serra",
+        "proteine": 3.0,
+        "grassi": 0.1,
+        "carboidrati": 3.0,
+        "kcal": 24.0,
+        "zuccheri": 3.0
+    },
+    {
+        "nome": "Barbabietole rosse crude",
+        "proteine": 1.1,
+        "grassi": 0.0,
+        "carboidrati": 4.0,
+        "kcal": 19.0,
+        "zuccheri": 4.0
+    },
+    {
+        "nome": "Basilico",
+        "proteine": 3.1,
+        "grassi": 0.8,
+        "carboidrati": 5.1,
+        "kcal": 39.0,
+        "zuccheri": 5.1
+    },
+    {
+        "nome": "Bieta cruda",
+        "proteine": 1.3,
+        "grassi": 0.1,
+        "carboidrati": 2.8,
+        "kcal": 17.0,
+        "zuccheri": 2.8
+    },
+    {
+        "nome": "Bieta bollita no sale",
+        "proteine": 2.8,
+        "grassi": 0.2,
+        "carboidrati": 6.0,
+        "kcal": 36.0,
+        "zuccheri": 6.0
+    },
+    {
+        "nome": "Broccoletti di rapa crudi",
+        "proteine": 2.9,
+        "grassi": 0.3,
+        "carboidrati": 2.0,
+        "kcal": 22.0,
+        "zuccheri": 2.0
+    },
+    {
+        "nome": "Broccoletti di rapa bolliti no sale",
+        "proteine": 4.2,
+        "grassi": 0.4,
+        "carboidrati": 3.1,
+        "kcal": 32.0,
+        "zuccheri": 3.1
+    },
+    {
+        "nome": "Broccolo a testa crudo",
+        "proteine": 3.0,
+        "grassi": 0.4,
+        "carboidrati": 3.1,
+        "kcal": 27.0,
+        "zuccheri": 3.1
+    },
+    {
+        "nome": "Broccolo a testa bollito no sale",
+        "proteine": 4.3,
+        "grassi": 0.5,
+        "carboidrati": 4.5,
+        "kcal": 39.0,
+        "zuccheri": 4.5
+    },
+    {
+        "nome": "Carciofi crudi",
+        "proteine": 2.7,
+        "grassi": 0.2,
+        "carboidrati": 2.5,
+        "kcal": 22.0,
+        "zuccheri": 1.9
+    },
+    {
+        "nome": "Carciofi bolliti no sale",
+        "proteine": 10.1,
+        "grassi": 0.7,
+        "carboidrati": 9.3,
+        "kcal": 82.0,
+        "zuccheri": 7.1
+    },
+    {
+        "nome": "Carciofi, surgelati crudi",
+        "proteine": 2.7,
+        "grassi": 0.2,
+        "carboidrati": 2.5,
+        "kcal": 22.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Cardi crudi",
+        "proteine": 0.6,
+        "grassi": 0.1,
+        "carboidrati": 1.7,
+        "kcal": 10.0,
+        "zuccheri": 1.5
+    },
+    {
+        "nome": "Cardi bolliti no sale",
+        "proteine": 4.5,
+        "grassi": 0.7,
+        "carboidrati": 12.9,
+        "kcal": 73.0,
+        "zuccheri": 11.4
+    },
+    {
+        "nome": "Carote crude",
+        "proteine": 1.1,
+        "grassi": 0.2,
+        "carboidrati": 7.6,
+        "kcal": 35.0,
+        "zuccheri": 7.6
+    },
+    {
+        "nome": "Carote bollite no sale",
+        "proteine": 2.6,
+        "grassi": 0.5,
+        "carboidrati": 18.3,
+        "kcal": 84.0,
+        "zuccheri": 18.3
+    },
+    {
+        "nome": "Cavolfiore crudo",
+        "proteine": 3.2,
+        "grassi": 0.2,
+        "carboidrati": 2.7,
+        "kcal": 25.0,
+        "zuccheri": 2.4
+    },
+    {
+        "nome": "Cavolfiore bollito no sale",
+        "proteine": 5.3,
+        "grassi": 0.3,
+        "carboidrati": 4.4,
+        "kcal": 40.0,
+        "zuccheri": 3.9
+    },
+    {
+        "nome": "Cavoli di bruxelles crudi",
+        "proteine": 4.2,
+        "grassi": 0.5,
+        "carboidrati": 4.2,
+        "kcal": 37.0,
+        "zuccheri": 3.3
+    },
+    {
+        "nome": "Cavoli di bruxelles bolliti no sale",
+        "proteine": 6.7,
+        "grassi": 0.8,
+        "carboidrati": 6.6,
+        "kcal": 59.0,
+        "zuccheri": 5.3
+    },
+    {
+        "nome": "Cavolo broccolo verde ramoso crudo",
+        "proteine": 3.4,
+        "grassi": 0.3,
+        "carboidrati": 2.0,
+        "kcal": 24.0,
+        "zuccheri": 2.0
+    },
+    {
+        "nome": "Cavolo broccolo verde ramoso bollito no sale",
+        "proteine": 15.0,
+        "grassi": 1.3,
+        "carboidrati": 8.9,
+        "kcal": 105.0,
+        "zuccheri": 8.9
+    },
+    {
+        "nome": "Cavolo cappuccio rosso",
+        "proteine": 1.9,
+        "grassi": 0.2,
+        "carboidrati": 2.7,
+        "kcal": 20.0,
+        "zuccheri": 2.7
+    },
+    {
+        "nome": "Cavolo cappuccio verde crudo",
+        "proteine": 2.1,
+        "grassi": 0.1,
+        "carboidrati": 2.5,
+        "kcal": 19.0,
+        "zuccheri": 2.5
+    },
+    {
+        "nome": "Cavolo cappuccio verde bollito no sale",
+        "proteine": 2.3,
+        "grassi": 0.1,
+        "carboidrati": 2.8,
+        "kcal": 21.0,
+        "zuccheri": 2.8
+    },
+    {
+        "nome": "Cavolo verza crudo",
+        "proteine": 2.0,
+        "grassi": 0.1,
+        "carboidrati": 0.0,
+        "kcal": 0.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Cavolo verza bollito no sale",
+        "proteine": 2.1,
+        "grassi": 0.2,
+        "carboidrati": 0.0,
+        "kcal": 0.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Cetrioli",
+        "proteine": 0.7,
+        "grassi": 0.5,
+        "carboidrati": 1.8,
+        "kcal": 14.0,
+        "zuccheri": 1.8
+    },
+    {
+        "nome": "Cicoria da taglio, coltivata",
+        "proteine": 1.2,
+        "grassi": 0.1,
+        "carboidrati": 1.7,
+        "kcal": 12.0,
+        "zuccheri": 1.7
+    },
+    {
+        "nome": "Cicoria di campo cruda",
+        "proteine": 1.4,
+        "grassi": 0.2,
+        "carboidrati": 0.7,
+        "kcal": 10.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "Cicoria di campo bollita no sale",
+        "proteine": 1.4,
+        "grassi": 0.2,
+        "carboidrati": 0.7,
+        "kcal": 10.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "Cicoria witloof o indivia belga",
+        "proteine": 0.7,
+        "grassi": 0.3,
+        "carboidrati": 3.2,
+        "kcal": 18.0,
+        "zuccheri": 3.2
+    },
+    {
+        "nome": "Cipolle crude",
+        "proteine": 1.0,
+        "grassi": 0.1,
+        "carboidrati": 5.7,
+        "kcal": 26.0,
+        "zuccheri": 5.7
+    },
+    {
+        "nome": "Cipolle bollite no sale",
+        "proteine": 4.1,
+        "grassi": 0.4,
+        "carboidrati": 23.6,
+        "kcal": 109.0,
+        "zuccheri": 23.6
+    },
+    {
+        "nome": "Cipolline crude",
+        "proteine": 1.3,
+        "grassi": 0.1,
+        "carboidrati": 8.5,
+        "kcal": 38.0,
+        "zuccheri": 8.5
+    },
+    {
+        "nome": "Cipolline bollite no sale",
+        "proteine": 3.4,
+        "grassi": 0.3,
+        "carboidrati": 22.6,
+        "kcal": 101.0,
+        "zuccheri": 22.6
+    },
+    {
+        "nome": "Finocchi crudi",
+        "proteine": 1.2,
+        "grassi": 0.0,
+        "carboidrati": 1.0,
+        "kcal": 9.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Finocchi bollitino sale",
+        "proteine": 3.5,
+        "grassi": 0.0,
+        "carboidrati": 2.9,
+        "kcal": 25.0,
+        "zuccheri": 2.9
+    },
+    {
+        "nome": "Fiori di zucca",
+        "proteine": 1.7,
+        "grassi": 0.4,
+        "carboidrati": 0.5,
+        "kcal": 12.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Foglie di rapa",
+        "proteine": 2.6,
+        "grassi": 0.1,
+        "carboidrati": 2.8,
+        "kcal": 22.0,
+        "zuccheri": 2.8
+    },
+    {
+        "nome": "Funghi coltivati pleurotes crudi",
+        "proteine": 2.2,
+        "grassi": 0.3,
+        "carboidrati": 4.5,
+        "kcal": 28.0,
+        "zuccheri": 4.5
+    },
+    {
+        "nome": "Funghi coltivati pleurotes cotti",
+        "proteine": 4.7,
+        "grassi": 0.4,
+        "carboidrati": 9.6,
+        "kcal": 58.0,
+        "zuccheri": 9.6
+    },
+    {
+        "nome": "Funghi coltivati prataioli crudi",
+        "proteine": 3.7,
+        "grassi": 0.2,
+        "carboidrati": 0.8,
+        "kcal": 20.0,
+        "zuccheri": 0.8
+    },
+    {
+        "nome": "Funghi coltivati prataioli cotti",
+        "proteine": 4.8,
+        "grassi": 0.3,
+        "carboidrati": 1.5,
+        "kcal": 27.0,
+        "zuccheri": 1.5
+    },
+    {
+        "nome": "Funghi ovuli",
+        "proteine": 2.0,
+        "grassi": 0.3,
+        "carboidrati": 0.0,
+        "kcal": 0.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Funghi porcini",
+        "proteine": 3.9,
+        "grassi": 0.7,
+        "carboidrati": 1.0,
+        "kcal": 26.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Germogli di soia",
+        "proteine": 6.2,
+        "grassi": 1.4,
+        "carboidrati": 3.0,
+        "kcal": 49.0,
+        "zuccheri": 3.0
+    },
+    {
+        "nome": "Indivia",
+        "proteine": 0.9,
+        "grassi": 0.3,
+        "carboidrati": 2.7,
+        "kcal": 16.0,
+        "zuccheri": 2.7
+    },
+    {
+        "nome": "Lattuga",
+        "proteine": 1.8,
+        "grassi": 0.4,
+        "carboidrati": 2.2,
+        "kcal": 19.0,
+        "zuccheri": 2.2
+    },
+    {
+        "nome": "Lattuga a cappuccio",
+        "proteine": 1.5,
+        "grassi": 0.2,
+        "carboidrati": 3.0,
+        "kcal": 19.0,
+        "zuccheri": 3.0
+    },
+    {
+        "nome": "Lattuga da taglio",
+        "proteine": 1.1,
+        "grassi": 0.1,
+        "carboidrati": 2.2,
+        "kcal": 14.0,
+        "zuccheri": 2.2
+    },
+    {
+        "nome": "Melanzane crude",
+        "proteine": 1.1,
+        "grassi": 0.4,
+        "carboidrati": 2.6,
+        "kcal": 18.0,
+        "zuccheri": 2.6
+    },
+    {
+        "nome": "Melanzane cotte",
+        "proteine": 3.8,
+        "grassi": 1.4,
+        "carboidrati": 3.4,
+        "kcal": 41.0,
+        "zuccheri": 3.4
+    },
+    {
+        "nome": "Menta",
+        "proteine": 3.8,
+        "grassi": 0.7,
+        "carboidrati": 5.3,
+        "kcal": 41.0,
+        "zuccheri": 5.3
+    },
+    {
+        "nome": "Patate crude",
+        "proteine": 2.1,
+        "grassi": 1.0,
+        "carboidrati": 17.9,
+        "kcal": 85.0,
+        "zuccheri": 0.4
+    },
+    {
+        "nome": "Patate novelle crude",
+        "proteine": 2.0,
+        "grassi": 0.3,
+        "carboidrati": 15.7,
+        "kcal": 70.0,
+        "zuccheri": 0.2
+    },
+    {
+        "nome": "Patate, cotte [arrosto]",
+        "proteine": 2.9,
+        "grassi": 4.5,
+        "carboidrati": 25.7,
+        "kcal": 148.0,
+        "zuccheri": 0.6
+    },
+    {
+        "nome": "Patatemicroonde",
+        "proteine": 2.1,
+        "grassi": 1.0,
+        "carboidrati": 17.9,
+        "kcal": 85.0,
+        "zuccheri": 0.4
+    },
+    {
+        "nome": "Patate bollite con buccia",
+        "proteine": 2.1,
+        "grassi": 1.0,
+        "carboidrati": 17.9,
+        "kcal": 85.0,
+        "zuccheri": 0.4
+    },
+    {
+        "nome": "Patate bollite senza buccia",
+        "proteine": 1.8,
+        "grassi": 0.1,
+        "carboidrati": 16.9,
+        "kcal": 71.0,
+        "zuccheri": 0.4
+    },
+    {
+        "nome": "Patate, cotte, fritte",
+        "proteine": 3.9,
+        "grassi": 6.7,
+        "carboidrati": 29.9,
+        "kcal": 188.0,
+        "zuccheri": 0.6
+    },
+    {
+        "nome": "Patatine fritte, in busta",
+        "proteine": 5.4,
+        "grassi": 29.6,
+        "carboidrati": 58.5,
+        "kcal": 507.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Pepe nero",
+        "proteine": 10.9,
+        "grassi": 3.3,
+        "carboidrati": 0.0,
+        "kcal": 0.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Peperoncini piccanti",
+        "proteine": 1.8,
+        "grassi": 0.5,
+        "carboidrati": 3.8,
+        "kcal": 26.0,
+        "zuccheri": 1.5
+    },
+    {
+        "nome": "Peperoni crudi",
+        "proteine": 0.9,
+        "grassi": 0.3,
+        "carboidrati": 4.2,
+        "kcal": 22.0,
+        "zuccheri": 4.2
+    },
+    {
+        "nome": "Peperoni cotti",
+        "proteine": 5.2,
+        "grassi": 1.5,
+        "carboidrati": 24.3,
+        "kcal": 125.0,
+        "zuccheri": 24.3
+    },
+    {
+        "nome": "Peperoni, gialli crudi",
+        "proteine": 0.9,
+        "grassi": 0.2,
+        "carboidrati": 6.8,
+        "kcal": 31.0,
+        "zuccheri": 6.8
+    },
+    {
+        "nome": "Peperoni, rossi e gialli",
+        "proteine": 0.9,
+        "grassi": 0.3,
+        "carboidrati": 6.7,
+        "kcal": 31.0,
+        "zuccheri": 6.7
+    },
+    {
+        "nome": "Peperoni, verdi",
+        "proteine": 0.7,
+        "grassi": 0.2,
+        "carboidrati": 6.0,
+        "kcal": 27.0,
+        "zuccheri": 6.0
+    },
+    {
+        "nome": "Pomodori San Marzano",
+        "proteine": 1.1,
+        "grassi": 0.2,
+        "carboidrati": 3.0,
+        "kcal": 17.0,
+        "zuccheri": 3.0
+    },
+    {
+        "nome": "Pomodori da insalata",
+        "proteine": 1.2,
+        "grassi": 0.2,
+        "carboidrati": 2.8,
+        "kcal": 17.0,
+        "zuccheri": 2.8
+    },
+    {
+        "nome": "Pomodori maturi",
+        "proteine": 1.0,
+        "grassi": 0.2,
+        "carboidrati": 3.5,
+        "kcal": 19.0,
+        "zuccheri": 3.5
+    },
+    {
+        "nome": "Pomodori, conserva",
+        "proteine": 3.9,
+        "grassi": 0.4,
+        "carboidrati": 20.4,
+        "kcal": 96.0,
+        "zuccheri": 20.4
+    },
+    {
+        "nome": "Pomodori, passata",
+        "proteine": 1.3,
+        "grassi": 0.2,
+        "carboidrati": 3.0,
+        "kcal": 18.0,
+        "zuccheri": 3.0
+    },
+    {
+        "nome": "Pomodori, pelati in scatola",
+        "proteine": 1.2,
+        "grassi": 0.5,
+        "carboidrati": 3.0,
+        "kcal": 21.0,
+        "zuccheri": 3.0
+    },
+    {
+        "nome": "Pomodori, succo",
+        "proteine": 0.8,
+        "grassi": 0.0,
+        "carboidrati": 3.0,
+        "kcal": 0.0,
+        "zuccheri": 3.0
+    },
+    {
+        "nome": "Porri crudi",
+        "proteine": 2.1,
+        "grassi": 0.1,
+        "carboidrati": 5.2,
+        "kcal": 29.0,
+        "zuccheri": 5.2
+    },
+    {
+        "nome": "Porri bolliti no sale",
+        "proteine": 2.4,
+        "grassi": 0.1,
+        "carboidrati": 5.9,
+        "kcal": 33.0,
+        "zuccheri": 5.9
+    },
+    {
+        "nome": "Prezzemolo",
+        "proteine": 3.7,
+        "grassi": 0.6,
+        "carboidrati": 0.0,
+        "kcal": 20.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Radicchio rosso",
+        "proteine": 1.4,
+        "grassi": 0.1,
+        "carboidrati": 1.6,
+        "kcal": 13.0,
+        "zuccheri": 1.6
+    },
+    {
+        "nome": "Radicchio verde",
+        "proteine": 1.9,
+        "grassi": 0.5,
+        "carboidrati": 0.5,
+        "kcal": 14.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Rape crude",
+        "proteine": 1.0,
+        "grassi": 0.0,
+        "carboidrati": 3.8,
+        "kcal": 18.0,
+        "zuccheri": 3.8
+    },
+    {
+        "nome": "Rape bollite no sale",
+        "proteine": 1.9,
+        "grassi": 0.0,
+        "carboidrati": 7.5,
+        "kcal": 36.0,
+        "zuccheri": 7.5
+    },
+    {
+        "nome": "Ravanelli",
+        "proteine": 0.8,
+        "grassi": 0.1,
+        "carboidrati": 1.8,
+        "kcal": 11.0,
+        "zuccheri": 1.8
+    },
+    {
+        "nome": "Rosmarino",
+        "proteine": 1.4,
+        "grassi": 4.4,
+        "carboidrati": 13.5,
+        "kcal": 96.0,
+        "zuccheri": 13.5
+    },
+    {
+        "nome": "Rughetta o rucola",
+        "proteine": 2.6,
+        "grassi": 0.3,
+        "carboidrati": 3.9,
+        "kcal": 28.0,
+        "zuccheri": 3.9
+    },
+    {
+        "nome": "Salvia",
+        "proteine": 3.9,
+        "grassi": 4.6,
+        "carboidrati": 15.6,
+        "kcal": 116.0,
+        "zuccheri": 15.6
+    },
+    {
+        "nome": "Sedano crudo",
+        "proteine": 2.3,
+        "grassi": 0.2,
+        "carboidrati": 2.4,
+        "kcal": 20.0,
+        "zuccheri": 2.2
+    },
+    {
+        "nome": "Sedano rapa",
+        "proteine": 1.9,
+        "grassi": 0.1,
+        "carboidrati": 3.8,
+        "kcal": 23.0,
+        "zuccheri": 3.8
+    },
+    {
+        "nome": "Spinaci crudi",
+        "proteine": 3.4,
+        "grassi": 0.7,
+        "carboidrati": 2.9,
+        "kcal": 31.0,
+        "zuccheri": 0.4
+    },
+    {
+        "nome": "Spinaci bolliti no sale",
+        "proteine": 6.3,
+        "grassi": 1.3,
+        "carboidrati": 7.0,
+        "kcal": 63.0,
+        "zuccheri": 0.9
+    },
+    {
+        "nome": "Spinaci, surgelati",
+        "proteine": 2.8,
+        "grassi": 0.0,
+        "carboidrati": 3.0,
+        "kcal": 23.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tarassaco o dente di leone",
+        "proteine": 3.1,
+        "grassi": 1.1,
+        "carboidrati": 3.7,
+        "kcal": 36.0,
+        "zuccheri": 3.7
+    },
+    {
+        "nome": "Tartufo nero",
+        "proteine": 6.0,
+        "grassi": 0.5,
+        "carboidrati": 0.7,
+        "kcal": 31.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "Vegetali misti, surgelati: piselli, mais, carote, fagioli",
+        "proteine": 3.3,
+        "grassi": 0.3,
+        "carboidrati": 13.7,
+        "kcal": 67.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Zucca gialla",
+        "proteine": 1.1,
+        "grassi": 0.1,
+        "carboidrati": 3.5,
+        "kcal": 18.0,
+        "zuccheri": 2.5
+    },
+    {
+        "nome": "Zucchine crude",
+        "proteine": 1.3,
+        "grassi": 0.1,
+        "carboidrati": 1.4,
+        "kcal": 11.0,
+        "zuccheri": 1.3
+    },
+    {
+        "nome": "Zucchine, chiare crude",
+        "proteine": 1.3,
+        "grassi": 0.1,
+        "carboidrati": 1.4,
+        "kcal": 11.0,
+        "zuccheri": 1.3
+    },
+    {
+        "nome": "Zucchine bollite no sale",
+        "proteine": 3.2,
+        "grassi": 0.2,
+        "carboidrati": 3.4,
+        "kcal": 27.0,
+        "zuccheri": 3.2
+    },
+    {
+        "nome": "Zucchine, scure crude",
+        "proteine": 1.3,
+        "grassi": 0.1,
+        "carboidrati": 1.4,
+        "kcal": 11.0,
+        "zuccheri": 1.3
+    },
+    {
+        "nome": "Semi di Lino",
+        "proteine": 18.29,
+        "grassi": 42.16,
+        "carboidrati": 28.88,
+        "kcal": 534.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Albicocche",
+        "proteine": 0.4,
+        "grassi": 0.1,
+        "carboidrati": 6.8,
+        "kcal": 28.0,
+        "zuccheri": 6.8
+    },
+    {
+        "nome": "Albicocche, disidr",
+        "proteine": 5.6,
+        "grassi": 1.0,
+        "carboidrati": 84.6,
+        "kcal": 349.0,
+        "zuccheri": 84.6
+    },
+    {
+        "nome": "Albicocche, sciroppate",
+        "proteine": 0.4,
+        "grassi": 0.1,
+        "carboidrati": 16.1,
+        "kcal": 63.0,
+        "zuccheri": 16.1
+    },
+    {
+        "nome": "Albicocche, secche",
+        "proteine": 5.0,
+        "grassi": 0.5,
+        "carboidrati": 66.5,
+        "kcal": 274.0,
+        "zuccheri": 66.5
+    },
+    {
+        "nome": "Amarene",
+        "proteine": 0.8,
+        "grassi": 0.0,
+        "carboidrati": 10.2,
+        "kcal": 42.0,
+        "zuccheri": 10.2
+    },
+    {
+        "nome": "Anacardi",
+        "proteine": 15.0,
+        "grassi": 46.0,
+        "carboidrati": 33.0,
+        "kcal": 598.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Ananas",
+        "proteine": 0.5,
+        "grassi": 0.0,
+        "carboidrati": 10.0,
+        "kcal": 40.0,
+        "zuccheri": 10.0
+    },
+    {
+        "nome": "Ananas, sciroppato",
+        "proteine": 0.5,
+        "grassi": 0.0,
+        "carboidrati": 16.6,
+        "kcal": 64.0,
+        "zuccheri": 16.6
+    },
+    {
+        "nome": "Anona",
+        "proteine": 1.8,
+        "grassi": 0.2,
+        "carboidrati": 15.8,
+        "kcal": 68.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Arachidi, tostate",
+        "proteine": 29.0,
+        "grassi": 50.0,
+        "carboidrati": 8.5,
+        "kcal": 598.0,
+        "zuccheri": 3.1
+    },
+    {
+        "nome": "Arance",
+        "proteine": 0.7,
+        "grassi": 0.2,
+        "carboidrati": 7.8,
+        "kcal": 34.0,
+        "zuccheri": 7.8
+    },
+    {
+        "nome": "Arance, succo",
+        "proteine": 0.5,
+        "grassi": 0.0,
+        "carboidrati": 8.2,
+        "kcal": 33.0,
+        "zuccheri": 8.2
+    },
+    {
+        "nome": "Avocado",
+        "proteine": 4.4,
+        "grassi": 23.0,
+        "carboidrati": 1.8,
+        "kcal": 231.0,
+        "zuccheri": 1.8
+    },
+    {
+        "nome": "Babaco",
+        "proteine": 0.7,
+        "grassi": 0.2,
+        "carboidrati": 4.5,
+        "kcal": 21.0,
+        "zuccheri": 4.5
+    },
+    {
+        "nome": "Banane",
+        "proteine": 1.2,
+        "grassi": 0.3,
+        "carboidrati": 15.4,
+        "kcal": 65.0,
+        "zuccheri": 12.8
+    },
+    {
+        "nome": "Carrube",
+        "proteine": 3.3,
+        "grassi": 0.7,
+        "carboidrati": 49.9,
+        "kcal": 207.0,
+        "zuccheri": 48.9
+    },
+    {
+        "nome": "Castagne",
+        "proteine": 2.9,
+        "grassi": 1.7,
+        "carboidrati": 36.7,
+        "kcal": 165.0,
+        "zuccheri": 8.9
+    },
+    {
+        "nome": "Castagne, arrostite",
+        "proteine": 3.7,
+        "grassi": 2.4,
+        "carboidrati": 41.8,
+        "kcal": 193.0,
+        "zuccheri": 10.7
+    },
+    {
+        "nome": "Castagne, bollite",
+        "proteine": 2.5,
+        "grassi": 1.3,
+        "carboidrati": 26.1,
+        "kcal": 120.0,
+        "zuccheri": 7.5
+    },
+    {
+        "nome": "Castagne, secche",
+        "proteine": 6.0,
+        "grassi": 3.4,
+        "carboidrati": 62.0,
+        "kcal": 287.0,
+        "zuccheri": 16.1
+    },
+    {
+        "nome": "Ciliege",
+        "proteine": 0.8,
+        "grassi": 0.1,
+        "carboidrati": 9.0,
+        "kcal": 38.0,
+        "zuccheri": 9.0
+    },
+    {
+        "nome": "Ciliege, candite",
+        "proteine": 0.4,
+        "grassi": 0.0,
+        "carboidrati": 66.4,
+        "kcal": 251.0,
+        "zuccheri": 66.4
+    },
+    {
+        "nome": "Clementine",
+        "proteine": 0.9,
+        "grassi": 0.1,
+        "carboidrati": 8.7,
+        "kcal": 37.0,
+        "zuccheri": 8.7
+    },
+    {
+        "nome": "Cocco",
+        "proteine": 3.5,
+        "grassi": 35.0,
+        "carboidrati": 9.4,
+        "kcal": 364.0,
+        "zuccheri": 9.4
+    },
+    {
+        "nome": "Cocco, essiccato",
+        "proteine": 5.6,
+        "grassi": 62.0,
+        "carboidrati": 6.4,
+        "kcal": 604.0,
+        "zuccheri": 6.4
+    },
+    {
+        "nome": "Cocktail di frutta sciroppata",
+        "proteine": 0.4,
+        "grassi": 0.0,
+        "carboidrati": 14.8,
+        "kcal": 57.0,
+        "zuccheri": 14.8
+    },
+    {
+        "nome": "Cocomero",
+        "proteine": 0.4,
+        "grassi": 0.0,
+        "carboidrati": 3.7,
+        "kcal": 16.0,
+        "zuccheri": 3.7
+    },
+    {
+        "nome": "Datteri, secchi",
+        "proteine": 2.7,
+        "grassi": 0.6,
+        "carboidrati": 63.1,
+        "kcal": 253.0,
+        "zuccheri": 63.1
+    },
+    {
+        "nome": "Feijoa",
+        "proteine": 0.7,
+        "grassi": 0.8,
+        "carboidrati": 9.6,
+        "kcal": 46.0,
+        "zuccheri": 9.6
+    },
+    {
+        "nome": "Fichi",
+        "proteine": 0.9,
+        "grassi": 0.2,
+        "carboidrati": 11.2,
+        "kcal": 47.0,
+        "zuccheri": 11.2
+    },
+    {
+        "nome": "Fichi, canditi",
+        "proteine": 3.5,
+        "grassi": 0.2,
+        "carboidrati": 73.7,
+        "kcal": 292.0,
+        "zuccheri": 73.7
+    },
+    {
+        "nome": "Fichi secchi mandorlat",
+        "proteine": 5.2,
+        "grassi": 4.2,
+        "carboidrati": 58.2,
+        "kcal": 277.0,
+        "zuccheri": 58.2
+    },
+    {
+        "nome": "Fichi, secchi",
+        "proteine": 3.5,
+        "grassi": 2.7,
+        "carboidrati": 58.0,
+        "kcal": 256.0,
+        "zuccheri": 58.0
+    },
+    {
+        "nome": "Fichi-d'india",
+        "proteine": 0.8,
+        "grassi": 0.1,
+        "carboidrati": 13.0,
+        "kcal": 53.0,
+        "zuccheri": 13.0
+    },
+    {
+        "nome": "Fragole",
+        "proteine": 0.9,
+        "grassi": 0.4,
+        "carboidrati": 5.3,
+        "kcal": 27.0,
+        "zuccheri": 5.3
+    },
+    {
+        "nome": "Guava",
+        "proteine": 0.7,
+        "grassi": 0.5,
+        "carboidrati": 3.5,
+        "kcal": 20.0,
+        "zuccheri": 3.5
+    },
+    {
+        "nome": "Kiwi",
+        "proteine": 1.2,
+        "grassi": 0.6,
+        "carboidrati": 9.0,
+        "kcal": 44.0,
+        "zuccheri": 9.0
+    },
+    {
+        "nome": "Lamponi",
+        "proteine": 1.0,
+        "grassi": 0.6,
+        "carboidrati": 6.5,
+        "kcal": 34.0,
+        "zuccheri": 6.5
+    },
+    {
+        "nome": "Limoni",
+        "proteine": 0.6,
+        "grassi": 0.0,
+        "carboidrati": 2.3,
+        "kcal": 11.0,
+        "zuccheri": 2.3
+    },
+    {
+        "nome": "Limoni, succo",
+        "proteine": 0.2,
+        "grassi": 0.0,
+        "carboidrati": 1.4,
+        "kcal": 6.0,
+        "zuccheri": 1.4
+    },
+    {
+        "nome": "Litchi",
+        "proteine": 1.1,
+        "grassi": 0.1,
+        "carboidrati": 17.2,
+        "kcal": 70.0,
+        "zuccheri": 17.2
+    },
+    {
+        "nome": "Loti o kaki",
+        "proteine": 0.6,
+        "grassi": 0.3,
+        "carboidrati": 16.0,
+        "kcal": 65.0,
+        "zuccheri": 16.0
+    },
+    {
+        "nome": "Macadamia",
+        "proteine": 8.0,
+        "grassi": 76.0,
+        "carboidrati": 5.1,
+        "kcal": 735.0,
+        "zuccheri": 4.0
+    },
+    {
+        "nome": "Mandaranci",
+        "proteine": 0.8,
+        "grassi": 0.2,
+        "carboidrati": 12.8,
+        "kcal": 53.0,
+        "zuccheri": 12.8
+    },
+    {
+        "nome": "Mandarini",
+        "proteine": 0.9,
+        "grassi": 0.3,
+        "carboidrati": 17.6,
+        "kcal": 72.0,
+        "zuccheri": 17.6
+    },
+    {
+        "nome": "Mandorle secche",
+        "proteine": 22.0,
+        "grassi": 55.3,
+        "carboidrati": 4.6,
+        "kcal": 603.0,
+        "zuccheri": 3.7
+    },
+    {
+        "nome": "Mango",
+        "proteine": 1.0,
+        "grassi": 0.2,
+        "carboidrati": 12.6,
+        "kcal": 53.0,
+        "zuccheri": 12.6
+    },
+    {
+        "nome": "Melagrane",
+        "proteine": 0.5,
+        "grassi": 0.2,
+        "carboidrati": 15.9,
+        "kcal": 63.0,
+        "zuccheri": 15.9
+    },
+    {
+        "nome": "Mele cotogne",
+        "proteine": 0.3,
+        "grassi": 0.1,
+        "carboidrati": 6.3,
+        "kcal": 26.0,
+        "zuccheri": 6.3
+    },
+    {
+        "nome": "Mele annurche",
+        "proteine": 0.3,
+        "grassi": 0.1,
+        "carboidrati": 10.2,
+        "kcal": 40.0,
+        "zuccheri": 10.2
+    },
+    {
+        "nome": "Mele deliziose",
+        "proteine": 0.2,
+        "grassi": 0.1,
+        "carboidrati": 11.1,
+        "kcal": 43.0,
+        "zuccheri": 11.1
+    },
+    {
+        "nome": "Mele golden",
+        "proteine": 0.4,
+        "grassi": 0.1,
+        "carboidrati": 10.7,
+        "kcal": 43.0,
+        "zuccheri": 10.7
+    },
+    {
+        "nome": "Mele granny smith",
+        "proteine": 0.5,
+        "grassi": 0.1,
+        "carboidrati": 9.4,
+        "kcal": 38.0,
+        "zuccheri": 9.4
+    },
+    {
+        "nome": "Mele imperatore",
+        "proteine": 0.2,
+        "grassi": 0.1,
+        "carboidrati": 11.3,
+        "kcal": 44.0,
+        "zuccheri": 11.3
+    },
+    {
+        "nome": "Mele  renette",
+        "proteine": 0.3,
+        "grassi": 0.1,
+        "carboidrati": 10.0,
+        "kcal": 40.0,
+        "zuccheri": 10.0
+    },
+    {
+        "nome": "Mele fresche con buccia",
+        "proteine": 0.2,
+        "grassi": 0.0,
+        "carboidrati": 10.0,
+        "kcal": 38.0,
+        "zuccheri": 10.0
+    },
+    {
+        "nome": "Mele fresche senza buccia",
+        "proteine": 0.3,
+        "grassi": 0.1,
+        "carboidrati": 13.7,
+        "kcal": 53.0,
+        "zuccheri": 13.7
+    },
+    {
+        "nome": "Mele, disidratate",
+        "proteine": 1.3,
+        "grassi": 2.0,
+        "carboidrati": 92.2,
+        "kcal": 369.0,
+        "zuccheri": 92.2
+    },
+    {
+        "nome": "Melone d'estate",
+        "proteine": 0.8,
+        "grassi": 0.2,
+        "carboidrati": 7.4,
+        "kcal": 33.0,
+        "zuccheri": 7.4
+    },
+    {
+        "nome": "Melone d'inverno",
+        "proteine": 0.5,
+        "grassi": 0.2,
+        "carboidrati": 4.9,
+        "kcal": 22.0,
+        "zuccheri": 4.9
+    },
+    {
+        "nome": "Mirtilli",
+        "proteine": 0.9,
+        "grassi": 0.2,
+        "carboidrati": 5.1,
+        "kcal": 25.0,
+        "zuccheri": 5.1
+    },
+    {
+        "nome": "Mora di rovo",
+        "proteine": 1.3,
+        "grassi": 0.0,
+        "carboidrati": 8.1,
+        "kcal": 36.0,
+        "zuccheri": 8.1
+    },
+    {
+        "nome": "Nespole",
+        "proteine": 0.4,
+        "grassi": 0.4,
+        "carboidrati": 6.1,
+        "kcal": 28.0,
+        "zuccheri": 6.1
+    },
+    {
+        "nome": "Nocciole, secche",
+        "proteine": 13.8,
+        "grassi": 64.1,
+        "carboidrati": 6.1,
+        "kcal": 655.0,
+        "zuccheri": 4.1
+    },
+    {
+        "nome": "Noci",
+        "proteine": 10.5,
+        "grassi": 57.7,
+        "carboidrati": 5.5,
+        "kcal": 582.0,
+        "zuccheri": 3.4
+    },
+    {
+        "nome": "Noci pecan",
+        "proteine": 7.2,
+        "grassi": 71.8,
+        "carboidrati": 7.9,
+        "kcal": 705.0,
+        "zuccheri": 4.3
+    },
+    {
+        "nome": "Noci, secche",
+        "proteine": 14.3,
+        "grassi": 68.1,
+        "carboidrati": 5.1,
+        "kcal": 689.0,
+        "zuccheri": 3.1
+    },
+    {
+        "nome": "Olive da tavola conservate",
+        "proteine": 1.5,
+        "grassi": 27.0,
+        "carboidrati": 5.0,
+        "kcal": 268.0,
+        "zuccheri": 5.0
+    },
+    {
+        "nome": "Olive nere",
+        "proteine": 1.6,
+        "grassi": 25.1,
+        "carboidrati": 0.8,
+        "kcal": 235.0,
+        "zuccheri": 0.8
+    },
+    {
+        "nome": "Olive verdi",
+        "proteine": 0.8,
+        "grassi": 15.0,
+        "carboidrati": 1.0,
+        "kcal": 142.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Olive verdi  salamoia",
+        "proteine": 1.2,
+        "grassi": 11.0,
+        "carboidrati": 1.0,
+        "kcal": 108.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Papaia",
+        "proteine": 0.4,
+        "grassi": 0.1,
+        "carboidrati": 6.9,
+        "kcal": 28.0,
+        "zuccheri": 6.9
+    },
+    {
+        "nome": "Passiflora",
+        "proteine": 3.0,
+        "grassi": 0.3,
+        "carboidrati": 5.7,
+        "kcal": 36.0,
+        "zuccheri": 5.7
+    },
+    {
+        "nome": "Pere fresche, senza buccia",
+        "proteine": 0.3,
+        "grassi": 0.1,
+        "carboidrati": 8.8,
+        "kcal": 35.0,
+        "zuccheri": 8.8
+    },
+    {
+        "nome": "Pere, candite",
+        "proteine": 1.3,
+        "grassi": 0.6,
+        "carboidrati": 75.9,
+        "kcal": 295.0,
+        "zuccheri": 75.9
+    },
+    {
+        "nome": "Pesche con buccia",
+        "proteine": 0.7,
+        "grassi": 0.0,
+        "carboidrati": 5.8,
+        "kcal": 25.0,
+        "zuccheri": 5.8
+    },
+    {
+        "nome": "Pesche senza buccia",
+        "proteine": 0.8,
+        "grassi": 0.1,
+        "carboidrati": 6.1,
+        "kcal": 27.0,
+        "zuccheri": 6.1
+    },
+    {
+        "nome": "Pesche, disidratate",
+        "proteine": 4.8,
+        "grassi": 0.9,
+        "carboidrati": 88.0,
+        "kcal": 357.0,
+        "zuccheri": 88.0
+    },
+    {
+        "nome": "Pesche, sciroppate",
+        "proteine": 0.5,
+        "grassi": 0.0,
+        "carboidrati": 14.0,
+        "kcal": 55.0,
+        "zuccheri": 14.0
+    },
+    {
+        "nome": "Pesche, secche",
+        "proteine": 3.1,
+        "grassi": 0.7,
+        "carboidrati": 68.3,
+        "kcal": 275.0,
+        "zuccheri": 68.3
+    },
+    {
+        "nome": "Pinoli",
+        "proteine": 31.9,
+        "grassi": 50.3,
+        "carboidrati": 4.0,
+        "kcal": 595.0,
+        "zuccheri": 3.9
+    },
+    {
+        "nome": "Pistacchi",
+        "proteine": 18.1,
+        "grassi": 56.1,
+        "carboidrati": 8.1,
+        "kcal": 608.0,
+        "zuccheri": 4.5
+    },
+    {
+        "nome": "Pompelmo",
+        "proteine": 0.6,
+        "grassi": 0.0,
+        "carboidrati": 6.2,
+        "kcal": 26.0,
+        "zuccheri": 6.2
+    },
+    {
+        "nome": "Prugne",
+        "proteine": 0.5,
+        "grassi": 0.1,
+        "carboidrati": 10.5,
+        "kcal": 42.0,
+        "zuccheri": 10.5
+    },
+    {
+        "nome": "Prugne gialle",
+        "proteine": 0.5,
+        "grassi": 0.1,
+        "carboidrati": 7.2,
+        "kcal": 30.0,
+        "zuccheri": 7.2
+    },
+    {
+        "nome": "Prugne rosse",
+        "proteine": 0.5,
+        "grassi": 0.1,
+        "carboidrati": 10.5,
+        "kcal": 42.0,
+        "zuccheri": 10.5
+    },
+    {
+        "nome": "Prugne secche",
+        "proteine": 2.2,
+        "grassi": 0.5,
+        "carboidrati": 55.0,
+        "kcal": 220.0,
+        "zuccheri": 55.0
+    },
+    {
+        "nome": "Ribes",
+        "proteine": 0.9,
+        "grassi": 0.0,
+        "carboidrati": 6.6,
+        "kcal": 28.0,
+        "zuccheri": 6.6
+    },
+    {
+        "nome": "Succo di frutta [albicocca e pera]",
+        "proteine": 0.3,
+        "grassi": 0.1,
+        "carboidrati": 14.5,
+        "kcal": 56.0,
+        "zuccheri": 14.5
+    },
+    {
+        "nome": "Succo Arancia senza zucchero",
+        "proteine": 0.59,
+        "grassi": 0.14,
+        "carboidrati": 9.85,
+        "kcal": 42.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Uva",
+        "proteine": 0.5,
+        "grassi": 0.1,
+        "carboidrati": 15.6,
+        "kcal": 61.0,
+        "zuccheri": 15.6
+    },
+    {
+        "nome": "Uva, secca",
+        "proteine": 1.9,
+        "grassi": 0.6,
+        "carboidrati": 72.0,
+        "kcal": 283.0,
+        "zuccheri": 72.0
+    },
+    {
+        "nome": "Uva, succo, in cartone",
+        "proteine": 0.3,
+        "grassi": 0.0,
+        "carboidrati": 17.3,
+        "kcal": 66.0,
+        "zuccheri": 17.3
+    },
+    {
+        "nome": "Agnello muscolo sgrass",
+        "proteine": 20.0,
+        "grassi": 8.8,
+        "carboidrati": 0.0,
+        "kcal": 159.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Agnello cotto muscolo sgrass",
+        "proteine": 35.6,
+        "grassi": 14.2,
+        "carboidrati": 0.0,
+        "kcal": 270.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Agnello, coscio crudo",
+        "proteine": 20.0,
+        "grassi": 2.5,
+        "carboidrati": 0.0,
+        "kcal": 103.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Agnello, coscio, cotto",
+        "proteine": 31.1,
+        "grassi": 4.5,
+        "carboidrati": 0.0,
+        "kcal": 165.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Agnello, costoletta cruda",
+        "proteine": 20.4,
+        "grassi": 2.7,
+        "carboidrati": 0.0,
+        "kcal": 106.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Agnello, costoletta, cotta",
+        "proteine": 28.7,
+        "grassi": 4.2,
+        "carboidrati": 0.0,
+        "kcal": 153.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Anatra domestica",
+        "proteine": 21.4,
+        "grassi": 8.2,
+        "carboidrati": 0.0,
+        "kcal": 159.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Bovino adulto - copertina di sotto, copertina di spalla, sottospalla, collo-",
+        "proteine": 20.3,
+        "grassi": 5.7,
+        "carboidrati": 0.0,
+        "kcal": 133.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Bovino adulto - costata",
+        "proteine": 21.3,
+        "grassi": 6.1,
+        "carboidrati": 0.0,
+        "kcal": 140.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Bovino adulto - fesa -",
+        "proteine": 21.8,
+        "grassi": 1.8,
+        "carboidrati": 0.0,
+        "kcal": 103.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Bovino adulto - filetto",
+        "proteine": 20.5,
+        "grassi": 5.0,
+        "carboidrati": 0.0,
+        "kcal": 127.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Bovino adulto - geretto ant e post",
+        "proteine": 20.9,
+        "grassi": 3.2,
+        "carboidrati": 0.0,
+        "kcal": 112.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Bovino adulto - girello -",
+        "proteine": 21.3,
+        "grassi": 2.8,
+        "carboidrati": 0.0,
+        "kcal": 110.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Bovino adulto - lombata",
+        "proteine": 21.8,
+        "grassi": 5.2,
+        "carboidrati": 0.0,
+        "kcal": 134.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Bovino adulto - noce",
+        "proteine": 21.3,
+        "grassi": 2.3,
+        "carboidrati": 0.0,
+        "kcal": 106.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Bovino adulto - pancia, biancostato, punta di petto",
+        "proteine": 19.7,
+        "grassi": 10.2,
+        "carboidrati": 0.0,
+        "kcal": 171.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Bovino adulto - scamone",
+        "proteine": 21.4,
+        "grassi": 3.7,
+        "carboidrati": 0.0,
+        "kcal": 119.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Bovino adulto - sottofesa",
+        "proteine": 22.0,
+        "grassi": 2.6,
+        "carboidrati": 0.0,
+        "kcal": 111.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Bovino adulto - spalla, muscolo, girello, fesone",
+        "proteine": 21.5,
+        "grassi": 2.4,
+        "carboidrati": 0.0,
+        "kcal": 108.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Bovino adulto - tagli anteriori",
+        "proteine": 20.5,
+        "grassi": 7.0,
+        "carboidrati": 0.0,
+        "kcal": 145.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Bovino adulto - tagli posteriori",
+        "proteine": 21.5,
+        "grassi": 3.4,
+        "carboidrati": 0.0,
+        "kcal": 117.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Capretto",
+        "proteine": 19.2,
+        "grassi": 5.0,
+        "carboidrati": 0.0,
+        "kcal": 122.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Cavallo",
+        "proteine": 19.8,
+        "grassi": 6.8,
+        "carboidrati": 0.6,
+        "kcal": 143.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Cervo",
+        "proteine": 21.0,
+        "grassi": 0.8,
+        "carboidrati": 0.0,
+        "kcal": 91.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Coniglio intero crudo",
+        "proteine": 19.9,
+        "grassi": 4.3,
+        "carboidrati": 0.0,
+        "kcal": 118.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Coniglio intero, cotto",
+        "proteine": 27.9,
+        "grassi": 6.0,
+        "carboidrati": 0.0,
+        "kcal": 166.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Coniglio intero, surgelato",
+        "proteine": 20.3,
+        "grassi": 3.9,
+        "carboidrati": 0.0,
+        "kcal": 116.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Coniglio, coscio",
+        "proteine": 21.0,
+        "grassi": 5.9,
+        "carboidrati": 0.0,
+        "kcal": 137.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Daino",
+        "proteine": 21.0,
+        "grassi": 1.2,
+        "carboidrati": 0.0,
+        "kcal": 95.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Fagiano",
+        "proteine": 24.3,
+        "grassi": 5.2,
+        "carboidrati": 0.0,
+        "kcal": 144.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Faraona, coscio, con pelle, crudo",
+        "proteine": 24.3,
+        "grassi": 3.8,
+        "carboidrati": 0.3,
+        "kcal": 133.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Faraona, coscio, senza pelle, cotto",
+        "proteine": 34.4,
+        "grassi": 6.1,
+        "carboidrati": 0.3,
+        "kcal": 194.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Faraona, coscio, senza pelle, crudo",
+        "proteine": 24.0,
+        "grassi": 3.3,
+        "carboidrati": 0.3,
+        "kcal": 127.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Faraona, petto, senza pelle, cotto",
+        "proteine": 30.7,
+        "grassi": 2.5,
+        "carboidrati": 0.2,
+        "kcal": 146.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Faraona, petto, senza pelle, crudo",
+        "proteine": 25.8,
+        "grassi": 1.9,
+        "carboidrati": 0.2,
+        "kcal": 121.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Gallina",
+        "proteine": 20.9,
+        "grassi": 12.3,
+        "carboidrati": 0.0,
+        "kcal": 194.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Lumaca",
+        "proteine": 12.9,
+        "grassi": 1.7,
+        "carboidrati": 0.0,
+        "kcal": 67.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Maiale leggero, bistecca cruda",
+        "proteine": 21.3,
+        "grassi": 8.0,
+        "carboidrati": 0.0,
+        "kcal": 157.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Maiale leggero, bistecca, cotta",
+        "proteine": 30.1,
+        "grassi": 14.1,
+        "carboidrati": 0.0,
+        "kcal": 247.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Maiale leggero, coscio",
+        "proteine": 20.2,
+        "grassi": 3.2,
+        "carboidrati": 0.0,
+        "kcal": 110.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Maiale leggero, lombo",
+        "proteine": 20.7,
+        "grassi": 7.0,
+        "carboidrati": 0.0,
+        "kcal": 146.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Maiale leggero, spalla",
+        "proteine": 19.0,
+        "grassi": 6.3,
+        "carboidrati": 0.0,
+        "kcal": 133.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Maiale pesante, coscio",
+        "proteine": 20.4,
+        "grassi": 5.1,
+        "carboidrati": 0.0,
+        "kcal": 128.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Maiale pesante,lombo",
+        "proteine": 20.8,
+        "grassi": 9.9,
+        "carboidrati": 0.0,
+        "kcal": 172.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Maiale pesante, spalla",
+        "proteine": 19.0,
+        "grassi": 8.9,
+        "carboidrati": 0.0,
+        "kcal": 156.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Oca",
+        "proteine": 15.8,
+        "grassi": 34.4,
+        "carboidrati": 0.0,
+        "kcal": 373.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pecora",
+        "proteine": 0.0,
+        "grassi": 3.1,
+        "carboidrati": 0.0,
+        "kcal": 0.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Piccione giovane",
+        "proteine": 22.1,
+        "grassi": 5.5,
+        "carboidrati": 0.0,
+        "kcal": 138.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo intero con pelle crudo",
+        "proteine": 19.0,
+        "grassi": 10.6,
+        "carboidrati": 0.0,
+        "kcal": 171.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo intero con pelle arrosto",
+        "proteine": 28.3,
+        "grassi": 14.7,
+        "carboidrati": 0.0,
+        "kcal": 246.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo intero con pelle, forno",
+        "proteine": 27.1,
+        "grassi": 10.2,
+        "carboidrati": 0.0,
+        "kcal": 200.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo intero senza pelle crudo",
+        "proteine": 19.4,
+        "grassi": 3.6,
+        "carboidrati": 0.0,
+        "kcal": 110.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo intero senza pelle, arrosto",
+        "proteine": 28.9,
+        "grassi": 10.0,
+        "carboidrati": 0.0,
+        "kcal": 206.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo intero senza pelle,forno",
+        "proteine": 27.9,
+        "grassi": 5.4,
+        "carboidrati": 0.0,
+        "kcal": 160.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo, ala con pelle cruda",
+        "proteine": 16.7,
+        "grassi": 14.3,
+        "carboidrati": 0.0,
+        "kcal": 196.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo, ala con pelle, cotta al forno]",
+        "proteine": 31.7,
+        "grassi": 17.4,
+        "carboidrati": 0.0,
+        "kcal": 283.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo, fuso con pelle crudo",
+        "proteine": 18.4,
+        "grassi": 5.7,
+        "carboidrati": 0.0,
+        "kcal": 125.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo, fuso con pelle, cotto [in forno senza aggiunta di grassi e di sale e scolato dal grasso prodotto con la cottura]",
+        "proteine": 31.2,
+        "grassi": 8.5,
+        "carboidrati": 0.0,
+        "kcal": 201.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo, fuso senza pelle crudo",
+        "proteine": 18.5,
+        "grassi": 3.7,
+        "carboidrati": 0.0,
+        "kcal": 107.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo, fuso senza pelle, cotto in forno",
+        "proteine": 29.9,
+        "grassi": 6.2,
+        "carboidrati": 0.0,
+        "kcal": 175.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo, petto crudo",
+        "proteine": 23.3,
+        "grassi": 0.8,
+        "carboidrati": 0.0,
+        "kcal": 100.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo, petto, cotto",
+        "proteine": 30.2,
+        "grassi": 0.9,
+        "carboidrati": 0.0,
+        "kcal": 129.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo, sovracoscio con pelle crudo",
+        "proteine": 17.4,
+        "grassi": 14.0,
+        "carboidrati": 0.0,
+        "kcal": 196.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo, sovracoscio con pelle, cotto",
+        "proteine": 26.7,
+        "grassi": 12.5,
+        "carboidrati": 0.0,
+        "kcal": 219.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo, sovracoscio senza pelle crudo",
+        "proteine": 18.7,
+        "grassi": 6.3,
+        "carboidrati": 0.0,
+        "kcal": 132.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pollo, sovracoscio senza pelle, cotto",
+        "proteine": 28.3,
+        "grassi": 8.3,
+        "carboidrati": 0.0,
+        "kcal": 188.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Polpettone di pollo(150gr di carne cruda)",
+        "proteine": 40.73,
+        "grassi": 4.8,
+        "carboidrati": 11.7,
+        "kcal": 249.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Quaglia",
+        "proteine": 25.0,
+        "grassi": 6.8,
+        "carboidrati": 0.0,
+        "kcal": 161.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Rana",
+        "proteine": 15.5,
+        "grassi": 0.2,
+        "carboidrati": 0.0,
+        "kcal": 64.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Struzzo crudo",
+        "proteine": 20.9,
+        "grassi": 0.9,
+        "carboidrati": 0.0,
+        "kcal": 92.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Struzzo, cotto",
+        "proteine": 22.2,
+        "grassi": 1.4,
+        "carboidrati": 0.0,
+        "kcal": 101.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tacchino intero, con pelle crudo",
+        "proteine": 18.2,
+        "grassi": 6.9,
+        "carboidrati": 0.0,
+        "kcal": 135.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tacchino intero, senza pelle crudo",
+        "proteine": 21.9,
+        "grassi": 2.4,
+        "carboidrati": 0.0,
+        "kcal": 109.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tacchino, fesa cruda",
+        "proteine": 24.0,
+        "grassi": 1.2,
+        "carboidrati": 0.0,
+        "kcal": 107.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tacchino, fesa, cotta",
+        "proteine": 29.6,
+        "grassi": 1.4,
+        "carboidrati": 0.0,
+        "kcal": 131.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tacchino, fuso, con pelle crudo",
+        "proteine": 17.9,
+        "grassi": 6.0,
+        "carboidrati": 0.0,
+        "kcal": 126.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tacchino, fuso, con pelle, cotto",
+        "proteine": 26.7,
+        "grassi": 9.3,
+        "carboidrati": 0.0,
+        "kcal": 191.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tacchino, fuso, senza pelle crudo",
+        "proteine": 18.0,
+        "grassi": 4.6,
+        "carboidrati": 0.0,
+        "kcal": 113.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tacchino, fuso, senza pelle, cotto",
+        "proteine": 28.0,
+        "grassi": 8.7,
+        "carboidrati": 0.0,
+        "kcal": 190.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tacchino, sovracoscio, senza pelle crudo",
+        "proteine": 18.5,
+        "grassi": 5.1,
+        "carboidrati": 0.0,
+        "kcal": 120.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tacchino, sovracoscio, senza pelle, cotto",
+        "proteine": 30.2,
+        "grassi": 6.8,
+        "carboidrati": 0.0,
+        "kcal": 182.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Vitello, filetto crudo",
+        "proteine": 20.7,
+        "grassi": 2.7,
+        "carboidrati": 0.0,
+        "kcal": 107.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Vitello, filetto, cotto",
+        "proteine": 38.6,
+        "grassi": 11.5,
+        "carboidrati": 0.0,
+        "kcal": 258.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Seitan",
+        "proteine": 28.0,
+        "grassi": 2.5,
+        "carboidrati": 2.0,
+        "kcal": 148.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Bresaola",
+        "proteine": 32.0,
+        "grassi": 2.6,
+        "carboidrati": 0.0,
+        "kcal": 151.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Capocollo",
+        "proteine": 20.8,
+        "grassi": 40.2,
+        "carboidrati": 1.4,
+        "kcal": 450.0,
+        "zuccheri": 1.4
+    },
+    {
+        "nome": "Carne bovina gelatina",
+        "proteine": 12.6,
+        "grassi": 1.8,
+        "carboidrati": 0.0,
+        "kcal": 67.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Carne bovina pressata, in scatola",
+        "proteine": 16.5,
+        "grassi": 8.3,
+        "carboidrati": 0.0,
+        "kcal": 141.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Ciccioli",
+        "proteine": 40.8,
+        "grassi": 40.0,
+        "carboidrati": 0.0,
+        "kcal": 523.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Coppa Parma",
+        "proteine": 23.6,
+        "grassi": 33.5,
+        "carboidrati": 0.6,
+        "kcal": 398.0,
+        "zuccheri": 0.6
+    },
+    {
+        "nome": "Corned beef, in scatola",
+        "proteine": 23.2,
+        "grassi": 14.0,
+        "carboidrati": 0.0,
+        "kcal": 219.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Cotechino, confezionato precotto",
+        "proteine": 17.2,
+        "grassi": 42.3,
+        "carboidrati": 0.0,
+        "kcal": 450.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Cotechino cotto, confezionato precotto",
+        "proteine": 21.1,
+        "grassi": 24.7,
+        "carboidrati": 0.0,
+        "kcal": 307.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Mortadella",
+        "proteine": 14.7,
+        "grassi": 28.1,
+        "carboidrati": 1.5,
+        "kcal": 317.0,
+        "zuccheri": 1.5
+    },
+    {
+        "nome": "Mortadella di bovino e suino",
+        "proteine": 13.3,
+        "grassi": 37.0,
+        "carboidrati": 0.5,
+        "kcal": 388.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Pancetta magretta",
+        "proteine": 21.7,
+        "grassi": 25.3,
+        "carboidrati": 0.0,
+        "kcal": 315.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pancetta tesa",
+        "proteine": 20.9,
+        "grassi": 28.1,
+        "carboidrati": 0.0,
+        "kcal": 337.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pate' di coniglio",
+        "proteine": 13.0,
+        "grassi": 32.2,
+        "carboidrati": 1.1,
+        "kcal": 346.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pate' di fegato",
+        "proteine": 12.7,
+        "grassi": 31.7,
+        "carboidrati": 1.3,
+        "kcal": 341.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pate' di pollo",
+        "proteine": 11.1,
+        "grassi": 26.2,
+        "carboidrati": 2.3,
+        "kcal": 289.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pate' di prosciutto",
+        "proteine": 11.3,
+        "grassi": 34.3,
+        "carboidrati": 1.1,
+        "kcal": 358.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Prosciutto cotto",
+        "proteine": 19.8,
+        "grassi": 14.7,
+        "carboidrati": 0.9,
+        "kcal": 215.0,
+        "zuccheri": 0.9
+    },
+    {
+        "nome": "Prosciutto cotto, magro [privato del grasso visibile]",
+        "proteine": 22.2,
+        "grassi": 4.4,
+        "carboidrati": 1.0,
+        "kcal": 132.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Prosciutto crudo San Daniele",
+        "proteine": 28.3,
+        "grassi": 23.0,
+        "carboidrati": 0.0,
+        "kcal": 320.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Prosciutto crudo San Daniele, magro",
+        "proteine": 26.8,
+        "grassi": 3.2,
+        "carboidrati": 0.0,
+        "kcal": 136.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Prosciutto crudo di Parma",
+        "proteine": 25.5,
+        "grassi": 18.4,
+        "carboidrati": 0.0,
+        "kcal": 268.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Prosciutto crudo di Parma, magro",
+        "proteine": 27.5,
+        "grassi": 3.9,
+        "carboidrati": 0.0,
+        "kcal": 145.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Prosciutto crudo di montagna",
+        "proteine": 26.2,
+        "grassi": 22.0,
+        "carboidrati": 0.0,
+        "kcal": 303.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Prosciutto crudo, disossato",
+        "proteine": 26.9,
+        "grassi": 12.9,
+        "carboidrati": 0.0,
+        "kcal": 224.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Prosciutto crudo, disossato, magro",
+        "proteine": 29.3,
+        "grassi": 4.6,
+        "carboidrati": 0.0,
+        "kcal": 159.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Prosciutto crudo, gambuccio",
+        "proteine": 26.2,
+        "grassi": 22.4,
+        "carboidrati": 0.0,
+        "kcal": 306.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Salame Brianza",
+        "proteine": 26.5,
+        "grassi": 30.5,
+        "carboidrati": 1.0,
+        "kcal": 384.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Salame Fabriano",
+        "proteine": 26.5,
+        "grassi": 34.3,
+        "carboidrati": 1.5,
+        "kcal": 420.0,
+        "zuccheri": 1.5
+    },
+    {
+        "nome": "Salame Felino",
+        "proteine": 30.5,
+        "grassi": 27.9,
+        "carboidrati": 0.5,
+        "kcal": 375.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Salame Milano",
+        "proteine": 26.7,
+        "grassi": 31.1,
+        "carboidrati": 1.5,
+        "kcal": 392.0,
+        "zuccheri": 1.5
+    },
+    {
+        "nome": "Salame Napoli",
+        "proteine": 26.7,
+        "grassi": 27.3,
+        "carboidrati": 1.7,
+        "kcal": 359.0,
+        "zuccheri": 1.7
+    },
+    {
+        "nome": "Salame cacciatore",
+        "proteine": 28.5,
+        "grassi": 34.0,
+        "carboidrati": 1.2,
+        "kcal": 425.0,
+        "zuccheri": 1.2
+    },
+    {
+        "nome": "Salame nostrano",
+        "proteine": 27.3,
+        "grassi": 28.5,
+        "carboidrati": 1.1,
+        "kcal": 370.0,
+        "zuccheri": 1.1
+    },
+    {
+        "nome": "Salame ungherese",
+        "proteine": 24.2,
+        "grassi": 34.0,
+        "carboidrati": 0.7,
+        "kcal": 405.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "184.0",
+        "proteine": 12.4,
+        "grassi": 41.2,
+        "carboidrati": 0.9,
+        "kcal": 424.0,
+        "zuccheri": 0.9
+    },
+    {
+        "nome": "Salsiccia di suino, fresca cruda",
+        "proteine": 15.4,
+        "grassi": 26.7,
+        "carboidrati": 0.6,
+        "kcal": 304.0,
+        "zuccheri": 0.6
+    },
+    {
+        "nome": "Salsiccia di suino cotta",
+        "proteine": 22.2,
+        "grassi": 26.1,
+        "carboidrati": 0.0,
+        "kcal": 324.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Salsiccia di suino, secca",
+        "proteine": 22.0,
+        "grassi": 47.3,
+        "carboidrati": 0.0,
+        "kcal": 514.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Speck",
+        "proteine": 28.3,
+        "grassi": 20.9,
+        "carboidrati": 0.5,
+        "kcal": 303.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Wurstel crudo",
+        "proteine": 13.7,
+        "grassi": 23.3,
+        "carboidrati": 1.4,
+        "kcal": 270.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Wurstel, cotto",
+        "proteine": 16.4,
+        "grassi": 26.9,
+        "carboidrati": 1.3,
+        "kcal": 313.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Zampone, confezionato precotto",
+        "proteine": 19.1,
+        "grassi": 31.6,
+        "carboidrati": 0.0,
+        "kcal": 361.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Zampone cotto, confezionato precotto",
+        "proteine": 21.4,
+        "grassi": 25.9,
+        "carboidrati": 0.0,
+        "kcal": 319.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Big Mc - McDonald (1panino)",
+        "proteine": 27.0,
+        "grassi": 25.0,
+        "carboidrati": 40.0,
+        "kcal": 495.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Cheese-burger -McDonald (1panino)",
+        "proteine": 16.0,
+        "grassi": 13.0,
+        "carboidrati": 30.0,
+        "kcal": 300.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "McToast",
+        "proteine": 13.0,
+        "grassi": 10.0,
+        "carboidrati": 30.0,
+        "kcal": 265.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Hamburger -McDonald (1panino)",
+        "proteine": 13.0,
+        "grassi": 9.0,
+        "carboidrati": 30.0,
+        "kcal": 255.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Cesar sald McDonald (pollo alla piastra)",
+        "proteine": 27.0,
+        "grassi": 7.0,
+        "carboidrati": 4.0,
+        "kcal": 185.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Patatine piccole McDonald",
+        "proteine": 3.0,
+        "grassi": 12.0,
+        "carboidrati": 29.0,
+        "kcal": 235.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Patine medie McDonald",
+        "proteine": 5.0,
+        "grassi": 17.0,
+        "carboidrati": 42.0,
+        "kcal": 340.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Patatine grandi McDonald",
+        "proteine": 7.0,
+        "grassi": 23.0,
+        "carboidrati": 59.0,
+        "kcal": 470.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Cervello di bovino",
+        "proteine": 10.0,
+        "grassi": 12.7,
+        "carboidrati": 0.8,
+        "kcal": 157.0,
+        "zuccheri": 0.8
+    },
+    {
+        "nome": "Coratella di agnello [cuore, polmoni, fegato, milza, reni]",
+        "proteine": 15.7,
+        "grassi": 4.7,
+        "carboidrati": 1.0,
+        "kcal": 109.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Coratella di vitello [cuore, polmoni, fegato, milza, reni]",
+        "proteine": 17.1,
+        "grassi": 3.2,
+        "carboidrati": 0.8,
+        "kcal": 100.0,
+        "zuccheri": 0.8
+    },
+    {
+        "nome": "Cuore di bovino",
+        "proteine": 16.8,
+        "grassi": 6.0,
+        "carboidrati": 0.5,
+        "kcal": 123.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Cuore di equino",
+        "proteine": 18.7,
+        "grassi": 7.7,
+        "carboidrati": 0.6,
+        "kcal": 146.0,
+        "zuccheri": 0.6
+    },
+    {
+        "nome": "Cuore di ovino",
+        "proteine": 16.9,
+        "grassi": 7.2,
+        "carboidrati": 0.4,
+        "kcal": 134.0,
+        "zuccheri": 0.4
+    },
+    {
+        "nome": "Cuore di suino",
+        "proteine": 18.3,
+        "grassi": 9.4,
+        "carboidrati": 0.4,
+        "kcal": 159.0,
+        "zuccheri": 0.4
+    },
+    {
+        "nome": "Fegato di bovino",
+        "proteine": 20.0,
+        "grassi": 4.4,
+        "carboidrati": 5.9,
+        "kcal": 142.0,
+        "zuccheri": 5.9
+    },
+    {
+        "nome": "Fegato di equino",
+        "proteine": 22.4,
+        "grassi": 4.0,
+        "carboidrati": 5.3,
+        "kcal": 145.0,
+        "zuccheri": 5.3
+    },
+    {
+        "nome": "Fegato di ovino",
+        "proteine": 19.5,
+        "grassi": 5.5,
+        "carboidrati": 2.0,
+        "kcal": 135.0,
+        "zuccheri": 2.0
+    },
+    {
+        "nome": "Fegato di pollo crudo",
+        "proteine": 0.0,
+        "grassi": 6.3,
+        "carboidrati": 0.0,
+        "kcal": 0.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Fegato di suino, crudo",
+        "proteine": 22.8,
+        "grassi": 4.8,
+        "carboidrati": 1.5,
+        "kcal": 140.0,
+        "zuccheri": 1.5
+    },
+    {
+        "nome": "Lingua di bovino cruda",
+        "proteine": 17.1,
+        "grassi": 18.0,
+        "carboidrati": 0.4,
+        "kcal": 232.0,
+        "zuccheri": 0.4
+    },
+    {
+        "nome": "Milza di bovino",
+        "proteine": 18.5,
+        "grassi": 3.7,
+        "carboidrati": 0.0,
+        "kcal": 107.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Polmone di bovino",
+        "proteine": 14.0,
+        "grassi": 2.1,
+        "carboidrati": 0.0,
+        "kcal": 75.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Rene di bovino",
+        "proteine": 18.4,
+        "grassi": 4.6,
+        "carboidrati": 0.8,
+        "kcal": 118.0,
+        "zuccheri": 0.8
+    },
+    {
+        "nome": "Trippa di bovino",
+        "proteine": 15.8,
+        "grassi": 5.0,
+        "carboidrati": 0.0,
+        "kcal": 108.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Acciuga o alice, fresca",
+        "proteine": 16.8,
+        "grassi": 2.6,
+        "carboidrati": 1.5,
+        "kcal": 96.0,
+        "zuccheri": 1.5
+    },
+    {
+        "nome": "Acciuga o alice, sott'olio",
+        "proteine": 25.9,
+        "grassi": 11.3,
+        "carboidrati": 0.2,
+        "kcal": 206.0,
+        "zuccheri": 0.2
+    },
+    {
+        "nome": "Acciuga o alice, sotto sale",
+        "proteine": 25.0,
+        "grassi": 3.1,
+        "carboidrati": 2.3,
+        "kcal": 137.0,
+        "zuccheri": 2.3
+    },
+    {
+        "nome": "Anguilla d'allevamento, filetti",
+        "proteine": 14.2,
+        "grassi": 28.9,
+        "carboidrati": 0.5,
+        "kcal": 319.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Anguilla di fiume",
+        "proteine": 11.8,
+        "grassi": 23.7,
+        "carboidrati": 0.1,
+        "kcal": 261.0,
+        "zuccheri": 0.1
+    },
+    {
+        "nome": "Anguilla di mare",
+        "proteine": 14.6,
+        "grassi": 19.6,
+        "carboidrati": 0.7,
+        "kcal": 237.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "Anguilla, affumicata",
+        "proteine": 0.0,
+        "grassi": 27.8,
+        "carboidrati": 0.0,
+        "kcal": 0.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Anguilla, marinata",
+        "proteine": 14.8,
+        "grassi": 21.9,
+        "carboidrati": 0.6,
+        "kcal": 259.0,
+        "zuccheri": 0.6
+    },
+    {
+        "nome": "Aragosta fresca",
+        "proteine": 16.0,
+        "grassi": 1.9,
+        "carboidrati": 1.0,
+        "kcal": 85.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Aragosta, bollita",
+        "proteine": 20.2,
+        "grassi": 2.4,
+        "carboidrati": 1.3,
+        "kcal": 107.0,
+        "zuccheri": 1.3
+    },
+    {
+        "nome": "Aringa fresca",
+        "proteine": 16.5,
+        "grassi": 16.7,
+        "carboidrati": 0.0,
+        "kcal": 216.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Aringa, affumicata",
+        "proteine": 19.9,
+        "grassi": 12.7,
+        "carboidrati": 0.0,
+        "kcal": 194.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Aringa, marinata",
+        "proteine": 18.3,
+        "grassi": 14.0,
+        "carboidrati": 0.0,
+        "kcal": 199.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Aringa, sotto sale",
+        "proteine": 19.8,
+        "grassi": 15.4,
+        "carboidrati": 0.0,
+        "kcal": 218.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Boga",
+        "proteine": 18.3,
+        "grassi": 1.2,
+        "carboidrati": 0.8,
+        "kcal": 87.0,
+        "zuccheri": 0.8
+    },
+    {
+        "nome": "Calamaro, fresco",
+        "proteine": 12.6,
+        "grassi": 1.7,
+        "carboidrati": 0.6,
+        "kcal": 68.0,
+        "zuccheri": 0.6
+    },
+    {
+        "nome": "Calamaro, surgelato",
+        "proteine": 13.1,
+        "grassi": 1.5,
+        "carboidrati": 0.6,
+        "kcal": 68.0,
+        "zuccheri": 0.6
+    },
+    {
+        "nome": "Capitone",
+        "proteine": 13.0,
+        "grassi": 21.5,
+        "carboidrati": 0.5,
+        "kcal": 247.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Carpa",
+        "proteine": 18.9,
+        "grassi": 7.1,
+        "carboidrati": 0.0,
+        "kcal": 140.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Cefalo muggine",
+        "proteine": 15.8,
+        "grassi": 6.8,
+        "carboidrati": 0.7,
+        "kcal": 127.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "Cefalo muggine, uova [bottarga]",
+        "proteine": 35.5,
+        "grassi": 25.7,
+        "carboidrati": 0.0,
+        "kcal": 373.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Cernia, surgelata",
+        "proteine": 17.0,
+        "grassi": 2.0,
+        "carboidrati": 0.5,
+        "kcal": 88.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Coregone",
+        "proteine": 19.0,
+        "grassi": 6.5,
+        "carboidrati": 0.1,
+        "kcal": 135.0,
+        "zuccheri": 0.1
+    },
+    {
+        "nome": "Corvina",
+        "proteine": 20.0,
+        "grassi": 0.8,
+        "carboidrati": 0.2,
+        "kcal": 88.0,
+        "zuccheri": 0.2
+    },
+    {
+        "nome": "Cozza o mitilo",
+        "proteine": 11.7,
+        "grassi": 2.7,
+        "carboidrati": 3.4,
+        "kcal": 84.0,
+        "zuccheri": 0.3
+    },
+    {
+        "nome": "Dentice, fresco",
+        "proteine": 16.7,
+        "grassi": 3.5,
+        "carboidrati": 0.7,
+        "kcal": 101.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "Dentice, surgelato",
+        "proteine": 17.2,
+        "grassi": 3.5,
+        "carboidrati": 0.7,
+        "kcal": 103.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "Gamberi, freschi",
+        "proteine": 13.6,
+        "grassi": 0.6,
+        "carboidrati": 2.9,
+        "kcal": 71.0,
+        "zuccheri": 2.9
+    },
+    {
+        "nome": "Gamberi, sgusciati, surgelati",
+        "proteine": 16.5,
+        "grassi": 0.9,
+        "carboidrati": 2.9,
+        "kcal": 85.0,
+        "zuccheri": 2.9
+    },
+    {
+        "nome": "Granchio, in scatola",
+        "proteine": 18.1,
+        "grassi": 0.9,
+        "carboidrati": 0.0,
+        "kcal": 81.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Halibut",
+        "proteine": 20.6,
+        "grassi": 3.5,
+        "carboidrati": 0.0,
+        "kcal": 114.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Lattarini",
+        "proteine": 14.6,
+        "grassi": 9.6,
+        "carboidrati": 0.0,
+        "kcal": 145.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Luccio",
+        "proteine": 18.7,
+        "grassi": 0.6,
+        "carboidrati": 0.1,
+        "kcal": 81.0,
+        "zuccheri": 0.1
+    },
+    {
+        "nome": "Melu' o pesce molo fresco",
+        "proteine": 17.4,
+        "grassi": 0.3,
+        "carboidrati": 0.0,
+        "kcal": 72.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Melu' o pesce molo, stoccafisso secco",
+        "proteine": 80.1,
+        "grassi": 3.5,
+        "carboidrati": 1.1,
+        "kcal": 356.0,
+        "zuccheri": 1.1
+    },
+    {
+        "nome": "Melu' o pesce molo, stoccafisso, ammollato",
+        "proteine": 20.7,
+        "grassi": 0.9,
+        "carboidrati": 0.3,
+        "kcal": 92.0,
+        "zuccheri": 0.3
+    },
+    {
+        "nome": "Merluzzo o nasello crudo",
+        "proteine": 17.0,
+        "grassi": 0.3,
+        "carboidrati": 0.0,
+        "kcal": 71.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Merluzzo o nasello, baccala' ammollato",
+        "proteine": 21.6,
+        "grassi": 1.0,
+        "carboidrati": 0.0,
+        "kcal": 95.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Merluzzo o nasello, baccala' secco",
+        "proteine": 29.0,
+        "grassi": 1.7,
+        "carboidrati": 0.0,
+        "kcal": 131.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Merluzzo o nasello, bastoncini di pesce surgelati",
+        "proteine": 11.0,
+        "grassi": 10.1,
+        "carboidrati": 15.0,
+        "kcal": 191.0,
+        "zuccheri": 0.6
+    },
+    {
+        "nome": "Merluzzo o nasello, surgelato",
+        "proteine": 17.3,
+        "grassi": 0.6,
+        "carboidrati": 0.0,
+        "kcal": 75.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Merluzzo o nasello, surgelato microonde",
+        "proteine": 24.8,
+        "grassi": 0.9,
+        "carboidrati": 0.0,
+        "kcal": 107.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Merluzzo o nasello, surgelato, cotto",
+        "proteine": 20.9,
+        "grassi": 0.9,
+        "carboidrati": 0.0,
+        "kcal": 92.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Merluzzo o nasello, surgelato, filetti",
+        "proteine": 15.6,
+        "grassi": 0.6,
+        "carboidrati": 0.0,
+        "kcal": 68.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Mormora",
+        "proteine": 18.0,
+        "grassi": 1.9,
+        "carboidrati": 2.0,
+        "kcal": 97.0,
+        "zuccheri": 2.0
+    },
+    {
+        "nome": "Occhiata",
+        "proteine": 19.0,
+        "grassi": 3.7,
+        "carboidrati": 2.0,
+        "kcal": 117.0,
+        "zuccheri": 2.0
+    },
+    {
+        "nome": "Orata fresca d'allevamento, filetti",
+        "proteine": 19.7,
+        "grassi": 8.4,
+        "carboidrati": 1.2,
+        "kcal": 159.0,
+        "zuccheri": 1.2
+    },
+    {
+        "nome": "Orata fresca selvatica, filetti",
+        "proteine": 20.7,
+        "grassi": 3.8,
+        "carboidrati": 1.0,
+        "kcal": 121.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Orata, surgelata",
+        "proteine": 19.8,
+        "grassi": 1.2,
+        "carboidrati": 1.0,
+        "kcal": 94.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Ostrica",
+        "proteine": 10.2,
+        "grassi": 0.9,
+        "carboidrati": 5.4,
+        "kcal": 69.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Pagello",
+        "proteine": 21.0,
+        "grassi": 1.9,
+        "carboidrati": 0.0,
+        "kcal": 101.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pagello bocca d'oro",
+        "proteine": 20.0,
+        "grassi": 3.0,
+        "carboidrati": 3.0,
+        "kcal": 118.0,
+        "zuccheri": 3.0
+    },
+    {
+        "nome": "Palombo",
+        "proteine": 16.0,
+        "grassi": 1.2,
+        "carboidrati": 1.3,
+        "kcal": 80.0,
+        "zuccheri": 1.3
+    },
+    {
+        "nome": "Pesce gatto",
+        "proteine": 15.5,
+        "grassi": 3.3,
+        "carboidrati": 0.2,
+        "kcal": 92.0,
+        "zuccheri": 0.2
+    },
+    {
+        "nome": "Polpo",
+        "proteine": 10.6,
+        "grassi": 1.0,
+        "carboidrati": 1.4,
+        "kcal": 57.0,
+        "zuccheri": 1.4
+    },
+    {
+        "nome": "Razza",
+        "proteine": 14.2,
+        "grassi": 0.9,
+        "carboidrati": 0.7,
+        "kcal": 68.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "Rombo",
+        "proteine": 16.3,
+        "grassi": 1.3,
+        "carboidrati": 1.2,
+        "kcal": 81.0,
+        "zuccheri": 1.2
+    },
+    {
+        "nome": "Salmone fresco",
+        "proteine": 18.4,
+        "grassi": 12.0,
+        "carboidrati": 1.0,
+        "kcal": 185.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Salmone, affumicato",
+        "proteine": 25.4,
+        "grassi": 4.5,
+        "carboidrati": 1.2,
+        "kcal": 147.0,
+        "zuccheri": 1.2
+    },
+    {
+        "nome": "Salmone, in salamoia",
+        "proteine": 21.1,
+        "grassi": 11.5,
+        "carboidrati": 1.0,
+        "kcal": 192.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Salpa",
+        "proteine": 18.0,
+        "grassi": 2.7,
+        "carboidrati": 2.0,
+        "kcal": 104.0,
+        "zuccheri": 2.0
+    },
+    {
+        "nome": "Sarda fresca",
+        "proteine": 20.8,
+        "grassi": 4.5,
+        "carboidrati": 1.5,
+        "kcal": 129.0,
+        "zuccheri": 1.5
+    },
+    {
+        "nome": "Scorfano",
+        "proteine": 19.0,
+        "grassi": 0.4,
+        "carboidrati": 0.6,
+        "kcal": 82.0,
+        "zuccheri": 0.6
+    },
+    {
+        "nome": "Seppia",
+        "proteine": 14.0,
+        "grassi": 1.5,
+        "carboidrati": 0.7,
+        "kcal": 72.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "Sgombro o maccarello fresco",
+        "proteine": 17.0,
+        "grassi": 11.1,
+        "carboidrati": 0.5,
+        "kcal": 170.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Sgombro o maccarello, in salamoia",
+        "proteine": 19.3,
+        "grassi": 11.1,
+        "carboidrati": 0.0,
+        "kcal": 177.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Sogliola, fresca",
+        "proteine": 16.9,
+        "grassi": 1.4,
+        "carboidrati": 0.8,
+        "kcal": 83.0,
+        "zuccheri": 0.8
+    },
+    {
+        "nome": "Sogliola, surgelata",
+        "proteine": 17.3,
+        "grassi": 1.3,
+        "carboidrati": 0.1,
+        "kcal": 81.0,
+        "zuccheri": 0.1
+    },
+    {
+        "nome": "Spigola",
+        "proteine": 16.5,
+        "grassi": 1.5,
+        "carboidrati": 0.6,
+        "kcal": 82.0,
+        "zuccheri": 0.6
+    },
+    {
+        "nome": "Spigola d'allevamento, filetti",
+        "proteine": 21.3,
+        "grassi": 6.8,
+        "carboidrati": 0.8,
+        "kcal": 149.0,
+        "zuccheri": 0.8
+    },
+    {
+        "nome": "Storione",
+        "proteine": 19.2,
+        "grassi": 7.6,
+        "carboidrati": 0.0,
+        "kcal": 145.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Storione, uova [caviale]",
+        "proteine": 26.9,
+        "grassi": 15.0,
+        "carboidrati": 3.3,
+        "kcal": 255.0,
+        "zuccheri": 3.3
+    },
+    {
+        "nome": "Suro o sugarello",
+        "proteine": 18.3,
+        "grassi": 3.0,
+        "carboidrati": 1.0,
+        "kcal": 104.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Tinca",
+        "proteine": 17.9,
+        "grassi": 0.5,
+        "carboidrati": 0.9,
+        "kcal": 79.0,
+        "zuccheri": 0.9
+    },
+    {
+        "nome": "Tonno, fresco",
+        "proteine": 21.5,
+        "grassi": 8.1,
+        "carboidrati": 0.1,
+        "kcal": 159.0,
+        "zuccheri": 0.1
+    },
+    {
+        "nome": "Tonno, in salamoia, sgocciolato",
+        "proteine": 25.1,
+        "grassi": 0.3,
+        "carboidrati": 0.0,
+        "kcal": 103.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tonno, sott'olio",
+        "proteine": 0.0,
+        "grassi": 20.5,
+        "carboidrati": 0.0,
+        "kcal": 0.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tonno, sott'olio, sgocciolato",
+        "proteine": 25.2,
+        "grassi": 10.1,
+        "carboidrati": 0.0,
+        "kcal": 192.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tonno, ventresca, in salamoia, sgocciolata",
+        "proteine": 0.0,
+        "grassi": 5.7,
+        "carboidrati": 0.0,
+        "kcal": 0.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Triglia",
+        "proteine": 15.8,
+        "grassi": 6.2,
+        "carboidrati": 1.1,
+        "kcal": 123.0,
+        "zuccheri": 1.1
+    },
+    {
+        "nome": "Trota",
+        "proteine": 14.7,
+        "grassi": 3.0,
+        "carboidrati": 0.0,
+        "kcal": 86.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Trota iridea d'allevamento, filetti",
+        "proteine": 20.3,
+        "grassi": 4.1,
+        "carboidrati": 0.0,
+        "kcal": 118.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Trota, surgelata",
+        "proteine": 17.8,
+        "grassi": 2.3,
+        "carboidrati": 0.0,
+        "kcal": 92.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Trota surgelata microonde",
+        "proteine": 26.7,
+        "grassi": 3.2,
+        "carboidrati": 0.0,
+        "kcal": 136.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Trota, surgelata, cotta",
+        "proteine": 20.4,
+        "grassi": 2.6,
+        "carboidrati": 0.0,
+        "kcal": 105.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Vongola",
+        "proteine": 10.2,
+        "grassi": 2.5,
+        "carboidrati": 2.2,
+        "kcal": 72.0,
+        "zuccheri": 2.2
+    },
+    {
+        "nome": "Crema di latte -12% di lipidi",
+        "proteine": 2.8,
+        "grassi": 12.5,
+        "carboidrati": 4.4,
+        "kcal": 140.0,
+        "zuccheri": 4.4
+    },
+    {
+        "nome": "Latte di bufala",
+        "proteine": 4.5,
+        "grassi": 8.5,
+        "carboidrati": 5.1,
+        "kcal": 114.0,
+        "zuccheri": 5.1
+    },
+    {
+        "nome": "Latte di capra",
+        "proteine": 3.9,
+        "grassi": 4.8,
+        "carboidrati": 4.7,
+        "kcal": 76.0,
+        "zuccheri": 4.7
+    },
+    {
+        "nome": "Latte di pecora",
+        "proteine": 5.3,
+        "grassi": 6.9,
+        "carboidrati": 5.2,
+        "kcal": 103.0,
+        "zuccheri": 5.2
+    },
+    {
+        "nome": "Latte di vacca UHT, intero",
+        "proteine": 3.3,
+        "grassi": 3.6,
+        "carboidrati": 4.7,
+        "kcal": 63.0,
+        "zuccheri": 4.7
+    },
+    {
+        "nome": "Latte di vacca UHT, parzialmente scremato",
+        "proteine": 3.2,
+        "grassi": 1.6,
+        "carboidrati": 5.1,
+        "kcal": 46.0,
+        "zuccheri": 5.1
+    },
+    {
+        "nome": "Latte di vacca in polvere, intero",
+        "proteine": 25.7,
+        "grassi": 24.9,
+        "carboidrati": 42.0,
+        "kcal": 484.0,
+        "zuccheri": 42.0
+    },
+    {
+        "nome": "Latte di vacca in polvere, parzialmente scremato",
+        "proteine": 28.8,
+        "grassi": 12.7,
+        "carboidrati": 50.2,
+        "kcal": 418.0,
+        "zuccheri": 50.2
+    },
+    {
+        "nome": "Latte di vacca in polvere, scremato",
+        "proteine": 33.1,
+        "grassi": 0.9,
+        "carboidrati": 56.2,
+        "kcal": 351.0,
+        "zuccheri": 56.2
+    },
+    {
+        "nome": "Latte di vacca pastorizzato, intero",
+        "proteine": 3.3,
+        "grassi": 3.6,
+        "carboidrati": 4.9,
+        "kcal": 64.0,
+        "zuccheri": 4.9
+    },
+    {
+        "nome": "Latte di vacca pastorizzato, parzialmente scremato",
+        "proteine": 3.5,
+        "grassi": 1.5,
+        "carboidrati": 5.0,
+        "kcal": 46.0,
+        "zuccheri": 5.0
+    },
+    {
+        "nome": "Latte di vacca pastorizzato, scremato",
+        "proteine": 3.6,
+        "grassi": 0.2,
+        "carboidrati": 5.3,
+        "kcal": 36.0,
+        "zuccheri": 5.3
+    },
+    {
+        "nome": "Latte di vacca, condensato zuccherato",
+        "proteine": 8.7,
+        "grassi": 9.0,
+        "carboidrati": 56.5,
+        "kcal": 328.0,
+        "zuccheri": 56.5
+    },
+    {
+        "nome": "Latte di vacca, evaporato non zuccherato",
+        "proteine": 7.0,
+        "grassi": 8.2,
+        "carboidrati": 8.6,
+        "kcal": 134.0,
+        "zuccheri": 8.6
+    },
+    {
+        "nome": "Panna o crema di latte",
+        "proteine": 2.3,
+        "grassi": 35.0,
+        "carboidrati": 3.4,
+        "kcal": 337.0,
+        "zuccheri": 3.4
+    },
+    {
+        "nome": "Panna, sterilizzata",
+        "proteine": 0.0,
+        "grassi": 23.9,
+        "carboidrati": 0.0,
+        "kcal": 0.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Yogurt caprino",
+        "proteine": 3.6,
+        "grassi": 2.9,
+        "carboidrati": 5.1,
+        "kcal": 60.0,
+        "zuccheri": 5.1
+    },
+    {
+        "nome": "Yogurt da latte, intero",
+        "proteine": 3.8,
+        "grassi": 3.9,
+        "carboidrati": 4.3,
+        "kcal": 66.0,
+        "zuccheri": 4.3
+    },
+    {
+        "nome": "Yogurt da latte, intero, alla frutta",
+        "proteine": 0.0,
+        "grassi": 2.8,
+        "carboidrati": 0.0,
+        "kcal": 0.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Yogurt da latte, parzialmente scremato",
+        "proteine": 3.4,
+        "grassi": 1.7,
+        "carboidrati": 3.8,
+        "kcal": 43.0,
+        "zuccheri": 3.8
+    },
+    {
+        "nome": "Yogurt da latte, scremato",
+        "proteine": 3.3,
+        "grassi": 0.9,
+        "carboidrati": 4.0,
+        "kcal": 36.0,
+        "zuccheri": 4.0
+    },
+    {
+        "nome": "Yogurt greco, da latte intero",
+        "proteine": 6.4,
+        "grassi": 9.1,
+        "carboidrati": 2.0,
+        "kcal": 115.0,
+        "zuccheri": 2.0
+    },
+    {
+        "nome": "Yogurt greco 2%",
+        "proteine": 9.9,
+        "grassi": 2.0,
+        "carboidrati": 3.8,
+        "kcal": 73.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Yogurt greco 0%",
+        "proteine": 10.3,
+        "grassi": 0.0,
+        "carboidrati": 4.0,
+        "kcal": 57.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Actimel (1=100gr)",
+        "proteine": 3.1,
+        "grassi": 0.9,
+        "carboidrati": 14.4,
+        "kcal": 80.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Brie",
+        "proteine": 19.3,
+        "grassi": 26.9,
+        "carboidrati": 0.0,
+        "kcal": 319.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Burrini",
+        "proteine": 22.1,
+        "grassi": 47.0,
+        "carboidrati": 4.1,
+        "kcal": 527.0,
+        "zuccheri": 4.1
+    },
+    {
+        "nome": "Butirro calabro",
+        "proteine": 24.7,
+        "grassi": 37.8,
+        "carboidrati": 0.3,
+        "kcal": 440.0,
+        "zuccheri": 0.3
+    },
+    {
+        "nome": "Caciocavallo",
+        "proteine": 37.7,
+        "grassi": 31.1,
+        "carboidrati": 2.3,
+        "kcal": 439.0,
+        "zuccheri": 2.3
+    },
+    {
+        "nome": "Cacioricotta di capra",
+        "proteine": 11.9,
+        "grassi": 14.3,
+        "carboidrati": 0.5,
+        "kcal": 178.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Caciotta mista",
+        "proteine": 24.5,
+        "grassi": 31.0,
+        "carboidrati": 1.8,
+        "kcal": 384.0,
+        "zuccheri": 1.8
+    },
+    {
+        "nome": "Caciotta romana di pecora",
+        "proteine": 27.7,
+        "grassi": 27.3,
+        "carboidrati": 2.1,
+        "kcal": 364.0,
+        "zuccheri": 2.1
+    },
+    {
+        "nome": "Caciotta toscana",
+        "proteine": 24.6,
+        "grassi": 29.6,
+        "carboidrati": 0.8,
+        "kcal": 368.0,
+        "zuccheri": 0.8
+    },
+    {
+        "nome": "Caciottina fresca",
+        "proteine": 17.3,
+        "grassi": 21.3,
+        "carboidrati": 0.5,
+        "kcal": 263.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Caciottina mista",
+        "proteine": 26.9,
+        "grassi": 28.5,
+        "carboidrati": 1.5,
+        "kcal": 370.0,
+        "zuccheri": 1.5
+    },
+    {
+        "nome": "Caciottina vaccina",
+        "proteine": 21.1,
+        "grassi": 25.4,
+        "carboidrati": 3.0,
+        "kcal": 324.0,
+        "zuccheri": 3.0
+    },
+    {
+        "nome": "Camembert",
+        "proteine": 20.9,
+        "grassi": 23.7,
+        "carboidrati": 0.0,
+        "kcal": 297.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Cheddar",
+        "proteine": 25.0,
+        "grassi": 31.0,
+        "carboidrati": 0.5,
+        "kcal": 381.0,
+        "zuccheri": 0.5
+    },
+    {
+        "nome": "Crescenza",
+        "proteine": 16.1,
+        "grassi": 23.3,
+        "carboidrati": 1.9,
+        "kcal": 281.0,
+        "zuccheri": 1.9
+    },
+    {
+        "nome": "Dolce verde",
+        "proteine": 19.1,
+        "grassi": 20.0,
+        "carboidrati": 2.5,
+        "kcal": 266.0,
+        "zuccheri": 2.5
+    },
+    {
+        "nome": "Emmenthal",
+        "proteine": 28.5,
+        "grassi": 30.6,
+        "carboidrati": 3.6,
+        "kcal": 403.0,
+        "zuccheri": 3.6
+    },
+    {
+        "nome": "Feta",
+        "proteine": 15.6,
+        "grassi": 20.2,
+        "carboidrati": 1.5,
+        "kcal": 250.0,
+        "zuccheri": 1.5
+    },
+    {
+        "nome": "Fiocchi di formaggio magro",
+        "proteine": 9.7,
+        "grassi": 7.1,
+        "carboidrati": 3.2,
+        "kcal": 115.0,
+        "zuccheri": 3.2
+    },
+    {
+        "nome": "Fior di latte",
+        "proteine": 20.6,
+        "grassi": 20.3,
+        "carboidrati": 0.7,
+        "kcal": 268.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "Fontina",
+        "proteine": 24.5,
+        "grassi": 26.9,
+        "carboidrati": 0.8,
+        "kcal": 343.0,
+        "zuccheri": 0.8
+    },
+    {
+        "nome": "Formaggino",
+        "proteine": 11.2,
+        "grassi": 26.9,
+        "carboidrati": 6.0,
+        "kcal": 309.0,
+        "zuccheri": 6.0
+    },
+    {
+        "nome": "Formaggino, meno grasso",
+        "proteine": 14.7,
+        "grassi": 17.3,
+        "carboidrati": 6.5,
+        "kcal": 239.0,
+        "zuccheri": 6.5
+    },
+    {
+        "nome": "Formaggio cremoso spalmabile",
+        "proteine": 8.6,
+        "grassi": 31.0,
+        "carboidrati": 0.0,
+        "kcal": 313.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Formaggio cremoso spalmabile, light",
+        "proteine": 9.2,
+        "grassi": 14.5,
+        "carboidrati": 3.1,
+        "kcal": 179.0,
+        "zuccheri": 3.1
+    },
+    {
+        "nome": "Formaggio molle da tavola",
+        "proteine": 25.4,
+        "grassi": 30.2,
+        "carboidrati": 1.0,
+        "kcal": 377.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Gorgonzola",
+        "proteine": 19.1,
+        "grassi": 27.1,
+        "carboidrati": 1.0,
+        "kcal": 324.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Grana",
+        "proteine": 33.9,
+        "grassi": 28.5,
+        "carboidrati": 4.0,
+        "kcal": 392.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Groviera",
+        "proteine": 30.6,
+        "grassi": 29.0,
+        "carboidrati": 1.5,
+        "kcal": 389.0,
+        "zuccheri": 1.5
+    },
+    {
+        "nome": "Italico",
+        "proteine": 21.2,
+        "grassi": 25.2,
+        "carboidrati": 1.2,
+        "kcal": 316.0,
+        "zuccheri": 1.2
+    },
+    {
+        "nome": "Latteria [formaggio tipico del Veneto]",
+        "proteine": 30.7,
+        "grassi": 36.4,
+        "carboidrati": 1.4,
+        "kcal": 456.0,
+        "zuccheri": 1.4
+    },
+    {
+        "nome": "Mascarpone",
+        "proteine": 7.6,
+        "grassi": 47.0,
+        "carboidrati": 0.3,
+        "kcal": 455.0,
+        "zuccheri": 0.3
+    },
+    {
+        "nome": "Mozzarella di bufala",
+        "proteine": 16.7,
+        "grassi": 24.4,
+        "carboidrati": 0.4,
+        "kcal": 288.0,
+        "zuccheri": 0.4
+    },
+    {
+        "nome": "Mozzarella di vacca",
+        "proteine": 18.7,
+        "grassi": 19.5,
+        "carboidrati": 0.7,
+        "kcal": 253.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "Parmigiano",
+        "proteine": 33.5,
+        "grassi": 28.1,
+        "carboidrati": 0.0,
+        "kcal": 387.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Pecorino",
+        "proteine": 25.8,
+        "grassi": 32.0,
+        "carboidrati": 0.2,
+        "kcal": 392.0,
+        "zuccheri": 0.2
+    },
+    {
+        "nome": "Pecorino romano",
+        "proteine": 26.0,
+        "grassi": 33.1,
+        "carboidrati": 1.8,
+        "kcal": 409.0,
+        "zuccheri": 1.8
+    },
+    {
+        "nome": "Pecorino siciliano",
+        "proteine": 28.9,
+        "grassi": 33.6,
+        "carboidrati": 2.4,
+        "kcal": 427.0,
+        "zuccheri": 2.4
+    },
+    {
+        "nome": "Provolone",
+        "proteine": 28.1,
+        "grassi": 28.2,
+        "carboidrati": 2.0,
+        "kcal": 374.0,
+        "zuccheri": 2.0
+    },
+    {
+        "nome": "Ricotta di bufala",
+        "proteine": 10.5,
+        "grassi": 17.3,
+        "carboidrati": 3.7,
+        "kcal": 212.0,
+        "zuccheri": 3.7
+    },
+    {
+        "nome": "Ricotta di pecora",
+        "proteine": 9.5,
+        "grassi": 11.5,
+        "carboidrati": 4.2,
+        "kcal": 157.0,
+        "zuccheri": 4.2
+    },
+    {
+        "nome": "Ricotta di vacca",
+        "proteine": 8.8,
+        "grassi": 10.9,
+        "carboidrati": 3.5,
+        "kcal": 146.0,
+        "zuccheri": 3.5
+    },
+    {
+        "nome": "Robiola",
+        "proteine": 20.0,
+        "grassi": 27.7,
+        "carboidrati": 2.3,
+        "kcal": 338.0,
+        "zuccheri": 2.3
+    },
+    {
+        "nome": "Scamorza",
+        "proteine": 25.0,
+        "grassi": 25.6,
+        "carboidrati": 1.0,
+        "kcal": 334.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Stracchino",
+        "proteine": 18.5,
+        "grassi": 25.1,
+        "carboidrati": 0.0,
+        "kcal": 300.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Taleggio",
+        "proteine": 19.0,
+        "grassi": 26.2,
+        "carboidrati": 0.9,
+        "kcal": 315.0,
+        "zuccheri": 0.9
+    },
+    {
+        "nome": "tofu",
+        "proteine": 15.0,
+        "grassi": 10.0,
+        "carboidrati": 1.0,
+        "kcal": 158.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Uova di anatra, intero",
+        "proteine": 12.2,
+        "grassi": 15.4,
+        "carboidrati": 0.7,
+        "kcal": 190.0,
+        "zuccheri": 0.7
+    },
+    {
+        "nome": "Uova di gallina, albume",
+        "proteine": 10.7,
+        "grassi": 0.0,
+        "carboidrati": 0.0,
+        "kcal": 43.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Uova di gallina, intero",
+        "proteine": 12.4,
+        "grassi": 8.7,
+        "carboidrati": 0.0,
+        "kcal": 128.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Uova di gallina, intero, in polvere",
+        "proteine": 51.9,
+        "grassi": 36.4,
+        "carboidrati": 0.4,
+        "kcal": 537.0,
+        "zuccheri": 0.4
+    },
+    {
+        "nome": "Uova di gallina, tuorlo",
+        "proteine": 15.8,
+        "grassi": 29.1,
+        "carboidrati": 0.0,
+        "kcal": 325.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Uova di oca, intero",
+        "proteine": 13.8,
+        "grassi": 14.4,
+        "carboidrati": 1.0,
+        "kcal": 189.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Uova di tacchina, intero",
+        "proteine": 12.8,
+        "grassi": 10.2,
+        "carboidrati": 1.0,
+        "kcal": 147.0,
+        "zuccheri": 1.0
+    },
+    {
+        "nome": "Burro",
+        "proteine": 0.8,
+        "grassi": 83.4,
+        "carboidrati": 1.1,
+        "kcal": 758.0,
+        "zuccheri": 1.1
+    },
+    {
+        "nome": "Lardo",
+        "proteine": 0.0,
+        "grassi": 99.0,
+        "carboidrati": 0.0,
+        "kcal": 891.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Margarina -100% vegetale",
+        "proteine": 0.6,
+        "grassi": 84.0,
+        "carboidrati": 0.4,
+        "kcal": 760.0,
+        "zuccheri": 0.4
+    },
+    {
+        "nome": "Margarina -2/3 di grassi animali, 1/3 di grassi vegetali",
+        "proteine": 0.7,
+        "grassi": 84.0,
+        "carboidrati": 0.4,
+        "kcal": 760.0,
+        "zuccheri": 0.4
+    },
+    {
+        "nome": "Olii vegetali [oliva, soia, mais ecc.]",
+        "proteine": 0.0,
+        "grassi": 99.9,
+        "carboidrati": 0.0,
+        "kcal": 899.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Olio di arachide",
+        "proteine": 0.0,
+        "grassi": 99.9,
+        "carboidrati": 0.0,
+        "kcal": 899.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Olio di cocco",
+        "proteine": 0.0,
+        "grassi": 99.9,
+        "carboidrati": 0.0,
+        "kcal": 899.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Olio di colza",
+        "proteine": 0.0,
+        "grassi": 99.9,
+        "carboidrati": 0.0,
+        "kcal": 899.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Olio di fegato di merluzzo",
+        "proteine": 0.0,
+        "grassi": 99.9,
+        "carboidrati": 0.0,
+        "kcal": 899.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Olio di germe di grano",
+        "proteine": 0.0,
+        "grassi": 99.9,
+        "carboidrati": 0.0,
+        "kcal": 899.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Olio di girasole",
+        "proteine": 0.0,
+        "grassi": 99.9,
+        "carboidrati": 0.0,
+        "kcal": 899.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Olio di mais",
+        "proteine": 0.0,
+        "grassi": 99.9,
+        "carboidrati": 0.0,
+        "kcal": 899.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Olio di mandorle dolci",
+        "proteine": 0.0,
+        "grassi": 99.9,
+        "carboidrati": 0.0,
+        "kcal": 899.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Olio di oliva",
+        "proteine": 0.0,
+        "grassi": 99.9,
+        "carboidrati": 0.0,
+        "kcal": 899.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Olio di oliva extra vergine",
+        "proteine": 0.0,
+        "grassi": 99.9,
+        "carboidrati": 0.0,
+        "kcal": 899.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Olio di palma",
+        "proteine": 0.0,
+        "grassi": 99.9,
+        "carboidrati": 0.0,
+        "kcal": 899.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Olio di sesamo",
+        "proteine": 0.0,
+        "grassi": 99.9,
+        "carboidrati": 0.0,
+        "kcal": 899.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Olio di soia",
+        "proteine": 0.0,
+        "grassi": 99.9,
+        "carboidrati": 0.0,
+        "kcal": 899.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Olio di vinacciolo",
+        "proteine": 0.0,
+        "grassi": 99.9,
+        "carboidrati": 0.0,
+        "kcal": 899.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Sego di bue",
+        "proteine": 0.8,
+        "grassi": 96.5,
+        "carboidrati": 0.0,
+        "kcal": 872.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Strutto o sugna",
+        "proteine": 0.3,
+        "grassi": 99.0,
+        "carboidrati": 0.0,
+        "kcal": 892.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Baba' al rhum",
+        "proteine": 5.9,
+        "grassi": 5.7,
+        "carboidrati": 41.2,
+        "kcal": 229.0,
+        "zuccheri": 18.5
+    },
+    {
+        "nome": "Barretta al cocco ricoperta di cioccolato",
+        "proteine": 4.8,
+        "grassi": 26.1,
+        "carboidrati": 58.2,
+        "kcal": 472.0,
+        "zuccheri": 53.7
+    },
+    {
+        "nome": "Canditi",
+        "proteine": 0.5,
+        "grassi": 0.0,
+        "carboidrati": 75.0,
+        "kcal": 283.0,
+        "zuccheri": 75.0
+    },
+    {
+        "nome": "Cannoli alla crema",
+        "proteine": 6.2,
+        "grassi": 20.7,
+        "carboidrati": 41.9,
+        "kcal": 368.0,
+        "zuccheri": 10.9
+    },
+    {
+        "nome": "Caramelle dure",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 91.6,
+        "kcal": 344.0,
+        "zuccheri": 91.6
+    },
+    {
+        "nome": "Caramelle tipo mou",
+        "proteine": 2.1,
+        "grassi": 17.2,
+        "carboidrati": 71.1,
+        "kcal": 430.0,
+        "zuccheri": 70.0
+    },
+    {
+        "nome": "Cioccolato al latte",
+        "proteine": 7.3,
+        "grassi": 36.3,
+        "carboidrati": 50.5,
+        "kcal": 545.0,
+        "zuccheri": 50.5
+    },
+    {
+        "nome": "Cioccolato al latte con nocciole",
+        "proteine": 7.2,
+        "grassi": 36.9,
+        "carboidrati": 48.6,
+        "kcal": 543.0,
+        "zuccheri": 48.6
+    },
+    {
+        "nome": "Cioccolato fondente",
+        "proteine": 6.6,
+        "grassi": 33.6,
+        "carboidrati": 49.7,
+        "kcal": 515.0,
+        "zuccheri": 49.7
+    },
+    {
+        "nome": "Crema di nocciole e cacao",
+        "proteine": 6.9,
+        "grassi": 32.4,
+        "carboidrati": 58.1,
+        "kcal": 537.0,
+        "zuccheri": 58.1
+    },
+    {
+        "nome": "Crostata con crema al cacao",
+        "proteine": 4.6,
+        "grassi": 24.7,
+        "carboidrati": 67.0,
+        "kcal": 492.0,
+        "zuccheri": 36.1
+    },
+    {
+        "nome": "Crostata con marmellata",
+        "proteine": 4.9,
+        "grassi": 8.2,
+        "carboidrati": 65.5,
+        "kcal": 339.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Crostata con marmellata di albicocche, tipo industriale",
+        "proteine": 0.9,
+        "grassi": 16.5,
+        "carboidrati": 71.7,
+        "kcal": 421.0,
+        "zuccheri": 28.4
+    },
+    {
+        "nome": "Gelato confezionato- biscotto con crema, zabaione e cioccolato",
+        "proteine": 5.3,
+        "grassi": 7.3,
+        "carboidrati": 49.1,
+        "kcal": 271.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Gelato confezionato- cacao, in vaschetta",
+        "proteine": 3.6,
+        "grassi": 7.1,
+        "carboidrati": 25.3,
+        "kcal": 173.0,
+        "zuccheri": 25.3
+    },
+    {
+        "nome": "Gelato confezionato- caffe, in vaschetta",
+        "proteine": 5.1,
+        "grassi": 15.0,
+        "carboidrati": 23.9,
+        "kcal": 245.0,
+        "zuccheri": 23.9
+    },
+    {
+        "nome": "Gelato confezionato- cono con panna e cioccolato",
+        "proteine": 5.1,
+        "grassi": 15.5,
+        "carboidrati": 34.9,
+        "kcal": 291.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Gelato confezionato- cono con panna, scaglie di cioccolato e noccioline",
+        "proteine": 4.2,
+        "grassi": 20.5,
+        "carboidrati": 33.3,
+        "kcal": 326.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Gelato confezionato- fior di latte, in vaschetta",
+        "proteine": 4.2,
+        "grassi": 13.7,
+        "carboidrati": 20.7,
+        "kcal": 218.0,
+        "zuccheri": 20.7
+    },
+    {
+        "nome": "Gelato confezionato- fior di latte, ricoperto di sorbetto alla fragola",
+        "proteine": 1.4,
+        "grassi": 1.7,
+        "carboidrati": 21.3,
+        "kcal": 101.0,
+        "zuccheri": 21.3
+    },
+    {
+        "nome": "Gelato confezionato- ghiacciolo all'arancio",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 36.5,
+        "kcal": 137.0,
+        "zuccheri": 36.5
+    },
+    {
+        "nome": "Gelato confezionato- nocciola, in vaschetta",
+        "proteine": 3.3,
+        "grassi": 8.4,
+        "carboidrati": 25.2,
+        "kcal": 183.0,
+        "zuccheri": 25.2
+    },
+    {
+        "nome": "Gelato confezionato- panna ricoperta di cioccolato fondente",
+        "proteine": 4.5,
+        "grassi": 21.4,
+        "carboidrati": 28.2,
+        "kcal": 316.0,
+        "zuccheri": 28.2
+    },
+    {
+        "nome": "Gelato confezionato- panna, in vaschetta",
+        "proteine": 3.2,
+        "grassi": 8.2,
+        "carboidrati": 27.2,
+        "kcal": 189.0,
+        "zuccheri": 27.2
+    },
+    {
+        "nome": "Gelato confezionato- sorbetto al limone, in vaschetta",
+        "proteine": 0.9,
+        "grassi": 0.0,
+        "carboidrati": 34.2,
+        "kcal": 132.0,
+        "zuccheri": 34.2
+    },
+    {
+        "nome": "Gelato confezionato- stracciatella, in vaschetta",
+        "proteine": 2.9,
+        "grassi": 7.0,
+        "carboidrati": 31.5,
+        "kcal": 193.0,
+        "zuccheri": 31.5
+    },
+    {
+        "nome": "Gelato confezionato- vaniglia, in vaschetta",
+        "proteine": 2.7,
+        "grassi": 6.7,
+        "carboidrati": 25.7,
+        "kcal": 167.0,
+        "zuccheri": 25.7
+    },
+    {
+        "nome": "Gelato di crema",
+        "proteine": 0.0,
+        "grassi": 12.0,
+        "carboidrati": 0.0,
+        "kcal": 0.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Gomme da masticare, lastrine e confetti",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 70.0,
+        "kcal": 263.0,
+        "zuccheri": 70.0
+    },
+    {
+        "nome": "Lenti colorate ripiene di cioccolato",
+        "proteine": 5.4,
+        "grassi": 17.5,
+        "carboidrati": 73.9,
+        "kcal": 456.0,
+        "zuccheri": 70.8
+    },
+    {
+        "nome": "Marmellate, normali e tipo frutta viva",
+        "proteine": 0.5,
+        "grassi": 0.0,
+        "carboidrati": 58.7,
+        "kcal": 222.0,
+        "zuccheri": 58.7
+    },
+    {
+        "nome": "Marzapane",
+        "proteine": 0.0,
+        "grassi": 25.8,
+        "carboidrati": 0.0,
+        "kcal": 0.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Merendine, con marmellata",
+        "proteine": 5.5,
+        "grassi": 8.3,
+        "carboidrati": 69.6,
+        "kcal": 358.0,
+        "zuccheri": 46.5
+    },
+    {
+        "nome": "Merendine, farcite di latte",
+        "proteine": 6.2,
+        "grassi": 15.1,
+        "carboidrati": 67.3,
+        "kcal": 413.0,
+        "zuccheri": 45.7
+    },
+    {
+        "nome": "Merendine, tipo briosche",
+        "proteine": 8.2,
+        "grassi": 17.6,
+        "carboidrati": 65.7,
+        "kcal": 438.0,
+        "zuccheri": 22.5
+    },
+    {
+        "nome": "Merendine, tipo pan di spagna",
+        "proteine": 7.4,
+        "grassi": 13.1,
+        "carboidrati": 62.7,
+        "kcal": 383.0,
+        "zuccheri": 34.9
+    },
+    {
+        "nome": "Merendine, tipo pasta frolla",
+        "proteine": 5.3,
+        "grassi": 17.1,
+        "carboidrati": 71.7,
+        "kcal": 444.0,
+        "zuccheri": 35.2
+    },
+    {
+        "nome": "Miele",
+        "proteine": 0.6,
+        "grassi": 0.0,
+        "carboidrati": 80.3,
+        "kcal": 304.0,
+        "zuccheri": 80.3
+    },
+    {
+        "nome": "Panettone",
+        "proteine": 6.4,
+        "grassi": 10.7,
+        "carboidrati": 56.2,
+        "kcal": 333.0,
+        "zuccheri": 22.9
+    },
+    {
+        "nome": "Pasta di mandorle",
+        "proteine": 9.9,
+        "grassi": 23.4,
+        "carboidrati": 54.6,
+        "kcal": 455.0,
+        "zuccheri": 54.6
+    },
+    {
+        "nome": "Savoiardi",
+        "proteine": 11.9,
+        "grassi": 9.2,
+        "carboidrati": 69.6,
+        "kcal": 391.0,
+        "zuccheri": 39.3
+    },
+    {
+        "nome": "Torrone alla mandorla",
+        "proteine": 10.8,
+        "grassi": 26.8,
+        "carboidrati": 52.0,
+        "kcal": 479.0,
+        "zuccheri": 52.0
+    },
+    {
+        "nome": "Torta margherita",
+        "proteine": 8.9,
+        "grassi": 10.4,
+        "carboidrati": 63.4,
+        "kcal": 367.0,
+        "zuccheri": 34.1
+    },
+    {
+        "nome": "Wafer ricoperto di cioccolato",
+        "proteine": 8.2,
+        "grassi": 26.6,
+        "carboidrati": 60.3,
+        "kcal": 498.0,
+        "zuccheri": 46.8
+    },
+    {
+        "nome": "Danette vitasnella cioccolato",
+        "proteine": 4.1,
+        "grassi": 0.9,
+        "carboidrati": 14.8,
+        "kcal": 84.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Danette (cioccolato)",
+        "proteine": 3.9,
+        "grassi": 3.4,
+        "carboidrati": 22.4,
+        "kcal": 136.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Kinder Bueno",
+        "proteine": 9.2,
+        "grassi": 37.3,
+        "carboidrati": 49.5,
+        "kcal": 571.0,
+        "zuccheri": 41.3
+    },
+    {
+        "nome": "Ciocc Coop senza zucchero (1 quad=3,3g)",
+        "proteine": 7.1,
+        "grassi": 30.6,
+        "carboidrati": 43.4,
+        "kcal": 442.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Zucchero, saccarosio",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 104.5,
+        "kcal": 392.0,
+        "zuccheri": 104.5
+    },
+    {
+        "nome": "Aranciata",
+        "proteine": 0.1,
+        "grassi": 0.0,
+        "carboidrati": 10.0,
+        "kcal": 38.0,
+        "zuccheri": 10.0
+    },
+    {
+        "nome": "Bevanda tipo cola",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 10.5,
+        "kcal": 39.0,
+        "zuccheri": 10.5
+    },
+    {
+        "nome": "Cacao amaro in polvere",
+        "proteine": 20.4,
+        "grassi": 25.6,
+        "carboidrati": 11.5,
+        "kcal": 355.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Cacao magro in polvere",
+        "proteine": 0.0,
+        "grassi": 8.0,
+        "carboidrati": 0.0,
+        "kcal": 0.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Caffe' tostato",
+        "proteine": 10.4,
+        "grassi": 15.4,
+        "carboidrati": 28.5,
+        "kcal": 287.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Dadi da brodo",
+        "proteine": 15.7,
+        "grassi": 18.7,
+        "carboidrati": 5.0,
+        "kcal": 250.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Farina di castagne",
+        "proteine": 6.1,
+        "grassi": 3.7,
+        "carboidrati": 76.2,
+        "kcal": 343.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Fecola di patate",
+        "proteine": 1.4,
+        "grassi": 0.0,
+        "carboidrati": 90.7,
+        "kcal": 346.0,
+        "zuccheri": 9.1
+    },
+    {
+        "nome": "Lievito di birra, compresso",
+        "proteine": 12.1,
+        "grassi": 0.4,
+        "carboidrati": 1.1,
+        "kcal": 56.0,
+        "zuccheri": 1.1
+    },
+    {
+        "nome": "Maionese",
+        "proteine": 4.3,
+        "grassi": 70.0,
+        "carboidrati": 2.1,
+        "kcal": 655.0,
+        "zuccheri": 2.1
+    },
+    {
+        "nome": "Minestre in scatola, crema di asparagi",
+        "proteine": 1.0,
+        "grassi": 0.7,
+        "carboidrati": 4.2,
+        "kcal": 26.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Minestre in scatola, crema di cipolle",
+        "proteine": 2.2,
+        "grassi": 1.0,
+        "carboidrati": 2.2,
+        "kcal": 26.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Minestre in scatola, crema di funghi",
+        "proteine": 1.0,
+        "grassi": 4.0,
+        "carboidrati": 4.2,
+        "kcal": 56.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Minestre in scatola, crema di pollo",
+        "proteine": 1.7,
+        "grassi": 3.8,
+        "carboidrati": 4.5,
+        "kcal": 58.0,
+        "zuccheri": 1.1
+    },
+    {
+        "nome": "Minestre in scatola, crema di pomodori",
+        "proteine": 0.8,
+        "grassi": 1.0,
+        "carboidrati": 6.4,
+        "kcal": 36.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Minestrone liofilizzato",
+        "proteine": 10.1,
+        "grassi": 8.8,
+        "carboidrati": 47.6,
+        "kcal": 298.0,
+        "zuccheri": 15.0
+    },
+    {
+        "nome": "Pappa reale",
+        "proteine": 10.0,
+        "grassi": 6.0,
+        "carboidrati": 14.0,
+        "kcal": 147.0,
+        "zuccheri": 14.0
+    },
+    {
+        "nome": "Pop corn",
+        "proteine": 12.0,
+        "grassi": 4.2,
+        "carboidrati": 77.9,
+        "kcal": 378.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Salsa tomato ketchup",
+        "proteine": 2.1,
+        "grassi": 0.0,
+        "carboidrati": 24.0,
+        "kcal": 98.0,
+        "zuccheri": 22.9
+    },
+    {
+        "nome": "Soia, latte",
+        "proteine": 2.9,
+        "grassi": 1.9,
+        "carboidrati": 0.8,
+        "kcal": 32.0,
+        "zuccheri": 0.8
+    },
+    {
+        "nome": "Soia, salsa",
+        "proteine": 8.7,
+        "grassi": 0.0,
+        "carboidrati": 8.3,
+        "kcal": 66.0,
+        "zuccheri": 8.3
+    },
+    {
+        "nome": "Soia, yogurt",
+        "proteine": 5.0,
+        "grassi": 4.2,
+        "carboidrati": 3.9,
+        "kcal": 72.0,
+        "zuccheri": 3.9
+    },
+    {
+        "nome": "tortino verdure con pasta pizza",
+        "proteine": 22.74,
+        "grassi": 12.52,
+        "carboidrati": 53.4,
+        "kcal": 414.3,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "tortino verdure con pasta sfoglia",
+        "proteine": 18.19,
+        "grassi": 17.52,
+        "carboidrati": 25.85,
+        "kcal": 331.3,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Te' (foglie)",
+        "proteine": 19.6,
+        "grassi": 2.0,
+        "carboidrati": 3.0,
+        "kcal": 108.0,
+        "zuccheri": 3.0
+    },
+    {
+        "nome": "Barretta sost past enerzona (1=45gr)",
+        "proteine": 26.4,
+        "grassi": 11.6,
+        "carboidrati": 32.9,
+        "kcal": 342.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Polpette di tofu",
+        "proteine": 15.4,
+        "grassi": 13.6,
+        "carboidrati": 4.8,
+        "kcal": 203.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "sushi (porzione 12-14 pezzi)",
+        "proteine": 25.0,
+        "grassi": 5.5,
+        "carboidrati": 7.0,
+        "kcal": 390.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Tortillas (1=40gr)",
+        "proteine": 9.2,
+        "grassi": 9.0,
+        "carboidrati": 51.0,
+        "kcal": 324.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Aperitivi a base di vino",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 17.0,
+        "kcal": 186.0,
+        "zuccheri": 17.0
+    },
+    {
+        "nome": "Birra chiara",
+        "proteine": 0.2,
+        "grassi": 0.0,
+        "carboidrati": 3.5,
+        "kcal": 34.0,
+        "zuccheri": 3.5
+    },
+    {
+        "nome": "Brandy",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 0.0,
+        "kcal": 230.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Grappa",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 0.0,
+        "kcal": 242.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Liquori da dessert",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 31.1,
+        "kcal": 314.0,
+        "zuccheri": 31.1
+    },
+    {
+        "nome": "Marsala all'uovo",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 12.4,
+        "kcal": 150.0,
+        "zuccheri": 12.4
+    },
+    {
+        "nome": "Marsala tipico",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 28.0,
+        "kcal": 203.0,
+        "zuccheri": 28.0
+    },
+    {
+        "nome": "Spumante",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 0.6,
+        "kcal": 87.0,
+        "zuccheri": 0.6
+    },
+    {
+        "nome": "Vermouth dolce",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 13.9,
+        "kcal": 139.0,
+        "zuccheri": 13.9
+    },
+    {
+        "nome": "Vermouth secco",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 4.0,
+        "kcal": 121.0,
+        "zuccheri": 4.0
+    },
+    {
+        "nome": "Vino da pasto bianco",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 0.0,
+        "kcal": 70.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Vino da pasto rosso",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 0.0,
+        "kcal": 75.0,
+        "zuccheri": 0.0
+    },
+    {
+        "nome": "Whisky",
+        "proteine": 0.0,
+        "grassi": 0.0,
+        "carboidrati": 0.0,
+        "kcal": 245.0,
+        "zuccheri": 0.0
+    }
+]

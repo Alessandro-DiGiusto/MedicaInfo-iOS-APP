@@ -5,6 +5,7 @@
 //  Created by Alessandro Di Giusto on 22/05/24.
 //
 
+#if canImport(UIKit)
 import Foundation
 import UIKit
 import CoreData
@@ -35,3 +36,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
+#endif

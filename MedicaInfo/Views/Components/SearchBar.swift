@@ -1,14 +1,5 @@
-//
-//  AddPatientFinalStepView.swift
-//  MedicaInfo
-//
-//  Created by Alessandro Di Giusto on 12/08/24.
-//
-
-import Foundation
 import SwiftUI
 
-// Barra di ricerca personalizzata
 struct SearchBar: View {
     @Binding var text: String
 
@@ -17,7 +8,11 @@ struct SearchBar: View {
             TextField("Cerca paziente", text: $text)
                 .foregroundColor(.primary)
                 .padding(7)
+                #if os(iOS)
                 .background(Color(.systemGray5))
+                #else
+                .background(Color(.separatorColor))
+                #endif
                 .cornerRadius(10)
         }
         .padding(.vertical, 4)

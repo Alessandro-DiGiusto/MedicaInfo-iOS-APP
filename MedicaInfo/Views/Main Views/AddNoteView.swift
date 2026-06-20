@@ -1,11 +1,3 @@
-//
-//  AddNoteView.swift
-//  MedicaInfo
-//
-//  Created by Alessandro Di Giusto on 31/05/24.
-//
-
-import Foundation
 import SwiftUI
 import CoreData
 
@@ -17,7 +9,7 @@ struct AddNoteView: View {
     @State private var noteText: String = ""
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Text("Aggiungi Nota")
                     .font(.title)
@@ -29,19 +21,19 @@ struct AddNoteView: View {
                     .padding()
 
                 Button("Salva") {
-                    // Salvare la nota e aggiornare eventualmente il Core Data
-                    // qui utilizzando patientId e noteText
-                    // E poi chiudi la vista
                     onDismiss()
                 }
                 .padding()
                 .disabled(noteText.isEmpty)
             }
-            .navigationBarItems(trailing: Button("Annulla") {
-                onDismiss()
-            })
-            .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Aggiungi Nota")
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Annulla") {
+                        onDismiss()
+                    }
+                }
+            }
         }
     }
 }

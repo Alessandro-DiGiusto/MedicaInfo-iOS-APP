@@ -1,16 +1,8 @@
-//
-//  PDFKitRepresentedView.swift
-//  MedicaInfo
-//
-//  Created by Alessandro Di Giusto on 18/08/24.
-//
-
-import Foundation
 import SwiftUI
 import PDFKit
 
-// Supponiamo che esista un componente PDFKitRepresentedView
-// Wrapper per integrare PDFKit in SwiftUI
+// Wrapper per integrare PDFKit in SwiftUI (multi-piattaforma)
+#if os(iOS)
 struct PDFKitRepresentedView: UIViewRepresentable {
     let url: URL
     
@@ -25,3 +17,19 @@ struct PDFKitRepresentedView: UIViewRepresentable {
         // Non è necessario aggiornare nulla
     }
 }
+#elseif os(macOS)
+struct PDFKitRepresentedView: NSViewRepresentable {
+    let url: URL
+    
+    func makeNSView(context: Context) -> PDFView {
+        let pdfView = PDFView()
+        pdfView.document = PDFDocument(url: url)
+        pdfView.autoScales = true
+        return pdfView
+    }
+    
+    func updateNSView(_ nsView: PDFView, context: Context) {
+        // Non è necessario aggiornare nulla
+    }
+}
+#endif

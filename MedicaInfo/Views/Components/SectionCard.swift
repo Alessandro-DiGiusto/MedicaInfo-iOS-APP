@@ -21,7 +21,11 @@ struct SectionCard<Content: View>: View {
             content()
         }
         .padding()
+        #if os(iOS)
         .background(Color(.systemGroupedBackground))
+        #else
+        .background(Color(.controlBackgroundColor))
+        #endif
         .cornerRadius(10)
         .shadow(radius: 2)
     }

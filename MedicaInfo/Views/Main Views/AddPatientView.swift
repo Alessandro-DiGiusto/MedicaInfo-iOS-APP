@@ -6,27 +6,17 @@ struct AddPatientView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject private var viewModel: AddPatientViewModel
     
-    @State private var showSuggestions: Bool = false
-    @State private var showAlert: Bool = false
+    @FocusState private var birthPlaceFocused: Bool
     @State private var showSuccessMessage: Bool = false
     
     // Variabili per Anamnesi Fisiologica
     @State private var partoNaturaleSelection: String = ""
     @State private var altroInput: String = ""
-    @State private var vaccinazioni: String = ""
     @State private var assumeFarmaci: Bool = false
-    @State private var qualiFarmaci: String = ""
     @State private var esamiSangue: Bool = false
     @State private var sceltaDieta: String = ""
-    @State private var sceltaFumatore: String = ""
-    @State private var sceltaAlcolistica: String = ""
-    @State private var consumoAlcol: String = ""
     @State private var sceltaCaffe: String = ""
     @State private var consumoCaffe: String = ""
-    
-    //DATA PICKER DATA DI NASCITA
-    // Stato per tenere traccia della data di nascita selezionata
-    @State private var birthDate = Date()
     
     // Inizializzazione del ViewModel
     init() {
@@ -61,15 +51,22 @@ struct AddPatientView: View {
                 
                 saveButton
             }
-            .background(Color(.systemGroupedBackground).edgesIgnoringSafeArea(.all))
+            #if os(iOS)
+            .background(Color(.systemGroupedBackground))
+            #else
+            .background(Color(.controlBackgroundColor))
+            #endif
+            #if os(iOS)
+            .edgesIgnoringSafeArea(.all)
+            #endif
             .navigationTitle("Aggiungi Paziente")
             .onTapGesture {
+                #if os(iOS)
                 UIApplication.shared.endEditing()
+                #endif
             }
             .onAppear {
-                if viewModel.comuni.isEmpty {
-                    viewModel.loadComuni()
-                }
+                // Comuni già caricati in modo sincrono nel ViewModel
             }
             
             if showSuccessMessage {
@@ -122,20 +119,52 @@ struct AddPatientView: View {
                 HStack {
                     Image(systemName: "location")
                         .foregroundColor(.blue)
-                    TextField("Inserisci Comune di Nascita", text: $viewModel.birthPlace, onEditingChanged: { isEditing in
-                        if isEditing {
-                            showSuggestions = true
-                        }
-                    })
+                    TextField("Inserisci Comune di Nascita", text: $viewModel.birthPlace)
+                        .focused($birthPlaceFocused)
                 }
-                if showSuggestions && !viewModel.filteredComuni.isEmpty {
-                    List(viewModel.filteredComuni, id: \.id) { comune in
-                        Text(comune.nome)
-                            .onTapGesture {
-                                viewModel.birthPlace = comune.nome
-                                showSuggestions = false
+                
+                // Suggestions dropdown — appare solo se campo focalizzato + testo + risultati
+                if birthPlaceFocused && !viewModel.birthPlace.isEmpty && !viewModel.filteredComuni.isEmpty {
+                    ScrollView {
+                        LazyVStack(alignment: .leading, spacing: 0) {
+                            ForEach(viewModel.filteredComuni, id: \.id) { comune in
+                                Button(action: {
+                                    viewModel.birthPlace = comune.nome
+                                    birthPlaceFocused = false
+                                }) {
+                                    HStack {
+                                        Image(systemName: "mappin")
+                                            .font(.caption)
+                                            .foregroundColor(.blue)
+                                        Text(comune.nome)
+                                            .foregroundColor(.primary)
+                                        Spacer()
+                                    }
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 8)
+                                    .contentShape(Rectangle())
+                                }
+                                .buttonStyle(.plain)
+                                
+                                if comune.id != viewModel.filteredComuni.last?.id {
+                                    Divider().padding(.leading, 32)
+                                }
                             }
+                        }
                     }
+                    .frame(maxHeight: 200)
+                    #if os(iOS)
+                    .background(Color(.systemBackground))
+                    #else
+                    .background(Color(.windowBackgroundColor))
+                    #endif
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .shadow(color: Color.black.opacity(0.15), radius: 8, y: 4)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.primary.opacity(0.1), lineWidth: 1)
+                    )
+                    .padding(.horizontal, 4)
                 }
                 HStack {
                     Image(systemName: "house")
@@ -146,7 +175,9 @@ struct AddPatientView: View {
                     Image(systemName: "phone")
                         .foregroundColor(.blue)
                     TextField("Telefono", text: $viewModel.tel)
+                        #if os(iOS)
                         .keyboardType(.phonePad)
+                        #endif
                 }
             }
     }
@@ -172,7 +203,9 @@ struct AddPatientView: View {
                             get: { viewModel.yearsOfPractice ?? 0 },
                             set: { viewModel.yearsOfPractice = $0 == 0 ? nil : $0 }
                         ), formatter: numberFormatter)
+                        #if os(iOS)
                         .keyboardType(.numberPad)
+                        #endif
                         .frame(width: 50)
                     }
                     HStack {
@@ -184,7 +217,9 @@ struct AddPatientView: View {
                             get: { viewModel.weeklyHours ?? 0 },
                             set: { viewModel.weeklyHours = $0 == 0 ? nil : $0 }
                         ), formatter: numberFormatter)
+                        #if os(iOS)
                         .keyboardType(.numberPad)
+                        #endif
                         .frame(width: 50)
                     }
                     Toggle("Pratica altri sport", isOn: $viewModel.practicesOtherSports)
@@ -241,12 +276,12 @@ struct AddPatientView: View {
                 if partoNaturaleSelection == "Altro" {
                     TextField("Specifica", text: $altroInput)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .onChange(of: altroInput) { newValue in
+                        .onChange(of: altroInput) { _, newValue in
                             viewModel.partoNaturale = newValue
                         }
                 }
             }
-            .onChange(of: partoNaturaleSelection) { newValue in
+            .onChange(of: partoNaturaleSelection) { _, newValue in
                 if newValue != "Altro" {
                     viewModel.partoNaturale = newValue
                 }
@@ -254,7 +289,7 @@ struct AddPatientView: View {
     }
     
     var caffe: some View {
-        Section(header: Text("")
+        Section(header: Text("Caffè")
             .font(.headline)
             .foregroundColor(.blue)) {
                 
@@ -267,12 +302,12 @@ struct AddPatientView: View {
                 if sceltaCaffe == "SI" {
                     TextField("Quanti caffè prende al giorno?", text: $consumoCaffe)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .onChange(of: consumoCaffe) { newValue in
+                        .onChange(of: consumoCaffe) { _, newValue in
                             viewModel.consumoCaffe = newValue
                         }
                 }
             }
-            .onChange(of: sceltaCaffe) { newValue in
+            .onChange(of: sceltaCaffe) { _, newValue in
                 if newValue == "NO" {
                     viewModel.consumoCaffe = "NO"
                 } else if newValue == "SI" && !consumoCaffe.isEmpty {
@@ -362,14 +397,9 @@ struct AddPatientView: View {
                 DietaButton(title: "SI", selectedOption: $viewModel.fumo, optionValue: "SI")
             }
             
-            if sceltaFumatore == "SI" {
-                TextField("Quante sigarette al giorno fumi?", text: Binding(
-                    get: { viewModel.quanteSigarette.replacingOccurrences(of: "Si: ", with: "") },
-                    set: { newValue in
-                        viewModel.quanteSigarette = " \(newValue)"
-                    }
-                ))
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+            if viewModel.fumo == "SI" {
+                TextField("Quante sigarette al giorno?", text: $viewModel.quanteSigarette)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
             }
         }
         .padding(.vertical)
@@ -380,20 +410,12 @@ struct AddPatientView: View {
             Text("Beve alcolici?")
             
             HStack {
-                DietaButton(title: "NO", selectedOption: $sceltaAlcolistica, optionValue: "NO")
-                    .onTapGesture {
-                        sceltaAlcolistica = "NO"
-                        viewModel.consumoAlcol = "NO" // Salva "NO" in consumoAlcol
-                    }
+                DietaButton(title: "NO", selectedOption: $viewModel.consumoAlcol, optionValue: "NO")
                 Spacer()
-                DietaButton(title: "SI", selectedOption: $sceltaAlcolistica, optionValue: "SI")
-                    .onTapGesture {
-                        sceltaAlcolistica = "SI"
-                        viewModel.consumoAlcol = "" // Pulisci il campo per permettere l'input
-                    }
+                DietaButton(title: "SI", selectedOption: $viewModel.consumoAlcol, optionValue: "SI")
             }
             
-            if sceltaAlcolistica == "SI" {
+            if viewModel.consumoAlcol == "SI" {
                 TextField("Quanti?", text: $viewModel.consumoAlcol)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
@@ -405,7 +427,9 @@ struct AddPatientView: View {
     // Pulsante di Salvataggio
     var saveButton: some View {
         Button(action: {
+            #if os(iOS)
             UIApplication.shared.endEditing()
+            #endif
             viewModel.savePatient()
             showSuccessMessage = true
             

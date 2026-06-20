@@ -4,14 +4,12 @@ import CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    @State private var showAddPatientView = false
-    @State private var showPatientListView = false
     @State private var showDeleteConfirmation = false
     @State private var deleteConfirmationStep = 0 // Contatore per le conferme
     @State private var showSuccessOverlay = false // Stato per l'overlay di successo
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 // Sfondo sfumato per un aspetto moderno
                 LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.2), Color.blue.opacity(0.8)]), startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -49,85 +47,113 @@ struct ContentView: View {
                         .padding(.horizontal, 20)
                     // Pulsanti di navigazione principali con icone
                     HStack(spacing: 20) {
-                        VStack {
-                            Button(action: {
-                                // Azione per il tasto Impostazioni
-                            }) {
+                        NavigationLink(value: "settings") {
+                            VStack {
                                 Image(systemName: "gearshape.fill")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 20, height: 20)
                                     .foregroundColor(.white)
+                                Text("Settings")
+                                    .font(.system(size: 14, weight: .medium, design: .rounded))
+                                    .foregroundColor(.white)
                             }
-                            Text("Settings")
-                                .font(.system(size: 14, weight: .medium, design: .rounded))
-                                .foregroundColor(.white)
                         }
                         
-                        VStack {
-                            Button(action: {
-                                // Azione per il tasto Profilo
-                            }) {
+                        NavigationLink(value: "profile") {
+                            VStack {
                                 Image(systemName: "person.crop.circle.fill")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 20, height: 20)
                                     .foregroundColor(.white)
+                                Text("Profilo")
+                                    .font(.system(size: 14, weight: .medium, design: .rounded))
+                                    .foregroundColor(.white)
                             }
-                            Text("Profilo")
-                                .font(.system(size: 14, weight: .medium, design: .rounded))
-                                .foregroundColor(.white)
                         }
                         
-                        VStack {
-                            NavigationLink(destination: AddPatientView()) {
+                        NavigationLink(value: "addPatient") {
+                            VStack {
                                 Image(systemName: "plus.circle.fill")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 25, height: 25)
                                     .foregroundColor(.white)
                                     .shadow(radius: 5)
+                                Text("Paziente")
+                                    .font(.system(size: 14, weight: .medium, design: .rounded))
+                                    .foregroundColor(.white)
                             }
-                            Text("Paziente")
-                                .font(.system(size: 14, weight: .medium, design: .rounded))
-                                .foregroundColor(.white)
                         }
                         
-                        VStack {
-                            NavigationLink(destination: DetailView(onDeleteAllPatients: {
-                                handleDeletePatients()
-                            })) {
+                        NavigationLink(value: "dietPlan") {
+                            VStack {
+                                Image(systemName: "fork.knife.circle.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 25, height: 25)
+                                    .foregroundColor(.white)
+                                    .shadow(radius: 5)
+                                Text("Dieta")
+                                    .font(.system(size: 14, weight: .medium, design: .rounded))
+                                    .foregroundColor(.white)
+                            }
+                        }
+                        
+                        NavigationLink(value: "patientList") {
+                            VStack {
                                 Image(systemName: "list.bullet")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 20, height: 20)
                                     .foregroundColor(.white)
+                                Text("Lista Pazienti")
+                                    .font(.system(size: 14, weight: .medium, design: .rounded))
+                                    .foregroundColor(.white)
                             }
-                            Text("Lista Pazienti")
-                                .font(.system(size: 14, weight: .medium, design: .rounded))
-                                .foregroundColor(.white)
                         }
                         
-                        VStack {
-                            Button(action: {
-                                // Azione per il tasto Info
-                            }) {
+                        NavigationLink(value: "info") {
+                            VStack {
                                 Image(systemName: "info.circle.fill")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 20, height: 20)
                                     .foregroundColor(.white)
+                                Text("Info")
+                                    .font(.system(size: 14, weight: .medium, design: .rounded))
+                                    .foregroundColor(.white)
                             }
-                            Text("Info")
-                                .font(.system(size: 14, weight: .medium, design: .rounded))
-                                .foregroundColor(.white)
                         }
                     }
                     .padding(.bottom, 25)
                 }
             }
             .navigationTitle("")
+            #if os(iOS)
             .navigationBarHidden(true)  // Nasconde la barra di navigazione predefinita
+            #endif
+            .navigationDestination(for: String.self) { value in
+                switch value {
+                case "addPatient":
+                    AddPatientView()
+                case "dietPlan":
+                    DietPlanView()
+                case "patientList":
+                    DetailView(onDeleteAllPatients: {
+                        handleDeletePatients()
+                    })
+                case "settings":
+                    SettingsView()
+                case "profile":
+                    ProfileView()
+                case "info":
+                    InfoView()
+                default:
+                    EmptyView()
+                }
+            }
             .alert(isPresented: $showDeleteConfirmation) {
                 getDeleteConfirmationAlert()
             }
