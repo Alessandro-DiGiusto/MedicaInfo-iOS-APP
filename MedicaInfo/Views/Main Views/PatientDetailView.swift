@@ -1,288 +1,280 @@
 import SwiftUI
 import CoreData
 import UniformTypeIdentifiers
-import PDFKit
 
+// MARK: - PatientDetailView — Professional Medical Record 2026
 struct PatientDetailView: View {
     @ObservedObject var viewModel: PatientViewModel
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) private var dismiss
     @State private var showingDocumentPicker = false
     @State private var showingPDF = false
-    @State private var scelta: String? = nil
-    
+
     let context: NSManagedObjectContext
-    
-    // Crea un DateFormatter
-    let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long // Puoi modificare lo stile della data come preferisci
-        return formatter
+
+    private let dateFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateStyle = .long
+        f.locale = Locale(identifier: "it_IT")
+        return f
     }()
-    
+
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                
-                // Sezione Anagrafica
-                SectionCard(header: "Anagrafica") {
-                    VStack {
-                        HStack {
-                            Text("Nome Completo:")
-                                .font(.headline)
-                            Spacer()
-                            Text("\(viewModel.patient.name ?? "N/A") \(viewModel.patient.surname ?? "N/A")")
-                                .font(.body)
-                        }
-                        Divider()
-                        
-                        HStack {
-                            Text("Data di Nascita:")
-                                .font(.headline)
-                            Spacer()
-                            Text(viewModel.patient.birthDate != nil ? dateFormatter.string(from: viewModel.patient.birthDate!) : "N/A")
-                                .font(.body)
-                        }
-                        
-                        DetailRow(title: "Indirizzo di Residenza:", value: viewModel.patient.residenceAddress ?? "N/A")
-                        DetailRow(title: "Codice Fiscale:", value: viewModel.patient.cf ?? "N/A")
-                        DetailRow(title: "Sesso:", value: viewModel.patient.gender ?? "N/A")
-                        DetailRow(title: "Telefono:", value: viewModel.patient.tel ?? "N/A")
-                    }
-                }
-                
-                // Sezione Anamnesi Sportiva
-                SectionCard(header: "Anamnesi Sportiva") {
-                    VStack {
-                        DetailRow(title: "Sport Richiesto:", value: viewModel.patient.requiredSport ?? "N/A")
-                        if viewModel.patient.yearsOfPractice > 0 {
-                            DetailRow(title: "Anni di Pratica:", value: "\(viewModel.patient.yearsOfPractice)")
-                        }
-                        if viewModel.patient.weeklyHours > 0 {
-                            DetailRow(title: "Ore Settimanali:", value: "\(viewModel.patient.weeklyHours)")
-                        }
-                        DetailRow(title: "Pratica Altri Sport:", value: viewModel.patient.practicesOtherSports ? "Sì" : "No")
-                        if viewModel.patient.practicesOtherSports {
-                            DetailRow(title: "Altri Sport:", value: viewModel.patient.otherSportsDetails ?? "N/A")
-                        }
-                        DetailRow(title: "Sport Praticati in Passato:", value: viewModel.patient.pastSports ?? "N/A")
-                    }
-                }
-                
-                // Sezione Condizioni Mediche
-                SectionCard(header: "Condizioni Mediche") {
-                    VStack {
-                        if !anyMedicalConditionPresent() {
-                            // Mostra messaggio se nessuna condizione è presente
-                            Text("Nessuna condizione medica presente")
-                                .font(.body)
-                                .foregroundColor(.gray)
-                        } else {
-                            if viewModel.patient.diabetesMellitus {
-                                MedicalConditionRow(condition: "Diabete Mellito", isPresent: true)
-                            }
-                            if viewModel.patient.heartDisease {
-                                MedicalConditionRow(condition: "Malattie di Cuore", isPresent: true)
-                            }
-                            if viewModel.patient.thyroidDiseases {
-                                MedicalConditionRow(condition: "Malattie Tiroidee", isPresent: true)
-                            }
-                            if viewModel.patient.suddenDeath {
-                                MedicalConditionRow(condition: "Morte Improvvisa in Famiglia", isPresent: true)
-                            }
-                            if viewModel.patient.pulmonaryDiseases {
-                                MedicalConditionRow(condition: "Malattie Polmonari", isPresent: true)
-                            }
-                            if viewModel.patient.myocardialInfarction {
-                                MedicalConditionRow(condition: "Infarto del Miocardio", isPresent: true)
-                            }
-                            if viewModel.patient.cardiomyopathies {
-                                MedicalConditionRow(condition: "Cardiomiopatie", isPresent: true)
-                            }
-                            if viewModel.patient.hypertension {
-                                MedicalConditionRow(condition: "Ipertensione", isPresent: true)
-                            }
-                            if viewModel.patient.highCholesterol {
-                                MedicalConditionRow(condition: "Colesterolo Alto", isPresent: true)
-                            }
-                            if viewModel.patient.celiacDisease {
-                                MedicalConditionRow(condition: "Celiachia", isPresent: true)
-                            }
-                            if viewModel.patient.strokeNeurological {
-                                MedicalConditionRow(condition: "Ictus/Malattie Neurologiche", isPresent: true)
-                            }
-                            if viewModel.patient.tumors {
-                                MedicalConditionRow(condition: "Tumori", isPresent: true)
-                            }
-                            if viewModel.patient.asthmaAllergies {
-                                MedicalConditionRow(condition: "Asma/Allergie", isPresent: true)
-                            }
-                            if viewModel.patient.obesity {
-                                MedicalConditionRow(condition: "Obesità", isPresent: true)
-                            }
-                            if viewModel.patient.geneticDiseases {
-                                MedicalConditionRow(condition: "Malattie Genetiche", isPresent: true)
-                            }
-                        }
-                    }
-                }
-                
-                // Sezione Anamnesi Fisiologica
-                SectionCard(header: "Anamnesi Fisiologica") {
-                    VStack {
-                        DetailRow(title: "Parto Naturale:", value: viewModel.patient.partoNaturale ?? "N/A")
-                        DetailRow(title: "Vaccinazioni:", value: viewModel.patient.vaccinazioni ?? "N/A")
-                        DetailRow(title: "Dieta:", value: viewModel.patient.dieta ?? "N/A")
-                        
-                        if let quanteSigarette = viewModel.patient.quanteSigarette, !quanteSigarette.isEmpty {
-                            DetailRow(title: "Fumatore:", value: "Sì")
-                            DetailRow(title: "Quante Sigarette:", value: quanteSigarette)
-                        } else {
-                            DetailRow(title: "Fumatore:", value: viewModel.patient.fumo ?? "N/A")
-                        }
-                        
-                        if viewModel.patient.consumoAlcol == "NO" {
-                            DetailRow(title: "Beve alcolici?", value: "NO")
-                        } else {
-                            DetailRow(title: "Beve alcolici?", value: "Sì")
-                            if let consumoAlcol = viewModel.patient.consumoAlcol {
-                                DetailRow(title: "Quanto?", value: consumoAlcol)
-                            }
-                        }
-                        
-                        DetailRow(title: "Consumo di Caffè:", value: viewModel.patient.consumoCaffe ?? "N/A")
-                        if let etaMestruazione = viewModel.patient.etaMestruazione {
-                            DetailRow(title: "Età Prima Mestruazione:", value: "\(etaMestruazione)")
-                        }
-                        DetailRow(title: "Anomalie Ciclo:", value: viewModel.patient.noteAnomalieCiclo ?? "N/A")
-                        DetailRow(title: "Gravidanze:", value: viewModel.patient.gravidanze ? "Sì" : "No")
-                        if let qualiFarmaci = viewModel.patient.qualiFarmaci, !qualiFarmaci.isEmpty {
-                            DetailRow(title: "Farmaci Assunti:", value: qualiFarmaci)
-                        }
-                        if let alterazioniEsamiSangue = viewModel.patient.alterazioniEsamiSangue, !alterazioniEsamiSangue.isEmpty {
-                            DetailRow(title: "Alterazioni Esami del Sangue:", value: alterazioniEsamiSangue)
-                        }
-                    }
-                }
-                
-                // Sezione PDF
-                SectionCard(header: "Carica E.C.G.") {
-                    VStack {
-                        if let pdfFileURL = viewModel.pdfFileURL {
-                            Button(action: {
-                                showingPDF = true
-                            }) {
-                                Text("Visualizza")
-                                    .font(.headline)
-                                    .foregroundColor(.blue)
-                            }
-                            .sheet(isPresented: $showingPDF) {
-                                PDFViewer(pdfURL: pdfFileURL)
-                            }
-                            Button(action: {
-                                viewModel.removePDF()
-                            }) {
-                                Text("Rimuovi")
-                                    .font(.headline)
-                                    .foregroundColor(.red)
-                            }
-                        } else {
-                            Button(action: {
-                                showingDocumentPicker = true
-                            }) {
-                                Text("Aggiungi")
-                                    .font(.headline)
-                                    .foregroundColor(.blue)
-                            }
-                            .fileImporter(isPresented: $showingDocumentPicker, allowedContentTypes: [.pdf]) { result in
-                                switch result {
-                                case .success(let url):
-                                    viewModel.savePDF(url: url)
-                                case .failure(let error):
-                                    print("Errore durante l'importazione del file: \(error.localizedDescription)")
-                                }
-                            }
-                        }
-                    }
-                }
-                
-                // Sezione Nota
-                SectionCard(header: "Nota") {
-                    VStack {
-                        Text(viewModel.patient.nota ?? "Nessuna nota inserita")
-                            .font(.body)
-                            .padding(.vertical, 10)
-                            #if os(iOS)
-                            .background(Color(.systemGray6))
-                            #else
-                            .background(Color(.controlBackgroundColor))
-                            #endif
-                            .cornerRadius(8)
-                        
-                        // Campo di testo per aggiungere una nota
-                        TextField("Aggiungi una nota", text: $viewModel.noteText)
-                            .padding()
-                            #if os(iOS)
-                            .background(Color(.systemGray6))
-                            #else
-                            .background(Color(.controlBackgroundColor))
-                            #endif
-                            .cornerRadius(8)
-                        
-                        // Pulsante per salvare la nota
-                        Button(action: {
-                            viewModel.saveNote()
-                        }) {
-                            Text("Salva Nota")
-                                .font(.headline)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(Color.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(8)
-                        }
-                        .padding(.top, 10)
-                    }
-                }
-                
+            VStack(spacing: 20) {
+                anagraficaCard
+                sportCard
+                medicalConditionsCard
+                physiologicalCard
+                pdfCard
+                noteCard
+                Color.clear.frame(height: 20)
             }
-            .padding()
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
         }
+        #if os(iOS)
+        .background(Color(.systemGroupedBackground).ignoresSafeArea())
+        #else
+        .background(Color(.controlBackgroundColor))
+        #endif
         .navigationTitle("Dettagli Paziente")
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
         #endif
-        //.navigationBarItems(leading: backButton)
     }
-    
-    
-    
-    // Funzione per verificare se almeno una condizione medica è presente
-    private func anyMedicalConditionPresent() -> Bool {
-        return viewModel.patient.diabetesMellitus ||
-        viewModel.patient.heartDisease ||
-        viewModel.patient.thyroidDiseases ||
-        viewModel.patient.suddenDeath ||
-        viewModel.patient.pulmonaryDiseases ||
-        viewModel.patient.myocardialInfarction ||
-        viewModel.patient.cardiomyopathies ||
-        viewModel.patient.hypertension ||
-        viewModel.patient.highCholesterol ||
-        viewModel.patient.celiacDisease ||
-        viewModel.patient.strokeNeurological ||
-        viewModel.patient.tumors ||
-        viewModel.patient.asthmaAllergies ||
-        viewModel.patient.obesity ||
-        viewModel.patient.geneticDiseases
+
+    // MARK: - Anagrafica
+    private var anagraficaCard: some View {
+        FormCard(icon: "person.text.rectangle", title: "Anagrafica", color: .blue) {
+            DetailRowView(label: "Nome Completo", value: "\(viewModel.patient.name ?? "") \(viewModel.patient.surname ?? "")")
+            DetailRowView(label: "Data di Nascita", value: viewModel.patient.birthDate.map { dateFormatter.string(from: $0) } ?? "N/A")
+            DetailRowView(label: "Codice Fiscale", value: viewModel.patient.cf ?? "N/A")
+            DetailRowView(label: "Sesso", value: viewModel.patient.gender ?? "N/A")
+            DetailRowView(label: "Residenza", value: viewModel.patient.residenceAddress ?? "N/A")
+            DetailRowView(label: "Telefono", value: viewModel.patient.tel ?? "N/A")
+        }
     }
-    
-    // Viewer per mostrare il PDF
-    struct PDFViewer: View {
-        let pdfURL: URL
-        
-        var body: some View {
-            PDFKitRepresentedView(url: pdfURL)
-                .edgesIgnoringSafeArea(.all)
+
+    // MARK: - Anamnesi Sportiva
+    private var sportCard: some View {
+        FormCard(icon: "sportscourt", title: "Anamnesi Sportiva", color: .orange) {
+            if !hasSportData {
+                Text("Nessuna informazione sportiva")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            } else {
+                if let sport = viewModel.patient.requiredSport, !sport.isEmpty {
+                    DetailRowView(label: "Sport Richiesto", value: sport)
+                }
+                if viewModel.patient.yearsOfPractice > 0 {
+                    DetailRowView(label: "Anni di Pratica", value: "\(viewModel.patient.yearsOfPractice)")
+                }
+                if viewModel.patient.weeklyHours > 0 {
+                    DetailRowView(label: "Ore Settimanali", value: "\(viewModel.patient.weeklyHours)")
+                }
+                DetailRowView(label: "Altri Sport", value: viewModel.patient.practicesOtherSports ? (viewModel.patient.otherSportsDetails ?? "Sì") : "No")
+                DetailRowView(label: "Sport Passati", value: viewModel.patient.pastSports ?? "N/A")
+            }
+        }
+    }
+
+    private var hasSportData: Bool {
+        !(viewModel.patient.requiredSport ?? "").isEmpty
+        || viewModel.patient.yearsOfPractice > 0
+        || viewModel.patient.weeklyHours > 0
+        || viewModel.patient.practicesOtherSports
+        || !(viewModel.patient.pastSports ?? "").isEmpty
+    }
+
+    // MARK: - Condizioni Mediche
+    private var medicalConditionsCard: some View {
+        FormCard(icon: "heart.text.square", title: "Condizioni Mediche", color: .red) {
+            let conditions = activeConditions
+            if conditions.isEmpty {
+                Text("Nessuna condizione medica")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            } else {
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 6) {
+                    ForEach(conditions, id: \.self) { condition in
+                        HStack(spacing: 6) {
+                            Image(systemName: "checkmark.circle.fill")
+                                .font(.caption)
+                                .foregroundColor(.red)
+                            Text(condition)
+                                .font(.caption)
+                                .foregroundColor(.primary)
+                            Spacer()
+                        }
+                        .padding(8)
+                        .background(Color.red.opacity(0.06))
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                    }
+                }
+            }
+        }
+    }
+
+    private var activeConditions: [String] {
+        var result: [String] = []
+        if viewModel.patient.diabetesMellitus { result.append("Diabete Mellito") }
+        if viewModel.patient.heartDisease { result.append("Malattie Cuore") }
+        if viewModel.patient.thyroidDiseases { result.append("Malattie Tiroidee") }
+        if viewModel.patient.suddenDeath { result.append("Morte Improvvisa") }
+        if viewModel.patient.pulmonaryDiseases { result.append("Mal. Polmonari") }
+        if viewModel.patient.myocardialInfarction { result.append("Infarto Miocardio") }
+        if viewModel.patient.cardiomyopathies { result.append("Cardiomiopatie") }
+        if viewModel.patient.hypertension { result.append("Ipertensione") }
+        if viewModel.patient.highCholesterol { result.append("Colesterolo Alto") }
+        if viewModel.patient.celiacDisease { result.append("Celiachia") }
+        if viewModel.patient.strokeNeurological { result.append("Ictus/Neurologiche") }
+        if viewModel.patient.tumors { result.append("Tumori") }
+        if viewModel.patient.asthmaAllergies { result.append("Asma/Allergie") }
+        if viewModel.patient.obesity { result.append("Obesità") }
+        if viewModel.patient.geneticDiseases { result.append("Mal. Genetiche") }
+        return result
+    }
+
+    // MARK: - Anamnesi Fisiologica
+    private var physiologicalCard: some View {
+        FormCard(icon: "person.crop.rectangle.stack", title: "Anamnesi Fisiologica", color: .teal) {
+            VStack(spacing: 4) {
+                PhysiologicalDetail(label: "Parto Naturale", value: viewModel.patient.partoNaturale)
+                PhysiologicalDetail(label: "Vaccinazioni", value: viewModel.patient.vaccinazioni)
+                PhysiologicalDetail(label: "Dieta", value: viewModel.patient.dieta)
+                PhysiologicalDetail(label: "Fumo", value: viewModel.patient.fumo)
+                if let sig = viewModel.patient.quanteSigarette, !sig.isEmpty {
+                    PhysiologicalDetail(label: "Sigarette/giorno", value: sig)
+                }
+                PhysiologicalDetail(label: "Alcol", value: viewModel.patient.consumoAlcol)
+                PhysiologicalDetail(label: "Caffè", value: viewModel.patient.consumoCaffe)
+                if let eta = viewModel.patient.etaMestruazione {
+                    PhysiologicalDetail(label: "Età prima mestruazione", value: "\(eta)")
+                }
+                PhysiologicalDetail(label: "Anomalie Ciclo", value: viewModel.patient.noteAnomalieCiclo)
+                PhysiologicalDetail(label: "Gravidanze", value: viewModel.patient.gravidanze ? "Sì" : "No")
+                PhysiologicalDetail(label: "Farmaci", value: viewModel.patient.qualiFarmaci)
+                PhysiologicalDetail(label: "Alterazioni Esami", value: viewModel.patient.alterazioniEsamiSangue)
+            }
+        }
+    }
+
+    // MARK: - PDF
+    private var pdfCard: some View {
+        FormCard(icon: "doc.richtext", title: "ECG / Documenti", color: .purple) {
+            if let pdfURL = viewModel.pdfFileURL {
+                HStack(spacing: 16) {
+                    Button { showingPDF = true } label: {
+                        Label("Visualizza PDF", systemImage: "eye")
+                            .font(.subheadline)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.blue)
+
+                    Button(role: .destructive) { viewModel.removePDF() } label: {
+                        Label("Rimuovi", systemImage: "trash")
+                            .font(.subheadline)
+                    }
+                    .buttonStyle(.bordered)
+                }
+                .sheet(isPresented: $showingPDF) {
+                    PDFKitRepresentedView(url: pdfURL)
+                        .edgesIgnoringSafeArea(.all)
+                }
+            } else {
+                Button { showingDocumentPicker = true } label: {
+                    Label("Carica PDF", systemImage: "plus.circle")
+                        .font(.subheadline)
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(.purple)
+                .fileImporter(isPresented: $showingDocumentPicker, allowedContentTypes: [.pdf]) { result in
+                    switch result {
+                    case .success(let url): viewModel.savePDF(url: url)
+                    case .failure(let error): print("Errore PDF: \(error.localizedDescription)")
+                    }
+                }
+            }
+        }
+    }
+
+    // MARK: - Nota
+    private var noteCard: some View {
+        FormCard(icon: "note.text", title: "Nota Clinica", color: .gray) {
+            VStack(spacing: 10) {
+                if let nota = viewModel.patient.nota, !nota.isEmpty {
+                    Text(nota)
+                        .font(.body)
+                        .padding(12)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        #if os(iOS)
+                        .background(Color(.systemGray6))
+                        #else
+                        .background(Color(.controlBackgroundColor))
+                        #endif
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                } else {
+                    Text("Nessuna nota")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 8)
+                }
+
+                TextField("Scrivi una nota...", text: $viewModel.noteText)
+                    .padding(12)
+                    #if os(iOS)
+                    .background(Color(.systemGray6))
+                    #else
+                    .background(Color(.controlBackgroundColor))
+                    #endif
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+
+                Button(action: viewModel.saveNote) {
+                    Label("Salva Nota", systemImage: "square.and.arrow.down")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
+                        .background(Color.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                }
+                .buttonStyle(.plain)
+            }
+        }
+    }
+}
+
+// MARK: - DetailRowView (per FormCard)
+struct DetailRowView: View {
+    let label: String
+    let value: String
+
+    var body: some View {
+        HStack(alignment: .top) {
+            Text(label)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .fixedSize(horizontal: true, vertical: false)
+            Spacer()
+            Text(value)
+                .font(.subheadline)
+                .foregroundColor(.primary)
+                .multilineTextAlignment(.trailing)
+                .minimumScaleFactor(0.75)
+        }
+        .padding(.vertical, 3)
+    }
+}
+
+// MARK: - PhysiologicalDetail
+struct PhysiologicalDetail: View {
+    let label: String
+    let value: String?
+
+    var body: some View {
+        if let value, !value.isEmpty, value != "N/A" {
+            DetailRowView(label: label, value: value)
         }
     }
 }

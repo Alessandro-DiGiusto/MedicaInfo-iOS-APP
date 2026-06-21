@@ -1,95 +1,159 @@
 import Foundation
 import SwiftUI
 import SwiftData
+import CoreData
+
+// MARK: - Day of week helper
+extension Calendar {
+    func startOfWeek(for date: Date) -> Date {
+        let comps = dateComponents([.yearForWeekOfYear, .weekOfYear], from: date)
+        return self.date(from: comps) ?? date
+    }
+}
 
 @MainActor
 class DietPlanViewModel: ObservableObject {
-    // MARK: - Published State
     
-    @Published var currentPlan: DietPlan?
-    @Published var selectedMeal: Meal?
-    @Published var searchText: String = ""
+    // MARK: - Published State
+    @Published var weekPlans: [DietPlan] = []
+    @Published var selectedDayIndex = 0
+    @Published var searchText = ""
     @Published var searchResults: [Alimento] = []
     @Published var isShowingSearch = false
+    @Published var selectedMeal: Meal?
     
-    // MARK: - Daily Totals (reactive)
+    // Patient selection
+    @Published var patientNames: [String] = []
+    @Published var selectedPatientIndex: Int = -1 {
+        didSet { updatePatientOnPlans() }
+    }
+    @Published var selectedPatientName = ""
+    
+    // Computed: current day plan
+    var currentPlan: DietPlan? {
+        guard selectedDayIndex < weekPlans.count else { return nil }
+        return weekPlans[selectedDayIndex]
+    }
+    
+    // MARK: - Daily totals (reactive)
     @Published var totaleProteine: Double = 0
     @Published var totaleGrassi: Double = 0
     @Published var totaleCarboidrati: Double = 0
     @Published var totaleKcal: Double = 0
     @Published var totaleZuccheri: Double = 0
     
-    // MARK: - Computed progress (0.0 ... 1.0+)
     var progressProteine: Double { currentPlan.map { $0.targetProteine > 0 ? totaleProteine / $0.targetProteine : 0 } ?? 0 }
     var progressGrassi: Double { currentPlan.map { $0.targetGrassi > 0 ? totaleGrassi / $0.targetGrassi : 0 } ?? 0 }
     var progressCarboidrati: Double { currentPlan.map { $0.targetCarboidrati > 0 ? totaleCarboidrati / $0.targetCarboidrati : 0 } ?? 0 }
     var progressKcal: Double { currentPlan.map { $0.targetKcal > 0 ? totaleKcal / $0.targetKcal : 0 } ?? 0 }
     
     private var modelContext: ModelContext?
-    private var observationTask: Task<Void, Never>?
+    private var viewContext: NSManagedObjectContext?
     
     // MARK: - Setup
     
-    func setup(modelContext: ModelContext) {
+    func setup(modelContext: ModelContext, coreDataContext: NSManagedObjectContext) {
         self.modelContext = modelContext
-        loadOrCreateTodayPlan()
+        self.viewContext = coreDataContext
+        loadPatients()
+        loadOrCreateWeek()
     }
     
-    private func loadOrCreateTodayPlan() {
+    // MARK: - Patient Loading
+    private func loadPatients() {
+        guard let ctx = viewContext else { return }
+        let request: NSFetchRequest<Patient> = Patient.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Patient.surname, ascending: true)]
+        do {
+            let patients = try ctx.fetch(request)
+            patientNames = patients.compactMap { p in
+                guard let name = p.name, let surname = p.surname else { return nil }
+                return "\(name) \(surname)"
+            }
+        } catch {
+            print("[DietPlanVM] Errore caricamento pazienti: \(error)")
+        }
+    }
+    
+    private func updatePatientOnPlans() {
+        guard selectedPatientIndex >= 0, selectedPatientIndex < patientNames.count else {
+            selectedPatientName = ""
+            return
+        }
+        selectedPatientName = patientNames[selectedPatientIndex]
+        for plan in weekPlans {
+            plan.patientName = selectedPatientName
+        }
+    }
+    
+    // MARK: - Week Management
+    
+    private func loadOrCreateWeek() {
         guard let context = modelContext else { return }
         
-        let today = Calendar.current.startOfDay(for: Date())
-        let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today)!
+        let today = Date()
+        let weekStart = Calendar.current.startOfWeek(for: today)
+        let weekEnd = Calendar.current.date(byAdding: .day, value: 7, to: weekStart)!
+        
         let descriptor = FetchDescriptor<DietPlan>(
             predicate: #Predicate { plan in
-                plan.date >= today && plan.date < tomorrow
+                plan.weekStartDate >= weekStart && plan.weekStartDate < weekEnd
             }
         )
         
         do {
-            let plans = try context.fetch(descriptor)
-            if let existing = plans.first {
-                self.currentPlan = existing
-                observePlan(existing)
-            } else {
-                let newPlan = DietPlan(date: today)
-                // Create default meals
-                let meals = [
-                    Meal(name: "Colazione", orderIndex: 0),
-                    Meal(name: "Pranzo", orderIndex: 1),
-                    Meal(name: "Spuntino", orderIndex: 2),
-                    Meal(name: "Cena", orderIndex: 3)
-                ]
-                for meal in meals {
-                    newPlan.meals.append(meal)
-                    meal.plan = newPlan
+            let existing = try context.fetch(descriptor)
+            if existing.count == 7 {
+                self.weekPlans = existing.sorted { $0.dayIndex < $1.dayIndex }
+                // Restore patient
+                if let name = existing.first?.patientName {
+                    self.selectedPatientName = name
+                    self.selectedPatientIndex = self.patientNames.firstIndex(of: name) ?? -1
                 }
-                context.insert(newPlan)
-                try context.save()
-                self.currentPlan = newPlan
-                observePlan(newPlan)
+            } else {
+                // Delete partial existing
+                for plan in existing { context.delete(plan) }
+                createNewWeek(from: weekStart, in: context)
             }
+            refreshTotals()
         } catch {
-            print("[DietPlanVM] Errore caricamento piano: \(error)")
+            print("[DietPlanVM] Errore caricamento: \(error)")
+            createNewWeek(from: weekStart, in: context)
         }
     }
     
-    // MARK: - Reactive observation
-    
-    private func observePlan(_ plan: DietPlan) {
-        // SwiftData @Model objects are observable via observation API.
-        // We listen to changes in meals/entries through the SwiftData
-        // modelContext and re-compute totals reactively.
-        
-        // Since SwiftData doesn't have built-in Combine publishers,
-        // we use a manual refresh approach triggered by operations.
-        refreshTotals()
+    private func createNewWeek(from weekStart: Date, in context: ModelContext) {
+        var plans: [DietPlan] = []
+        for i in 0..<7 {
+            let plan = DietPlan(
+                weekStartDate: weekStart,
+                dayIndex: i,
+                patientID: nil,
+                patientName: selectedPatientName
+            )
+            let meals = [
+                Meal(name: "Colazione", orderIndex: 0),
+                Meal(name: "Merenda", orderIndex: 1),
+                Meal(name: "Pranzo", orderIndex: 2),
+                Meal(name: "Spuntino", orderIndex: 3),
+                Meal(name: "Cena", orderIndex: 4)
+            ]
+            for meal in meals {
+                plan.meals.append(meal)
+                meal.plan = plan
+            }
+            context.insert(plan)
+            plans.append(plan)
+        }
+        self.weekPlans = plans
+        saveContext()
     }
+    
+    // MARK: - Totals
     
     func refreshTotals() {
         guard let plan = currentPlan else { return }
         let meals = plan.meals.sorted { $0.orderIndex < $1.orderIndex }
-        
         var p: Double = 0, g: Double = 0, c: Double = 0, k: Double = 0, z: Double = 0
         for meal in meals {
             p += meal.totaleProteine
@@ -98,12 +162,17 @@ class DietPlanViewModel: ObservableObject {
             k += meal.totaleKcal
             z += meal.totaleZuccheri
         }
-        
-        self.totaleProteine = p.rounded(to: 1)
-        self.totaleGrassi = g.rounded(to: 1)
-        self.totaleCarboidrati = c.rounded(to: 1)
-        self.totaleKcal = k.rounded(to: 0)
-        self.totaleZuccheri = z.rounded(to: 1)
+        totaleProteine = p.rounded(to: 1)
+        totaleGrassi = g.rounded(to: 1)
+        totaleCarboidrati = c.rounded(to: 1)
+        totaleKcal = k.rounded(to: 0)
+        totaleZuccheri = z.rounded(to: 1)
+    }
+    
+    func selectDay(_ index: Int) {
+        selectedDayIndex = index
+        refreshTotals()
+        objectWillChange.send()
     }
     
     // MARK: - Food Search
@@ -132,55 +201,44 @@ class DietPlanViewModel: ObservableObject {
         saveAndRefresh()
     }
     
-    func updateTargets(proteine: Double, grassi: Double, carboidrati: Double, kcal: Double) {
-        guard let plan = currentPlan else { return }
-        plan.targetProteine = proteine
-        plan.targetGrassi = grassi
-        plan.targetCarboidrati = carboidrati
-        plan.targetKcal = kcal
+    func updateTargets(proteine: Double, grassi: Double, carboidrati: Double, kcal: Double, applyToAllDays: Bool) {
+        if applyToAllDays {
+            for plan in weekPlans {
+                plan.targetProteine = proteine
+                plan.targetGrassi = grassi
+                plan.targetCarboidrati = carboidrati
+                plan.targetKcal = kcal
+            }
+        } else if let plan = currentPlan {
+            plan.targetProteine = proteine
+            plan.targetGrassi = grassi
+            plan.targetCarboidrati = carboidrati
+            plan.targetKcal = kcal
+        }
         saveAndRefresh()
     }
     
-    func createPlan(for date: Date) {
-        guard let context = modelContext else { return }
-        let newPlan = DietPlan(date: date)
-        let meals = [
-            Meal(name: "Colazione", orderIndex: 0),
-            Meal(name: "Merenda", orderIndex: 1),
-            Meal(name: "Pranzo", orderIndex: 2),
-            Meal(name: "Spuntino", orderIndex: 3),
-            Meal(name: "Cena", orderIndex: 4)
-        ]
-        for meal in meals {
-            newPlan.meals.append(meal)
-            meal.plan = newPlan
-        }
-        context.insert(newPlan)
-        self.currentPlan = newPlan
-        saveAndRefresh()
+    func saveAll() {
+        saveContext()
     }
     
     // MARK: - Persistence
     
     private func saveAndRefresh() {
+        saveContext()
+        refreshTotals()
+        objectWillChange.send()
+    }
+    
+    private func saveContext() {
         guard let context = modelContext else { return }
         do {
             try context.save()
-            refreshTotals()
-            
-            // Post notification so SwiftUI picks up changes on computed properties
-            objectWillChange.send()
         } catch {
             print("[DietPlanVM] Errore salvataggio: \(error)")
         }
     }
-    
-    deinit {
-        observationTask?.cancel()
-    }
 }
-
-// MARK: - Helper
 
 extension Double {
     func rounded(to places: Int) -> Double {

@@ -42,13 +42,21 @@ struct FoodSearchView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding()
                 
-                // Results
-                if results.isEmpty {
+                // Results — always fill remaining space
+                if results.isEmpty && searchText.isEmpty {
                     ContentUnavailableView(
                         "Cerca un alimento",
                         systemImage: "magnifyingglass",
                         description: Text("Inizia a digitare per cercare nel database di \(foodLoader.allFoods.count) alimenti.")
                     )
+                    .frame(maxHeight: .infinity)
+                } else if results.isEmpty {
+                    ContentUnavailableView(
+                        "Nessun risultato",
+                        systemImage: "questionmark",
+                        description: Text("Nessun alimento trovato per \"\(searchText)\"")
+                    )
+                    .frame(maxHeight: .infinity)
                 } else {
                     List {
                         ForEach(results) { alimento in
@@ -97,7 +105,6 @@ struct FoodSearchView: View {
 }
 
 // MARK: - Food Search Row
-
 struct FoodSearchRow: View {
     let alimento: Alimento
     
@@ -107,6 +114,9 @@ struct FoodSearchRow: View {
                 Text(alimento.nome)
                     .font(.body)
                     .foregroundColor(.primary)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.8)
                 
                 HStack(spacing: 8) {
                     Label("\(Int(alimento.kcal)) kcal", systemImage: "flame")

@@ -51,12 +51,14 @@ struct ProfileView: View {
                         .foregroundColor(.blue)
                         .frame(width: 24)
                     TextField("Nome", text: $doctorName)
+                            .minimumScaleFactor(0.8)
                 }
                 HStack {
                     Image(systemName: "person.fill")
                         .foregroundColor(.blue)
                         .frame(width: 24)
                     TextField("Cognome", text: $doctorSurname)
+                            .minimumScaleFactor(0.8)
                 }
                 HStack {
                     Image(systemName: "stethoscope")

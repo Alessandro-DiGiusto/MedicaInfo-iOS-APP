@@ -51,9 +51,11 @@ struct SettingsView: View {
                         .foregroundColor(.blue)
                         .frame(width: 24)
                     Text("Versione")
+                        .fixedSize(horizontal: true, vertical: false)
                     Spacer()
                     Text("1.0.0")
                         .foregroundColor(.secondary)
+                        .fixedSize()
                 }
                 HStack {
                     Image(systemName: "swift")

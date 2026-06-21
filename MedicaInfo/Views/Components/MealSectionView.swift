@@ -129,8 +129,10 @@ struct MacroPill: View {
             Text("\(Int(value))")
                 .fontWeight(.semibold)
                 .foregroundColor(color)
+                .fixedSize(horizontal: true, vertical: false)
             Text(unit)
                 .foregroundColor(.secondary)
+                .fixedSize()
         }
         .padding(.horizontal, 6)
         .padding(.vertical, 2)

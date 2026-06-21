@@ -1,16 +1,28 @@
 import SwiftUI
 import SwiftData
+import CoreData
 
+// MARK: - DietPlanView with 7-day week
 struct DietPlanView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.managedObjectContext) private var viewContext
     @StateObject private var viewModel = DietPlanViewModel()
-    
+
     @State private var showingTargetEditor = false
     @State private var selectedMealForSearch: Meal?
-    @State private var showingDatePicker = false
-    
+    @State private var showingPatientPicker = false
+
+    private let dayLabels = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"]
+
     var body: some View {
-        Group {
+        VStack(spacing: 0) {
+            // Patient selector
+            patientHeader
+
+            // Day selector
+            daySelector
+
+            // Main content
             #if os(macOS)
             VSplitView {
                 macroSummaryHeader
@@ -23,8 +35,6 @@ struct DietPlanView: View {
             }
             #endif
         }
-        .frame(minWidth: 600, idealWidth: 900, maxWidth: .infinity,
-               minHeight: 500, idealHeight: 700, maxHeight: .infinity)
         #if os(iOS)
         .background(Color(.systemGray6))
         #else
@@ -33,87 +43,123 @@ struct DietPlanView: View {
         .navigationTitle("Piano Alimentare")
         .toolbar {
             ToolbarItemGroup {
-                Button(action: { showingDatePicker.toggle() }) {
-                    Image(systemName: "calendar")
-                }
-                
-                Button(action: { showingTargetEditor.toggle() }) {
+                Button { showingTargetEditor.toggle() } label: {
                     Image(systemName: "target")
                 }
-                
+
                 Spacer()
-                
-                Button(action: exportPlan) {
-                    Image(systemName: "square.and.arrow.up")
+
+                Button { viewModel.saveAll() } label: {
+                    Image(systemName: "square.and.arrow.down")
                 }
             }
         }
         .onAppear {
-            viewModel.setup(modelContext: modelContext)
+            viewModel.setup(
+                modelContext: modelContext,
+                coreDataContext: viewContext
+            )
         }
         .sheet(isPresented: $showingTargetEditor) {
             TargetEditorView(viewModel: viewModel)
-        }
-        .sheet(isPresented: $showingDatePicker) {
-            DatePickerSheet(viewModel: viewModel)
+                #if os(macOS)
+                .frame(width: 400, height: 320)
+                #endif
         }
         .sheet(item: $selectedMealForSearch) { meal in
             FoodSearchView(viewModel: viewModel, meal: meal)
+                #if os(macOS)
+                .frame(minWidth: 520, minHeight: 500)
+                #endif
+        }
+        .sheet(isPresented: $showingPatientPicker) {
+            PatientPickerView(viewModel: viewModel)
+                #if os(macOS)
+                .frame(width: 400, height: 400)
+                #endif
+        }
+        .onChange(of: viewModel.selectedDayIndex) { _, _ in
+            viewModel.refreshTotals()
         }
     }
-    
-    // MARK: - Macro Summary Header
-    
+
+    // MARK: - Patient Header
+    private var patientHeader: some View {
+        HStack {
+            Image(systemName: "person.fill")
+                .foregroundColor(.blue)
+            if viewModel.selectedPatientName.isEmpty {
+                Text("Nessun paziente selezionato")
+                    .foregroundColor(.secondary)
+            } else {
+                Text(viewModel.selectedPatientName)
+                    .fontWeight(.semibold)
+            }
+            Spacer()
+            Button { showingPatientPicker = true } label: {
+                Text(viewModel.selectedPatientName.isEmpty ? "Seleziona" : "Cambia")
+                    .font(.subheadline)
+            }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.small)
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 8)
+        .background(.thinMaterial)
+    }
+
+    // MARK: - Day Selector
+    private var daySelector: some View {
+        HStack(spacing: 0) {
+            ForEach(0..<7, id: \.self) { i in
+                Button {
+                    viewModel.selectDay(i)
+                } label: {
+                    VStack(spacing: 2) {
+                        Text(dayLabels[i])
+                            .font(.caption2)
+                            .foregroundColor(viewModel.selectedDayIndex == i ? .white : .secondary)
+                        Text(viewModel.weekPlans.indices.contains(i) ? "\(Int(viewModel.weekPlans[i].totaleKcal))" : "-")
+                            .font(.caption.weight(.bold))
+                            .foregroundColor(viewModel.selectedDayIndex == i ? .white : .primary)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 8)
+                    .background(viewModel.selectedDayIndex == i ? Color.blue : Color.clear)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(.horizontal, 8)
+        .padding(.vertical, 6)
+        .background(.regularMaterial)
+    }
+
+    // MARK: - Macro Summary
     private var macroSummaryHeader: some View {
         VStack(spacing: 8) {
-            // Date + Targets
-            HStack {
-                if let plan = viewModel.currentPlan {
-                    Text(plan.date, style: .date)
-                        .font(.title2)
-                        .fontWeight(.semibold)
+            if let plan = viewModel.currentPlan {
+                HStack {
+                    Text(plan.dayName)
+                        .font(.title2.weight(.semibold))
+                    Spacer()
+                    Text("Target: \(Int(plan.targetKcal)) kcal")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
                 }
-                Spacer()
-                Text("Target: \(Int(viewModel.currentPlan?.targetKcal ?? 0)) kcal")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+                .padding(.horizontal)
+                .padding(.top, 8)
+
+                HStack(spacing: 12) {
+                    MacroGaugeView(label: "Proteine", value: viewModel.totaleProteine, target: plan.targetProteine, unit: "g", color: .blue)
+                    MacroGaugeView(label: "Grassi", value: viewModel.totaleGrassi, target: plan.targetGrassi, unit: "g", color: .orange)
+                    MacroGaugeView(label: "Carboidrati", value: viewModel.totaleCarboidrati, target: plan.targetCarboidrati, unit: "g", color: .green)
+                    MacroGaugeView(label: "Energia", value: viewModel.totaleKcal, target: plan.targetKcal, unit: "kcal", color: .red)
+                }
+                .padding(.horizontal)
+                .padding(.bottom, 8)
             }
-            .padding(.horizontal)
-            .padding(.top, 8)
-            
-            // Macro bars
-            HStack(spacing: 16) {
-                MacroGaugeView(
-                    label: "Proteine",
-                    value: viewModel.totaleProteine,
-                    target: viewModel.currentPlan?.targetProteine ?? 0,
-                    unit: "g",
-                    color: .blue
-                )
-                MacroGaugeView(
-                    label: "Grassi",
-                    value: viewModel.totaleGrassi,
-                    target: viewModel.currentPlan?.targetGrassi ?? 0,
-                    unit: "g",
-                    color: .orange
-                )
-                MacroGaugeView(
-                    label: "Carboidrati",
-                    value: viewModel.totaleCarboidrati,
-                    target: viewModel.currentPlan?.targetCarboidrati ?? 0,
-                    unit: "g",
-                    color: .green
-                )
-                MacroGaugeView(
-                    label: "Energia",
-                    value: viewModel.totaleKcal,
-                    target: viewModel.currentPlan?.targetKcal ?? 0,
-                    unit: "kcal",
-                    color: .red
-                )
-            }
-            .padding(.horizontal)
-            .padding(.bottom, 8)
         }
         #if os(iOS)
         .background(Color(.systemBackground))
@@ -121,9 +167,8 @@ struct DietPlanView: View {
         .background(Color(.windowBackgroundColor))
         #endif
     }
-    
+
     // MARK: - Meals List
-    
     private var mealsList: some View {
         ScrollView {
             VStack(spacing: 12) {
@@ -138,75 +183,139 @@ struct DietPlanView: View {
                     ContentUnavailableView(
                         "Nessun Piano",
                         systemImage: "fork.knife",
-                        description: Text("Crea un nuovo piano alimentare per oggi.")
+                        description: Text("Crea un nuovo piano per il paziente selezionato.")
                     )
                 }
             }
             .padding()
         }
     }
-    
-    // MARK: - Export
-    
-    private func exportPlan() {
-        // TODO: Generate PDF/summary of the plan
-        print("[DietPlan] Export richiesto")
+}
+
+// MARK: - Patient Picker
+struct PatientPickerView: View {
+    @ObservedObject var viewModel: DietPlanViewModel
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        NavigationStack {
+            List {
+                if viewModel.patientNames.isEmpty {
+                    ContentUnavailableView(
+                        "Nessun paziente",
+                        systemImage: "person.slash",
+                        description: Text("Aggiungi prima un paziente dalla schermata home.")
+                    )
+                } else {
+                    ForEach(Array(viewModel.patientNames.enumerated()), id: \.offset) { index, name in
+                        Button {
+                            viewModel.selectedPatientIndex = index
+                            dismiss()
+                        } label: {
+                            HStack {
+                                Image(systemName: "person.circle")
+                                    .foregroundColor(.blue)
+                                Text(name)
+                                    .foregroundColor(.primary)
+                                Spacer()
+                                if index == viewModel.selectedPatientIndex {
+                                    Image(systemName: "checkmark")
+                                        .foregroundColor(.blue)
+                                }
+                            }
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+            }
+            .navigationTitle("Seleziona Paziente")
+            #if os(iOS)
+            .navigationBarTitleDisplayMode(.inline)
+            #endif
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Annulla") { dismiss() }
+                }
+            }
+        }
     }
 }
 
-// MARK: - Target Editor Sheet
-
+// MARK: - Target Editor (Adaptive Layout con LabeledContent)
 struct TargetEditorView: View {
     @ObservedObject var viewModel: DietPlanViewModel
     @Environment(\.dismiss) private var dismiss
-    
+
     @State private var proteine: Double = 120
     @State private var grassi: Double = 60
     @State private var carboidrati: Double = 250
     @State private var kcal: Double = 2000
-    
+    @State private var applyToAllDays = true
+
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    HStack {
-                        Text("Proteine")
-                        Spacer()
-                        TextField("g", value: $proteine, format: .number)
-                            .frame(width: 80)
-                            .multilineTextAlignment(.trailing)
-                        Text("g").foregroundColor(.secondary)
+                    LabeledContent("Proteine") {
+                        HStack(spacing: 4) {
+                            TextField("", value: $proteine, format: .number)
+                                .multilineTextAlignment(.trailing)
+                                .frame(width: 80)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("g")
+                                .foregroundColor(.secondary)
+                                .fixedSize()
+                        }
                     }
-                    HStack {
-                        Text("Grassi")
-                        Spacer()
-                        TextField("g", value: $grassi, format: .number)
-                            .frame(width: 80)
-                            .multilineTextAlignment(.trailing)
-                        Text("g").foregroundColor(.secondary)
+                    LabeledContent("Grassi") {
+                        HStack(spacing: 4) {
+                            TextField("", value: $grassi, format: .number)
+                                .multilineTextAlignment(.trailing)
+                                .frame(width: 80)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("g")
+                                .foregroundColor(.secondary)
+                                .fixedSize()
+                        }
                     }
-                    HStack {
-                        Text("Carboidrati")
-                        Spacer()
-                        TextField("g", value: $carboidrati, format: .number)
-                            .frame(width: 80)
-                            .multilineTextAlignment(.trailing)
-                        Text("g").foregroundColor(.secondary)
+                    LabeledContent("Carboidrati") {
+                        HStack(spacing: 4) {
+                            TextField("", value: $carboidrati, format: .number)
+                                .multilineTextAlignment(.trailing)
+                                .frame(width: 80)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("g")
+                                .foregroundColor(.secondary)
+                                .fixedSize()
+                        }
                     }
-                    HStack {
-                        Text("Energia")
-                        Spacer()
-                        TextField("kcal", value: $kcal, format: .number)
-                            .frame(width: 80)
-                            .multilineTextAlignment(.trailing)
-                        Text("kcal").foregroundColor(.secondary)
+                    LabeledContent("Energia") {
+                        HStack(spacing: 4) {
+                            TextField("", value: $kcal, format: .number)
+                                .multilineTextAlignment(.trailing)
+                                .frame(width: 80)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("kcal")
+                                .foregroundColor(.secondary)
+                                .fixedSize()
+                        }
                     }
                 } header: {
                     Label("Target Giornalieri", systemImage: "target")
+                }
+
+                Section {
+                    Toggle("Applica a tutti i giorni", isOn: $applyToAllDays)
+                        .tint(.blue)
                 } footer: {
-                    Text("Imposta i valori massimi giornalieri per ogni macronutriente.")
+                    Text(applyToAllDays
+                        ? "I target saranno uguali per tutti i 7 giorni della settimana."
+                        : "I target verranno applicati solo a \(viewModel.currentPlan?.dayName ?? "oggi").")
                 }
             }
+            #if os(macOS)
+            .frame(minWidth: 380, idealWidth: 420, maxWidth: 500)
+            #endif
             .navigationTitle("Modifica Target")
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
@@ -221,49 +330,19 @@ struct TargetEditorView: View {
                             proteine: proteine,
                             grassi: grassi,
                             carboidrati: carboidrati,
-                            kcal: kcal
+                            kcal: kcal,
+                            applyToAllDays: applyToAllDays
                         )
                         dismiss()
                     }
                 }
             }
             .onAppear {
-                proteine = viewModel.currentPlan?.targetProteine ?? 120
-                grassi = viewModel.currentPlan?.targetGrassi ?? 60
-                carboidrati = viewModel.currentPlan?.targetCarboidrati ?? 250
-                kcal = viewModel.currentPlan?.targetKcal ?? 2000
-            }
-        }
-    }
-}
-
-// MARK: - Date Picker Sheet
-
-struct DatePickerSheet: View {
-    @ObservedObject var viewModel: DietPlanViewModel
-    @Environment(\.dismiss) private var dismiss
-    @State private var selectedDate = Date()
-    
-    var body: some View {
-        NavigationStack {
-            VStack {
-                DatePicker("Seleziona data", selection: $selectedDate, displayedComponents: .date)
-                    .datePickerStyle(.graphical)
-                    .padding()
-            }
-            .navigationTitle("Cambia Data")
-            #if os(iOS)
-            .navigationBarTitleDisplayMode(.inline)
-            #endif
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Annulla") { dismiss() }
-                }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Vai") {
-                        viewModel.createPlan(for: selectedDate)
-                        dismiss()
-                    }
+                if let plan = viewModel.currentPlan {
+                    proteine = plan.targetProteine
+                    grassi = plan.targetGrassi
+                    carboidrati = plan.targetCarboidrati
+                    kcal = plan.targetKcal
                 }
             }
         }

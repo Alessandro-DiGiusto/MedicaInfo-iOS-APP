@@ -1,276 +1,293 @@
 import SwiftUI
 import CoreData
 
+// MARK: - Professional Home Screen
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @State private var showDeleteConfirmation = false
-    @State private var deleteConfirmationStep = 0 // Contatore per le conferme
-    @State private var showSuccessOverlay = false // Stato per l'overlay di successo
-    
+    @State private var deleteConfirmationStep = 0
+    @State private var showSuccessOverlay = false
+
+    private let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+
     var body: some View {
         NavigationStack {
             ZStack {
-                // Sfondo sfumato per un aspetto moderno
-                LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.2), Color.blue.opacity(0.8)]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                    .ignoresSafeArea()
-                
-                VStack {
-                    // Immagine di intestazione
-                    Image(systemName: "stethoscope.circle.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 150, height: 150)
-                        .foregroundColor(.white)
-                        .shadow(radius: 10)
-                        .padding(.top, 50)
-                    
-                    Text("MedicaInfo")
-                        .font(.system(size: 64, weight: .bold, design: .rounded))
-                        .foregroundColor(.white)
-                        .padding(.top, 20)
-                    
-                    Text("Gestisci facilmente \n le informazioni dei tuoi pazienti")
-                        .font(.system(size: 20, weight: .medium, design: .rounded))
-                        .foregroundColor(.white.opacity(0.9))
-                        .padding(.top, 10)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 20)
-                    
-                    Spacer()
-                    Text("Realizzato da alessandrodigiusto.it")
-                        .font(.system(size: 12, weight: .medium, design: .rounded))
-                        .foregroundColor(.white.opacity(0.3))
-                        .padding(.top, 10)
-                        .padding(.bottom, 30)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 20)
-                    // Pulsanti di navigazione principali con icone
-                    HStack(spacing: 20) {
-                        NavigationLink(value: "settings") {
-                            VStack {
-                                Image(systemName: "gearshape.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20, height: 20)
-                                    .foregroundColor(.white)
-                                Text("Settings")
-                                    .font(.system(size: 14, weight: .medium, design: .rounded))
-                                    .foregroundColor(.white)
-                            }
-                        }
-                        
-                        NavigationLink(value: "profile") {
-                            VStack {
-                                Image(systemName: "person.crop.circle.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20, height: 20)
-                                    .foregroundColor(.white)
-                                Text("Profilo")
-                                    .font(.system(size: 14, weight: .medium, design: .rounded))
-                                    .foregroundColor(.white)
-                            }
-                        }
-                        
-                        NavigationLink(value: "addPatient") {
-                            VStack {
-                                Image(systemName: "plus.circle.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 25, height: 25)
-                                    .foregroundColor(.white)
-                                    .shadow(radius: 5)
-                                Text("Paziente")
-                                    .font(.system(size: 14, weight: .medium, design: .rounded))
-                                    .foregroundColor(.white)
-                            }
-                        }
-                        
-                        NavigationLink(value: "dietPlan") {
-                            VStack {
-                                Image(systemName: "fork.knife.circle.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 25, height: 25)
-                                    .foregroundColor(.white)
-                                    .shadow(radius: 5)
-                                Text("Dieta")
-                                    .font(.system(size: 14, weight: .medium, design: .rounded))
-                                    .foregroundColor(.white)
-                            }
-                        }
-                        
-                        NavigationLink(value: "patientList") {
-                            VStack {
-                                Image(systemName: "list.bullet")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20, height: 20)
-                                    .foregroundColor(.white)
-                                Text("Lista Pazienti")
-                                    .font(.system(size: 14, weight: .medium, design: .rounded))
-                                    .foregroundColor(.white)
-                            }
-                        }
-                        
-                        NavigationLink(value: "info") {
-                            VStack {
-                                Image(systemName: "info.circle.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20, height: 20)
-                                    .foregroundColor(.white)
-                                Text("Info")
-                                    .font(.system(size: 14, weight: .medium, design: .rounded))
-                                    .foregroundColor(.white)
-                            }
-                        }
-                    }
-                    .padding(.bottom, 25)
-                }
+                backgroundGradient
+                content
             }
             .navigationTitle("")
             #if os(iOS)
-            .navigationBarHidden(true)  // Nasconde la barra di navigazione predefinita
+            .navigationBarHidden(true)
             #endif
             .navigationDestination(for: String.self) { value in
                 switch value {
-                case "addPatient":
-                    AddPatientView()
-                case "dietPlan":
-                    DietPlanView()
-                case "patientList":
-                    DetailView(onDeleteAllPatients: {
-                        handleDeletePatients()
-                    })
-                case "settings":
-                    SettingsView()
-                case "profile":
-                    ProfileView()
-                case "info":
-                    InfoView()
-                default:
-                    EmptyView()
+                case "addPatient": AddPatientView()
+                case "dietPlan": DietPlanView()
+                case "patientList": DetailView(onDeleteAllPatients: handleDeletePatients)
+                case "settings": SettingsView()
+                case "profile": ProfileView()
+                case "info": InfoView()
+                default: EmptyView()
                 }
             }
-            .alert(isPresented: $showDeleteConfirmation) {
-                getDeleteConfirmationAlert()
+            .alert(isPresented: $showDeleteConfirmation) { deleteAlert }
+            .overlay(successOverlayView)
+        }
+    }
+
+    // MARK: - Background
+    private var backgroundGradient: some View {
+        LinearGradient(
+            colors: [
+                .blue.opacity(0.15),
+                .blue.opacity(0.45),
+                .indigo.opacity(0.3)
+            ],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+        .ignoresSafeArea()
+    }
+
+    // MARK: - Content
+    private var content: some View {
+        ScrollView(showsIndicators: false) {
+            VStack(spacing: 32) {
+                headerSection
+                quickActionsGrid
+                footerSection
             }
-            .overlay(
-                // Overlay di successo
-                VStack {
-                    if showSuccessOverlay {
-                        successOverlay
-                            .transition(.opacity)
-                            .onAppear {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                    withAnimation {
-                                        showSuccessOverlay = false
-                                    }
-                                }
-                            }
-                    }
-                }
+            .padding(.horizontal, 24)
+            .padding(.vertical, 60)
+        }
+    }
+
+    // MARK: - Header
+    private var headerSection: some View {
+        VStack(spacing: 16) {
+            Image(systemName: "stethoscope.circle.fill")
+                .font(.system(size: 72))
+                .foregroundStyle(.white)
+                .shadow(color: .black.opacity(0.15), radius: 12, y: 4)
+
+            Text("MedicaInfo")
+                .font(.system(size: 42, weight: .bold, design: .rounded))
+                .foregroundColor(.white)
+
+            Text("Gestione professionale dei pazienti")
+                .font(.subheadline)
+                .fontWeight(.medium)
+                .foregroundColor(.white.opacity(0.8))
+                .multilineTextAlignment(.center)
+        }
+        .padding(.top, 20)
+    }
+
+    // MARK: - Quick Actions Grid
+    private var quickActionsGrid: some View {
+        LazyVGrid(columns: columns, spacing: 16) {
+            ActionTile(
+                icon: "plus.circle.fill",
+                title: "Paziente",
+                subtitle: "Nuovo",
+                color: .blue,
+                destination: "addPatient"
+            )
+            ActionTile(
+                icon: "fork.knife.circle.fill",
+                title: "Dieta",
+                subtitle: "Piano alimentare",
+                color: .orange,
+                destination: "dietPlan"
+            )
+            ActionTile(
+                icon: "list.bullet.rectangle",
+                title: "Lista",
+                subtitle: "Pazienti",
+                color: .green,
+                destination: "patientList"
+            )
+            ActionTile(
+                icon: "person.crop.circle",
+                title: "Profilo",
+                subtitle: "Medico",
+                color: .purple,
+                destination: "profile"
+            )
+            ActionTile(
+                icon: "gearshape",
+                title: "Settings",
+                subtitle: "Impostazioni",
+                color: .gray,
+                destination: "settings"
+            )
+            ActionTile(
+                icon: "info.circle",
+                title: "Info",
+                subtitle: "App",
+                color: .teal,
+                destination: "info"
             )
         }
     }
-    
-    private var successOverlay: some View {
-        VStack {
-            Text("✅ Cancellati! ")
-                .font(.title2)
-                .fontWeight(.semibold)
-                .foregroundColor(.white)
-                .padding()
-                .background(Color.green)
-                .cornerRadius(10)
+
+    // MARK: - Footer
+    private var footerSection: some View {
+        VStack(spacing: 8) {
+            Text("Realizzato da")
+                .font(.caption)
+                .foregroundColor(.white.opacity(0.5))
+            Link("alessandrodigiusto.it", destination: URL(string: "https://alessandrodigiusto.it")!)
+                .font(.caption)
+                .foregroundColor(.white.opacity(0.7))
+
+            if !patientsExist {
+                Button(role: .destructive) {
+                    handleDeletePatients()
+                } label: {
+                    Label("Elimina tutti i pazienti", systemImage: "trash")
+                        .font(.caption)
+                        .foregroundColor(.red.opacity(0.7))
+                }
+                .buttonStyle(.plain)
+                .padding(.top, 12)
+            }
         }
-        .frame(width: 300, height: 100)
-        .cornerRadius(20)
-        .shadow(radius: 20)
     }
-    
-    private func getDeleteConfirmationAlert() -> Alert {
-        var alertTitle = "Errore"
-        var alertMessage = "Si è verificato un errore."
-        var primaryButton: Alert.Button = .default(Text("OK"))
-        var secondaryButton: Alert.Button = .cancel()
-        
+
+    // MARK: - Helpers
+    private var patientsExist: Bool {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Patient")
+        request.fetchLimit = 1
+        return (try? viewContext.count(for: request)) ?? 0 > 0
+    }
+
+    // MARK: - Delete Alert
+    private var deleteAlert: Alert {
         switch deleteConfirmationStep {
         case 1:
-            alertTitle = "Conferma Cancellazione"
-            alertMessage = "Sei sicuro di voler cancellare tutti i pazienti?"
-            primaryButton = .destructive(Text("Conferma")) {
-                deleteConfirmationStep += 1
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    showDeleteConfirmation = true
-                }
-            }
-            secondaryButton = .cancel {
-                deleteConfirmationStep = 0
-            }
+            return Alert(
+                title: Text("Conferma Cancellazione"),
+                message: Text("Sei sicuro di voler cancellare TUTTI i pazienti?\n\nQuesta azione non può essere annullata."),
+                primaryButton: .destructive(Text("Continua")) {
+                    deleteConfirmationStep += 1
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        showDeleteConfirmation = true
+                    }
+                },
+                secondaryButton: .cancel { deleteConfirmationStep = 0 }
+            )
         case 2:
-            alertTitle = "Conferma Cancellazione"
-            alertMessage = "Questa è la seconda conferma. Sei sicuro di voler cancellare tutti i pazienti?"
-            primaryButton = .destructive(Text("Conferma")) {
-                deleteConfirmationStep += 1
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    showDeleteConfirmation = true
-                }
-            }
-            secondaryButton = .cancel {
-                deleteConfirmationStep = 0
-            }
+            return Alert(
+                title: Text("Seconda Conferma"),
+                message: Text("Stai per cancellare definitivamente tutti i dati. Sei sicuro?"),
+                primaryButton: .destructive(Text("Continua")) {
+                    deleteConfirmationStep += 1
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        showDeleteConfirmation = true
+                    }
+                },
+                secondaryButton: .cancel { deleteConfirmationStep = 0 }
+            )
         case 3:
-            alertTitle = "Conferma Finale"
-            alertMessage = "Questa è la terza e ultima conferma. Sei sicuro?"
-            primaryButton = .destructive(Text("Conferma")) {
-                deleteAllPatients()
-                deleteConfirmationStep = 0
-            }
-            secondaryButton = .cancel {
-                deleteConfirmationStep = 0
-            }
+            return Alert(
+                title: Text("Conferma Finale"),
+                message: Text("Ultima possibilità. Procedere?"),
+                primaryButton: .destructive(Text("Sì, cancella tutto")) {
+                    deleteAllPatients()
+                    deleteConfirmationStep = 0
+                },
+                secondaryButton: .cancel { deleteConfirmationStep = 0 }
+            )
         default:
-            break
+            return Alert(title: Text("Errore"), message: Text("Operazione annullata."))
         }
-        
-        return Alert(title: Text(alertTitle), message: Text(alertMessage), primaryButton: primaryButton, secondaryButton: secondaryButton)
     }
-    
-    // Funzione che gestisce la cancellazione dei pazienti con conferme multiple
+
     private func handleDeletePatients() {
         deleteConfirmationStep = 1
         showDeleteConfirmation = true
     }
-    
-    // Funzione per cancellare tutti i pazienti
+
     private func deleteAllPatients() {
-        // Crea una richiesta di recupero di tutti i pazienti
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Patient.fetchRequest()
-        
-        // Crea un batch delete request per rimuovere tutti i pazienti
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        
+        let request: NSFetchRequest<NSFetchRequestResult> = Patient.fetchRequest()
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
         do {
-            // Esegui il delete request
             try viewContext.execute(deleteRequest)
-            
-            // Salva il contesto per rendere permanenti le modifiche
             try viewContext.save()
-            
-            print("Tutti i pazienti sono stati cancellati.")
-            
-            // Mostra l'overlay di successo
-            withAnimation {
-                showSuccessOverlay = true
+            withAnimation { showSuccessOverlay = true }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                withAnimation { showSuccessOverlay = false }
             }
-            
         } catch {
-            // Gestisci l'errore
-            print("Errore durante la cancellazione dei pazienti: \(error)")
+            print("Errore cancellazione: \(error)")
         }
+    }
+
+    private var successOverlayView: some View {
+        Group {
+            if showSuccessOverlay {
+                VStack {
+                    Spacer()
+                    HStack(spacing: 12) {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.title2)
+                        Text("Cancellati!")
+                            .font(.headline)
+                    }
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 24)
+                    .padding(.vertical, 16)
+                    .background(.green.gradient)
+                    .clipShape(Capsule())
+                    .shadow(color: .green.opacity(0.3), radius: 12, y: 6)
+                    .padding(.bottom, 40)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Action Tile Component
+struct ActionTile: View {
+    let icon: String
+    let title: String
+    let subtitle: String
+    let color: Color
+    let destination: String
+
+    var body: some View {
+        NavigationLink(value: destination) {
+            VStack(spacing: 10) {
+                Image(systemName: icon)
+                    .font(.title)
+                    .foregroundColor(color)
+                    .frame(height: 28)
+
+                Text(title)
+                    .font(.callout)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.primary)
+
+                Text(subtitle)
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 18)
+            .padding(.horizontal, 8)
+            .background(.regularMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .shadow(color: .black.opacity(0.04), radius: 4, y: 2)
+        }
+        .buttonStyle(.plain)
     }
 }
 

@@ -16,8 +16,13 @@ struct Alimento: Codable, Identifiable, Hashable {
 @Model
 final class DietPlan {
     @Attribute(.unique) var id: UUID
-    var date: Date
+    var weekStartDate: Date      // Lunedì della settimana
+    var dayIndex: Int            // 0=Lunedì ... 6=Domenica
     var note: String
+    
+    // Associazione paziente (denormalizzato da Core Data)
+    var patientID: UUID?
+    var patientName: String?
     
     // Macro targets giornalieri
     var targetProteine: Double
@@ -27,18 +32,39 @@ final class DietPlan {
     
     @Relationship(deleteRule: .cascade) var meals: [Meal]
     
+    var dayName: String {
+        let days = ["Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato", "Domenica"]
+        guard dayIndex >= 0, dayIndex < days.count else { return "?" }
+        return days[dayIndex]
+    }
+    
+    var date: Date {
+        Calendar.current.date(byAdding: .day, value: dayIndex, to: weekStartDate) ?? weekStartDate
+    }
+
+    var totaleKcal: Double { meals.reduce(0) { $0 + $1.totaleKcal } }
+    var totaleProteine: Double { meals.reduce(0) { $0 + $1.totaleProteine } }
+    var totaleGrassi: Double { meals.reduce(0) { $0 + $1.totaleGrassi } }
+    var totaleCarboidrati: Double { meals.reduce(0) { $0 + $1.totaleCarboidrati } }
+
     init(
         id: UUID = UUID(),
-        date: Date = Date(),
+        weekStartDate: Date,
+        dayIndex: Int,
         note: String = "",
+        patientID: UUID? = nil,
+        patientName: String? = nil,
         targetProteine: Double = 120,
         targetGrassi: Double = 60,
         targetCarboidrati: Double = 250,
         targetKcal: Double = 2000
     ) {
         self.id = id
-        self.date = date
+        self.weekStartDate = weekStartDate
+        self.dayIndex = dayIndex
         self.note = note
+        self.patientID = patientID
+        self.patientName = patientName
         self.targetProteine = targetProteine
         self.targetGrassi = targetGrassi
         self.targetCarboidrati = targetCarboidrati
